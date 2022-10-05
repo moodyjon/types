@@ -23,11 +23,25 @@ version_gte "$VERSION" "$MIN_VERSION" || { echo >&2 "error: protoc version must 
 hash protoc-gen-go 2>/dev/null || go get -u github.com/golang/protobuf/protoc-gen-go
 hash protoc-gen-go 2>/dev/null || { echo >&2 'error: Make sure $GOPATH/bin is in your $PATH'; exit 1; }
 
+# Inform protoc what package Go code should be placed within.
+GO_PACKAGE="github.com/lbryio/herald.go/protobuf/go"
+GO_OPTS+=" --go_opt=Mclaim.proto=$GO_PACKAGE"
+GO_OPTS+=" --go_opt=Mpurchase.proto=$GO_PACKAGE"
+GO_OPTS+=" --go_opt=Mresult.proto=$GO_PACKAGE"
+GO_OPTS+=" --go_opt=Msupport.proto=$GO_PACKAGE"
 
-mkdir -p $DIR/go $DIR/python $DIR/js $DIR/cpp
-find $DIR/go $DIR/python $DIR/js $DIR/cpp -type f -delete
+mkdir -p $DIR/go $DIR/go.tmp $DIR/python $DIR/js $DIR/cpp
+find $DIR/go $DIR/go.tmp $DIR/python $DIR/js $DIR/cpp -type f -delete
 
 
-protoc --proto_path="$DIR/proto" --python_out="$DIR/python" --go_out="$DIR/go" --js_out="import_style=commonjs,binary:$DIR/js" --cpp_out="$DIR/cpp" $DIR/proto/*.proto
+protoc --proto_path="$DIR/proto" \
+    --python_out="$DIR/python" \
+    --go_out="$DIR/go.tmp" $GO_OPTS \
+    --js_out="import_style=commonjs,binary:$DIR/js" \
+    --cpp_out="$DIR/cpp" \
+    $DIR/proto/*.proto
 
-ls "$DIR"/go/*.pb.go | xargs -n1 -IX bash -c "sed -e 's/,omitempty//' X > X.tmp && mv X{.tmp,}"
+# Fixup generated Go code.
+ls "$DIR"/go.tmp/$GO_PACKAGE/*.pb.go | xargs -n1 -IX -S1024 bash -c "sed -e 's/,omitempty//' X > X.tmp && mv X{.tmp,}"
+cp "$DIR"/go.tmp/$GO_PACKAGE/* "$DIR"/go/
+rm -R "$DIR"/go.tmp
