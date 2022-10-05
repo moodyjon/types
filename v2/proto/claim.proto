@@ -42,6 +42,8 @@ message Channel {
 
 message ClaimReference {
     bytes claim_hash = 1;
+    Claim deletions = 2;
+    Claim edits = 3;
 }
 
 message ClaimList {

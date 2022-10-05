@@ -1816,7 +1816,9 @@ proto.pb.ClaimReference.prototype.toObject = function(opt_includeInstance) {
  */
 proto.pb.ClaimReference.toObject = function(includeInstance, msg) {
   var f, obj = {
-    claimHash: msg.getClaimHash_asB64()
+    claimHash: msg.getClaimHash_asB64(),
+    deletions: (f = msg.getDeletions()) && proto.pb.Claim.toObject(includeInstance, f),
+    edits: (f = msg.getEdits()) && proto.pb.Claim.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1857,6 +1859,16 @@ proto.pb.ClaimReference.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
       msg.setClaimHash(value);
       break;
+    case 2:
+      var value = new proto.pb.Claim;
+      reader.readMessage(value,proto.pb.Claim.deserializeBinaryFromReader);
+      msg.setDeletions(value);
+      break;
+    case 3:
+      var value = new proto.pb.Claim;
+      reader.readMessage(value,proto.pb.Claim.deserializeBinaryFromReader);
+      msg.setEdits(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1891,6 +1903,22 @@ proto.pb.ClaimReference.serializeBinaryToWriter = function(message, writer) {
     writer.writeBytes(
       1,
       f
+    );
+  }
+  f = message.getDeletions();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto.pb.Claim.serializeBinaryToWriter
+    );
+  }
+  f = message.getEdits();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.pb.Claim.serializeBinaryToWriter
     );
   }
 };
@@ -1935,6 +1963,80 @@ proto.pb.ClaimReference.prototype.getClaimHash_asU8 = function() {
  */
 proto.pb.ClaimReference.prototype.setClaimHash = function(value) {
   return jspb.Message.setProto3BytesField(this, 1, value);
+};
+
+
+/**
+ * optional Claim deletions = 2;
+ * @return {?proto.pb.Claim}
+ */
+proto.pb.ClaimReference.prototype.getDeletions = function() {
+  return /** @type{?proto.pb.Claim} */ (
+    jspb.Message.getWrapperField(this, proto.pb.Claim, 2));
+};
+
+
+/**
+ * @param {?proto.pb.Claim|undefined} value
+ * @return {!proto.pb.ClaimReference} returns this
+*/
+proto.pb.ClaimReference.prototype.setDeletions = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.pb.ClaimReference} returns this
+ */
+proto.pb.ClaimReference.prototype.clearDeletions = function() {
+  return this.setDeletions(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.pb.ClaimReference.prototype.hasDeletions = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional Claim edits = 3;
+ * @return {?proto.pb.Claim}
+ */
+proto.pb.ClaimReference.prototype.getEdits = function() {
+  return /** @type{?proto.pb.Claim} */ (
+    jspb.Message.getWrapperField(this, proto.pb.Claim, 3));
+};
+
+
+/**
+ * @param {?proto.pb.Claim|undefined} value
+ * @return {!proto.pb.ClaimReference} returns this
+*/
+proto.pb.ClaimReference.prototype.setEdits = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.pb.ClaimReference} returns this
+ */
+proto.pb.ClaimReference.prototype.clearEdits = function() {
+  return this.setEdits(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.pb.ClaimReference.prototype.hasEdits = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 

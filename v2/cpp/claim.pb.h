@@ -2198,6 +2198,8 @@ class ClaimReference final :
 
   enum : int {
     kClaimHashFieldNumber = 1,
+    kDeletionsFieldNumber = 2,
+    kEditsFieldNumber = 3,
   };
   // bytes claim_hash = 1;
   void clear_claim_hash();
@@ -2213,6 +2215,42 @@ class ClaimReference final :
   std::string* _internal_mutable_claim_hash();
   public:
 
+  // .pb.Claim deletions = 2;
+  bool has_deletions() const;
+  private:
+  bool _internal_has_deletions() const;
+  public:
+  void clear_deletions();
+  const ::pb::Claim& deletions() const;
+  PROTOBUF_NODISCARD ::pb::Claim* release_deletions();
+  ::pb::Claim* mutable_deletions();
+  void set_allocated_deletions(::pb::Claim* deletions);
+  private:
+  const ::pb::Claim& _internal_deletions() const;
+  ::pb::Claim* _internal_mutable_deletions();
+  public:
+  void unsafe_arena_set_allocated_deletions(
+      ::pb::Claim* deletions);
+  ::pb::Claim* unsafe_arena_release_deletions();
+
+  // .pb.Claim edits = 3;
+  bool has_edits() const;
+  private:
+  bool _internal_has_edits() const;
+  public:
+  void clear_edits();
+  const ::pb::Claim& edits() const;
+  PROTOBUF_NODISCARD ::pb::Claim* release_edits();
+  ::pb::Claim* mutable_edits();
+  void set_allocated_edits(::pb::Claim* edits);
+  private:
+  const ::pb::Claim& _internal_edits() const;
+  ::pb::Claim* _internal_mutable_edits();
+  public:
+  void unsafe_arena_set_allocated_edits(
+      ::pb::Claim* edits);
+  ::pb::Claim* unsafe_arena_release_edits();
+
   // @@protoc_insertion_point(class_scope:pb.ClaimReference)
  private:
   class _Internal;
@@ -2221,6 +2259,8 @@ class ClaimReference final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr claim_hash_;
+  ::pb::Claim* deletions_;
+  ::pb::Claim* edits_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_claim_2eproto;
 };
@@ -7522,6 +7562,186 @@ inline void ClaimReference::set_allocated_claim_hash(std::string* claim_hash) {
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:pb.ClaimReference.claim_hash)
+}
+
+// .pb.Claim deletions = 2;
+inline bool ClaimReference::_internal_has_deletions() const {
+  return this != internal_default_instance() && deletions_ != nullptr;
+}
+inline bool ClaimReference::has_deletions() const {
+  return _internal_has_deletions();
+}
+inline void ClaimReference::clear_deletions() {
+  if (GetArenaForAllocation() == nullptr && deletions_ != nullptr) {
+    delete deletions_;
+  }
+  deletions_ = nullptr;
+}
+inline const ::pb::Claim& ClaimReference::_internal_deletions() const {
+  const ::pb::Claim* p = deletions_;
+  return p != nullptr ? *p : reinterpret_cast<const ::pb::Claim&>(
+      ::pb::_Claim_default_instance_);
+}
+inline const ::pb::Claim& ClaimReference::deletions() const {
+  // @@protoc_insertion_point(field_get:pb.ClaimReference.deletions)
+  return _internal_deletions();
+}
+inline void ClaimReference::unsafe_arena_set_allocated_deletions(
+    ::pb::Claim* deletions) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(deletions_);
+  }
+  deletions_ = deletions;
+  if (deletions) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pb.ClaimReference.deletions)
+}
+inline ::pb::Claim* ClaimReference::release_deletions() {
+  
+  ::pb::Claim* temp = deletions_;
+  deletions_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::pb::Claim* ClaimReference::unsafe_arena_release_deletions() {
+  // @@protoc_insertion_point(field_release:pb.ClaimReference.deletions)
+  
+  ::pb::Claim* temp = deletions_;
+  deletions_ = nullptr;
+  return temp;
+}
+inline ::pb::Claim* ClaimReference::_internal_mutable_deletions() {
+  
+  if (deletions_ == nullptr) {
+    auto* p = CreateMaybeMessage<::pb::Claim>(GetArenaForAllocation());
+    deletions_ = p;
+  }
+  return deletions_;
+}
+inline ::pb::Claim* ClaimReference::mutable_deletions() {
+  ::pb::Claim* _msg = _internal_mutable_deletions();
+  // @@protoc_insertion_point(field_mutable:pb.ClaimReference.deletions)
+  return _msg;
+}
+inline void ClaimReference::set_allocated_deletions(::pb::Claim* deletions) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete deletions_;
+  }
+  if (deletions) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(deletions);
+    if (message_arena != submessage_arena) {
+      deletions = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, deletions, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  deletions_ = deletions;
+  // @@protoc_insertion_point(field_set_allocated:pb.ClaimReference.deletions)
+}
+
+// .pb.Claim edits = 3;
+inline bool ClaimReference::_internal_has_edits() const {
+  return this != internal_default_instance() && edits_ != nullptr;
+}
+inline bool ClaimReference::has_edits() const {
+  return _internal_has_edits();
+}
+inline void ClaimReference::clear_edits() {
+  if (GetArenaForAllocation() == nullptr && edits_ != nullptr) {
+    delete edits_;
+  }
+  edits_ = nullptr;
+}
+inline const ::pb::Claim& ClaimReference::_internal_edits() const {
+  const ::pb::Claim* p = edits_;
+  return p != nullptr ? *p : reinterpret_cast<const ::pb::Claim&>(
+      ::pb::_Claim_default_instance_);
+}
+inline const ::pb::Claim& ClaimReference::edits() const {
+  // @@protoc_insertion_point(field_get:pb.ClaimReference.edits)
+  return _internal_edits();
+}
+inline void ClaimReference::unsafe_arena_set_allocated_edits(
+    ::pb::Claim* edits) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(edits_);
+  }
+  edits_ = edits;
+  if (edits) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pb.ClaimReference.edits)
+}
+inline ::pb::Claim* ClaimReference::release_edits() {
+  
+  ::pb::Claim* temp = edits_;
+  edits_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::pb::Claim* ClaimReference::unsafe_arena_release_edits() {
+  // @@protoc_insertion_point(field_release:pb.ClaimReference.edits)
+  
+  ::pb::Claim* temp = edits_;
+  edits_ = nullptr;
+  return temp;
+}
+inline ::pb::Claim* ClaimReference::_internal_mutable_edits() {
+  
+  if (edits_ == nullptr) {
+    auto* p = CreateMaybeMessage<::pb::Claim>(GetArenaForAllocation());
+    edits_ = p;
+  }
+  return edits_;
+}
+inline ::pb::Claim* ClaimReference::mutable_edits() {
+  ::pb::Claim* _msg = _internal_mutable_edits();
+  // @@protoc_insertion_point(field_mutable:pb.ClaimReference.edits)
+  return _msg;
+}
+inline void ClaimReference::set_allocated_edits(::pb::Claim* edits) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete edits_;
+  }
+  if (edits) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(edits);
+    if (message_arena != submessage_arena) {
+      edits = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, edits, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  edits_ = edits;
+  // @@protoc_insertion_point(field_set_allocated:pb.ClaimReference.edits)
 }
 
 // -------------------------------------------------------------------
