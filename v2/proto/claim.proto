@@ -1,13 +1,15 @@
 syntax = "proto3";
 
 package pb;
+import "google/protobuf/any.proto";
 
 message Claim {
+    // Primary type
     oneof type {
         Stream stream = 1;
         Channel channel = 2;
         ClaimList collection = 3;
-        ClaimReference repost = 4;
+        ModifyingClaimReference repost = 4;
     }
     string title = 8;
     string description = 9;
@@ -30,6 +32,30 @@ message Stream {
         Audio audio = 12;
         Software software = 13;
     }
+
+    message Extension {
+        // StringMap is a generic extension which is useful for testing,
+        // but is not space-efficient and does not enforce a limited
+        // set of fields.
+        message StringMap {
+            string schema = 1; // Hint indicating what keys we should expect in the map.
+            map<string, string> s = 2;
+        }
+        // TODO: Other fixed message definitions intended to be used as extensions...
+
+        // Field "any" should contain one of the extension types (e.g. StringMap).
+        google.protobuf.Any any = 1;
+    }
+    repeated Extension extensions = 14;
+}
+
+message ModifyStream {
+    message Modifiable {
+        // Limit modifications to Stream.Extension for now.
+        repeated Stream.Extension extensions = 1;
+    }
+    Modifiable deletions = 1;
+    Modifiable edits = 2;
 }
 
 message Channel {
@@ -42,8 +68,14 @@ message Channel {
 
 message ClaimReference {
     bytes claim_hash = 1;
-    Claim deletions = 2;
-    Claim edits = 3;
+}
+
+message ModifyingClaimReference {
+    bytes claim_hash = 1;
+    oneof type {
+        ModifyStream stream = 2;
+        // Limit modifications to streams for now.
+    }
 }
 
 message ClaimList {
