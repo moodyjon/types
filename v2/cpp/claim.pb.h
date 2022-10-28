@@ -31,6 +31,7 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
+#include <google/protobuf/any.pb.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_claim_2eproto
@@ -73,6 +74,15 @@ extern LanguageDefaultTypeInternal _Language_default_instance_;
 class Location;
 struct LocationDefaultTypeInternal;
 extern LocationDefaultTypeInternal _Location_default_instance_;
+class ModifyStream;
+struct ModifyStreamDefaultTypeInternal;
+extern ModifyStreamDefaultTypeInternal _ModifyStream_default_instance_;
+class ModifyStream_Modifiable;
+struct ModifyStream_ModifiableDefaultTypeInternal;
+extern ModifyStream_ModifiableDefaultTypeInternal _ModifyStream_Modifiable_default_instance_;
+class ModifyingClaimReference;
+struct ModifyingClaimReferenceDefaultTypeInternal;
+extern ModifyingClaimReferenceDefaultTypeInternal _ModifyingClaimReference_default_instance_;
 class Software;
 struct SoftwareDefaultTypeInternal;
 extern SoftwareDefaultTypeInternal _Software_default_instance_;
@@ -82,6 +92,9 @@ extern SourceDefaultTypeInternal _Source_default_instance_;
 class Stream;
 struct StreamDefaultTypeInternal;
 extern StreamDefaultTypeInternal _Stream_default_instance_;
+class Stream_Extension;
+struct Stream_ExtensionDefaultTypeInternal;
+extern Stream_ExtensionDefaultTypeInternal _Stream_Extension_default_instance_;
 class Video;
 struct VideoDefaultTypeInternal;
 extern VideoDefaultTypeInternal _Video_default_instance_;
@@ -96,9 +109,13 @@ template<> ::pb::Fee* Arena::CreateMaybeMessage<::pb::Fee>(Arena*);
 template<> ::pb::Image* Arena::CreateMaybeMessage<::pb::Image>(Arena*);
 template<> ::pb::Language* Arena::CreateMaybeMessage<::pb::Language>(Arena*);
 template<> ::pb::Location* Arena::CreateMaybeMessage<::pb::Location>(Arena*);
+template<> ::pb::ModifyStream* Arena::CreateMaybeMessage<::pb::ModifyStream>(Arena*);
+template<> ::pb::ModifyStream_Modifiable* Arena::CreateMaybeMessage<::pb::ModifyStream_Modifiable>(Arena*);
+template<> ::pb::ModifyingClaimReference* Arena::CreateMaybeMessage<::pb::ModifyingClaimReference>(Arena*);
 template<> ::pb::Software* Arena::CreateMaybeMessage<::pb::Software>(Arena*);
 template<> ::pb::Source* Arena::CreateMaybeMessage<::pb::Source>(Arena*);
 template<> ::pb::Stream* Arena::CreateMaybeMessage<::pb::Stream>(Arena*);
+template<> ::pb::Stream_Extension* Arena::CreateMaybeMessage<::pb::Stream_Extension>(Arena*);
 template<> ::pb::Video* Arena::CreateMaybeMessage<::pb::Video>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace pb {
@@ -1469,23 +1486,23 @@ class Claim final :
       ::pb::ClaimList* collection);
   ::pb::ClaimList* unsafe_arena_release_collection();
 
-  // .pb.ClaimReference repost = 4;
+  // .pb.ModifyingClaimReference repost = 4;
   bool has_repost() const;
   private:
   bool _internal_has_repost() const;
   public:
   void clear_repost();
-  const ::pb::ClaimReference& repost() const;
-  PROTOBUF_NODISCARD ::pb::ClaimReference* release_repost();
-  ::pb::ClaimReference* mutable_repost();
-  void set_allocated_repost(::pb::ClaimReference* repost);
+  const ::pb::ModifyingClaimReference& repost() const;
+  PROTOBUF_NODISCARD ::pb::ModifyingClaimReference* release_repost();
+  ::pb::ModifyingClaimReference* mutable_repost();
+  void set_allocated_repost(::pb::ModifyingClaimReference* repost);
   private:
-  const ::pb::ClaimReference& _internal_repost() const;
-  ::pb::ClaimReference* _internal_mutable_repost();
+  const ::pb::ModifyingClaimReference& _internal_repost() const;
+  ::pb::ModifyingClaimReference* _internal_mutable_repost();
   public:
   void unsafe_arena_set_allocated_repost(
-      ::pb::ClaimReference* repost);
-  ::pb::ClaimReference* unsafe_arena_release_repost();
+      ::pb::ModifyingClaimReference* repost);
+  ::pb::ModifyingClaimReference* unsafe_arena_release_repost();
 
   void clear_type();
   TypeCase type_case() const;
@@ -1515,11 +1532,163 @@ class Claim final :
     ::pb::Stream* stream_;
     ::pb::Channel* channel_;
     ::pb::ClaimList* collection_;
-    ::pb::ClaimReference* repost_;
+    ::pb::ModifyingClaimReference* repost_;
   } type_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   uint32_t _oneof_case_[1];
 
+  friend struct ::TableStruct_claim_2eproto;
+};
+// -------------------------------------------------------------------
+
+class Stream_Extension final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.Stream.Extension) */ {
+ public:
+  inline Stream_Extension() : Stream_Extension(nullptr) {}
+  ~Stream_Extension() override;
+  explicit PROTOBUF_CONSTEXPR Stream_Extension(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  Stream_Extension(const Stream_Extension& from);
+  Stream_Extension(Stream_Extension&& from) noexcept
+    : Stream_Extension() {
+    *this = ::std::move(from);
+  }
+
+  inline Stream_Extension& operator=(const Stream_Extension& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Stream_Extension& operator=(Stream_Extension&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const Stream_Extension& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const Stream_Extension* internal_default_instance() {
+    return reinterpret_cast<const Stream_Extension*>(
+               &_Stream_Extension_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(Stream_Extension& a, Stream_Extension& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Stream_Extension* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(Stream_Extension* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  Stream_Extension* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<Stream_Extension>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const Stream_Extension& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const Stream_Extension& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Stream_Extension* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "pb.Stream.Extension";
+  }
+  protected:
+  explicit Stream_Extension(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kAnyFieldNumber = 1,
+  };
+  // .google.protobuf.Any any = 1;
+  bool has_any() const;
+  private:
+  bool _internal_has_any() const;
+  public:
+  void clear_any();
+  const ::PROTOBUF_NAMESPACE_ID::Any& any() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Any* release_any();
+  ::PROTOBUF_NAMESPACE_ID::Any* mutable_any();
+  void set_allocated_any(::PROTOBUF_NAMESPACE_ID::Any* any);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Any& _internal_any() const;
+  ::PROTOBUF_NAMESPACE_ID::Any* _internal_mutable_any();
+  public:
+  void unsafe_arena_set_allocated_any(
+      ::PROTOBUF_NAMESPACE_ID::Any* any);
+  ::PROTOBUF_NAMESPACE_ID::Any* unsafe_arena_release_any();
+
+  // @@protoc_insertion_point(class_scope:pb.Stream.Extension)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::Any* any_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_claim_2eproto;
 };
 // -------------------------------------------------------------------
@@ -1580,7 +1749,7 @@ class Stream final :
                &_Stream_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   friend void swap(Stream& a, Stream& b) {
     a.Swap(&b);
@@ -1648,9 +1817,12 @@ class Stream final :
 
   // nested types ----------------------------------------------------
 
+  typedef Stream_Extension Extension;
+
   // accessors -------------------------------------------------------
 
   enum : int {
+    kExtensionsFieldNumber = 14,
     kAuthorFieldNumber = 2,
     kLicenseFieldNumber = 3,
     kLicenseUrlFieldNumber = 4,
@@ -1662,6 +1834,24 @@ class Stream final :
     kAudioFieldNumber = 12,
     kSoftwareFieldNumber = 13,
   };
+  // repeated .pb.Stream.Extension extensions = 14;
+  int extensions_size() const;
+  private:
+  int _internal_extensions_size() const;
+  public:
+  void clear_extensions();
+  ::pb::Stream_Extension* mutable_extensions(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::Stream_Extension >*
+      mutable_extensions();
+  private:
+  const ::pb::Stream_Extension& _internal_extensions(int index) const;
+  ::pb::Stream_Extension* _internal_add_extensions();
+  public:
+  const ::pb::Stream_Extension& extensions(int index) const;
+  ::pb::Stream_Extension* add_extensions();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::Stream_Extension >&
+      extensions() const;
+
   // string author = 2;
   void clear_author();
   const std::string& author() const;
@@ -1837,6 +2027,7 @@ class Stream final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::Stream_Extension > extensions_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr author_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr license_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr license_url_;
@@ -1854,6 +2045,332 @@ class Stream final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   uint32_t _oneof_case_[1];
 
+  friend struct ::TableStruct_claim_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ModifyStream_Modifiable final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.ModifyStream.Modifiable) */ {
+ public:
+  inline ModifyStream_Modifiable() : ModifyStream_Modifiable(nullptr) {}
+  ~ModifyStream_Modifiable() override;
+  explicit PROTOBUF_CONSTEXPR ModifyStream_Modifiable(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ModifyStream_Modifiable(const ModifyStream_Modifiable& from);
+  ModifyStream_Modifiable(ModifyStream_Modifiable&& from) noexcept
+    : ModifyStream_Modifiable() {
+    *this = ::std::move(from);
+  }
+
+  inline ModifyStream_Modifiable& operator=(const ModifyStream_Modifiable& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ModifyStream_Modifiable& operator=(ModifyStream_Modifiable&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ModifyStream_Modifiable& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ModifyStream_Modifiable* internal_default_instance() {
+    return reinterpret_cast<const ModifyStream_Modifiable*>(
+               &_ModifyStream_Modifiable_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  friend void swap(ModifyStream_Modifiable& a, ModifyStream_Modifiable& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ModifyStream_Modifiable* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ModifyStream_Modifiable* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ModifyStream_Modifiable* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ModifyStream_Modifiable>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ModifyStream_Modifiable& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const ModifyStream_Modifiable& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ModifyStream_Modifiable* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "pb.ModifyStream.Modifiable";
+  }
+  protected:
+  explicit ModifyStream_Modifiable(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kExtensionsFieldNumber = 1,
+  };
+  // repeated .pb.Stream.Extension extensions = 1;
+  int extensions_size() const;
+  private:
+  int _internal_extensions_size() const;
+  public:
+  void clear_extensions();
+  ::pb::Stream_Extension* mutable_extensions(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::Stream_Extension >*
+      mutable_extensions();
+  private:
+  const ::pb::Stream_Extension& _internal_extensions(int index) const;
+  ::pb::Stream_Extension* _internal_add_extensions();
+  public:
+  const ::pb::Stream_Extension& extensions(int index) const;
+  ::pb::Stream_Extension* add_extensions();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::Stream_Extension >&
+      extensions() const;
+
+  // @@protoc_insertion_point(class_scope:pb.ModifyStream.Modifiable)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::Stream_Extension > extensions_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_claim_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ModifyStream final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.ModifyStream) */ {
+ public:
+  inline ModifyStream() : ModifyStream(nullptr) {}
+  ~ModifyStream() override;
+  explicit PROTOBUF_CONSTEXPR ModifyStream(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ModifyStream(const ModifyStream& from);
+  ModifyStream(ModifyStream&& from) noexcept
+    : ModifyStream() {
+    *this = ::std::move(from);
+  }
+
+  inline ModifyStream& operator=(const ModifyStream& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ModifyStream& operator=(ModifyStream&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ModifyStream& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ModifyStream* internal_default_instance() {
+    return reinterpret_cast<const ModifyStream*>(
+               &_ModifyStream_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    4;
+
+  friend void swap(ModifyStream& a, ModifyStream& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ModifyStream* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ModifyStream* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ModifyStream* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ModifyStream>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ModifyStream& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const ModifyStream& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ModifyStream* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "pb.ModifyStream";
+  }
+  protected:
+  explicit ModifyStream(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  typedef ModifyStream_Modifiable Modifiable;
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kDeletionsFieldNumber = 1,
+    kEditsFieldNumber = 2,
+  };
+  // .pb.ModifyStream.Modifiable deletions = 1;
+  bool has_deletions() const;
+  private:
+  bool _internal_has_deletions() const;
+  public:
+  void clear_deletions();
+  const ::pb::ModifyStream_Modifiable& deletions() const;
+  PROTOBUF_NODISCARD ::pb::ModifyStream_Modifiable* release_deletions();
+  ::pb::ModifyStream_Modifiable* mutable_deletions();
+  void set_allocated_deletions(::pb::ModifyStream_Modifiable* deletions);
+  private:
+  const ::pb::ModifyStream_Modifiable& _internal_deletions() const;
+  ::pb::ModifyStream_Modifiable* _internal_mutable_deletions();
+  public:
+  void unsafe_arena_set_allocated_deletions(
+      ::pb::ModifyStream_Modifiable* deletions);
+  ::pb::ModifyStream_Modifiable* unsafe_arena_release_deletions();
+
+  // .pb.ModifyStream.Modifiable edits = 2;
+  bool has_edits() const;
+  private:
+  bool _internal_has_edits() const;
+  public:
+  void clear_edits();
+  const ::pb::ModifyStream_Modifiable& edits() const;
+  PROTOBUF_NODISCARD ::pb::ModifyStream_Modifiable* release_edits();
+  ::pb::ModifyStream_Modifiable* mutable_edits();
+  void set_allocated_edits(::pb::ModifyStream_Modifiable* edits);
+  private:
+  const ::pb::ModifyStream_Modifiable& _internal_edits() const;
+  ::pb::ModifyStream_Modifiable* _internal_mutable_edits();
+  public:
+  void unsafe_arena_set_allocated_edits(
+      ::pb::ModifyStream_Modifiable* edits);
+  ::pb::ModifyStream_Modifiable* unsafe_arena_release_edits();
+
+  // @@protoc_insertion_point(class_scope:pb.ModifyStream)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::pb::ModifyStream_Modifiable* deletions_;
+  ::pb::ModifyStream_Modifiable* edits_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_claim_2eproto;
 };
 // -------------------------------------------------------------------
@@ -1906,7 +2423,7 @@ class Channel final :
                &_Channel_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    5;
 
   friend void swap(Channel& a, Channel& b) {
     a.Swap(&b);
@@ -2126,7 +2643,7 @@ class ClaimReference final :
                &_ClaimReference_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    6;
 
   friend void swap(ClaimReference& a, ClaimReference& b) {
     a.Swap(&b);
@@ -2198,8 +2715,6 @@ class ClaimReference final :
 
   enum : int {
     kClaimHashFieldNumber = 1,
-    kDeletionsFieldNumber = 2,
-    kEditsFieldNumber = 3,
   };
   // bytes claim_hash = 1;
   void clear_claim_hash();
@@ -2215,42 +2730,6 @@ class ClaimReference final :
   std::string* _internal_mutable_claim_hash();
   public:
 
-  // .pb.Claim deletions = 2;
-  bool has_deletions() const;
-  private:
-  bool _internal_has_deletions() const;
-  public:
-  void clear_deletions();
-  const ::pb::Claim& deletions() const;
-  PROTOBUF_NODISCARD ::pb::Claim* release_deletions();
-  ::pb::Claim* mutable_deletions();
-  void set_allocated_deletions(::pb::Claim* deletions);
-  private:
-  const ::pb::Claim& _internal_deletions() const;
-  ::pb::Claim* _internal_mutable_deletions();
-  public:
-  void unsafe_arena_set_allocated_deletions(
-      ::pb::Claim* deletions);
-  ::pb::Claim* unsafe_arena_release_deletions();
-
-  // .pb.Claim edits = 3;
-  bool has_edits() const;
-  private:
-  bool _internal_has_edits() const;
-  public:
-  void clear_edits();
-  const ::pb::Claim& edits() const;
-  PROTOBUF_NODISCARD ::pb::Claim* release_edits();
-  ::pb::Claim* mutable_edits();
-  void set_allocated_edits(::pb::Claim* edits);
-  private:
-  const ::pb::Claim& _internal_edits() const;
-  ::pb::Claim* _internal_mutable_edits();
-  public:
-  void unsafe_arena_set_allocated_edits(
-      ::pb::Claim* edits);
-  ::pb::Claim* unsafe_arena_release_edits();
-
   // @@protoc_insertion_point(class_scope:pb.ClaimReference)
  private:
   class _Internal;
@@ -2259,9 +2738,192 @@ class ClaimReference final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr claim_hash_;
-  ::pb::Claim* deletions_;
-  ::pb::Claim* edits_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_claim_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ModifyingClaimReference final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.ModifyingClaimReference) */ {
+ public:
+  inline ModifyingClaimReference() : ModifyingClaimReference(nullptr) {}
+  ~ModifyingClaimReference() override;
+  explicit PROTOBUF_CONSTEXPR ModifyingClaimReference(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ModifyingClaimReference(const ModifyingClaimReference& from);
+  ModifyingClaimReference(ModifyingClaimReference&& from) noexcept
+    : ModifyingClaimReference() {
+    *this = ::std::move(from);
+  }
+
+  inline ModifyingClaimReference& operator=(const ModifyingClaimReference& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ModifyingClaimReference& operator=(ModifyingClaimReference&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ModifyingClaimReference& default_instance() {
+    return *internal_default_instance();
+  }
+  enum TypeCase {
+    kStream = 2,
+    TYPE_NOT_SET = 0,
+  };
+
+  static inline const ModifyingClaimReference* internal_default_instance() {
+    return reinterpret_cast<const ModifyingClaimReference*>(
+               &_ModifyingClaimReference_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  friend void swap(ModifyingClaimReference& a, ModifyingClaimReference& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ModifyingClaimReference* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ModifyingClaimReference* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ModifyingClaimReference* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ModifyingClaimReference>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ModifyingClaimReference& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const ModifyingClaimReference& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ModifyingClaimReference* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "pb.ModifyingClaimReference";
+  }
+  protected:
+  explicit ModifyingClaimReference(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kClaimHashFieldNumber = 1,
+    kStreamFieldNumber = 2,
+  };
+  // bytes claim_hash = 1;
+  void clear_claim_hash();
+  const std::string& claim_hash() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_claim_hash(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_claim_hash();
+  PROTOBUF_NODISCARD std::string* release_claim_hash();
+  void set_allocated_claim_hash(std::string* claim_hash);
+  private:
+  const std::string& _internal_claim_hash() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_claim_hash(const std::string& value);
+  std::string* _internal_mutable_claim_hash();
+  public:
+
+  // .pb.ModifyStream stream = 2;
+  bool has_stream() const;
+  private:
+  bool _internal_has_stream() const;
+  public:
+  void clear_stream();
+  const ::pb::ModifyStream& stream() const;
+  PROTOBUF_NODISCARD ::pb::ModifyStream* release_stream();
+  ::pb::ModifyStream* mutable_stream();
+  void set_allocated_stream(::pb::ModifyStream* stream);
+  private:
+  const ::pb::ModifyStream& _internal_stream() const;
+  ::pb::ModifyStream* _internal_mutable_stream();
+  public:
+  void unsafe_arena_set_allocated_stream(
+      ::pb::ModifyStream* stream);
+  ::pb::ModifyStream* unsafe_arena_release_stream();
+
+  void clear_type();
+  TypeCase type_case() const;
+  // @@protoc_insertion_point(class_scope:pb.ModifyingClaimReference)
+ private:
+  class _Internal;
+  void set_has_stream();
+
+  inline bool has_type() const;
+  inline void clear_has_type();
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr claim_hash_;
+  union TypeUnion {
+    constexpr TypeUnion() : _constinit_{} {}
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
+    ::pb::ModifyStream* stream_;
+  } type_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  uint32_t _oneof_case_[1];
+
   friend struct ::TableStruct_claim_2eproto;
 };
 // -------------------------------------------------------------------
@@ -2314,7 +2976,7 @@ class ClaimList final :
                &_ClaimList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    8;
 
   friend void swap(ClaimList& a, ClaimList& b) {
     a.Swap(&b);
@@ -2507,7 +3169,7 @@ class Source final :
                &_Source_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    9;
 
   friend void swap(Source& a, Source& b) {
     a.Swap(&b);
@@ -2746,7 +3408,7 @@ class Fee final :
                &_Fee_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    10;
 
   friend void swap(Fee& a, Fee& b) {
     a.Swap(&b);
@@ -2950,7 +3612,7 @@ class Image final :
                &_Image_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    11;
 
   friend void swap(Image& a, Image& b) {
     a.Swap(&b);
@@ -3104,7 +3766,7 @@ class Video final :
                &_Video_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    12;
 
   friend void swap(Video& a, Video& b) {
     a.Swap(&b);
@@ -3289,7 +3951,7 @@ class Audio final :
                &_Audio_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    13;
 
   friend void swap(Audio& a, Audio& b) {
     a.Swap(&b);
@@ -3432,7 +4094,7 @@ class Software final :
                &_Software_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    14;
 
   friend void swap(Software& a, Software& b) {
     a.Swap(&b);
@@ -3620,7 +4282,7 @@ class Language final :
                &_Language_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    15;
 
   friend void swap(Language& a, Language& b) {
     a.Swap(&b);
@@ -4607,7 +5269,7 @@ class Location final :
                &_Location_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    16;
 
   friend void swap(Location& a, Location& b) {
     a.Swap(&b);
@@ -6089,7 +6751,7 @@ inline ::pb::ClaimList* Claim::mutable_collection() {
   return _msg;
 }
 
-// .pb.ClaimReference repost = 4;
+// .pb.ModifyingClaimReference repost = 4;
 inline bool Claim::_internal_has_repost() const {
   return type_case() == kRepost;
 }
@@ -6107,11 +6769,11 @@ inline void Claim::clear_repost() {
     clear_has_type();
   }
 }
-inline ::pb::ClaimReference* Claim::release_repost() {
+inline ::pb::ModifyingClaimReference* Claim::release_repost() {
   // @@protoc_insertion_point(field_release:pb.Claim.repost)
   if (_internal_has_repost()) {
     clear_has_type();
-    ::pb::ClaimReference* temp = type_.repost_;
+    ::pb::ModifyingClaimReference* temp = type_.repost_;
     if (GetArenaForAllocation() != nullptr) {
       temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
     }
@@ -6121,27 +6783,27 @@ inline ::pb::ClaimReference* Claim::release_repost() {
     return nullptr;
   }
 }
-inline const ::pb::ClaimReference& Claim::_internal_repost() const {
+inline const ::pb::ModifyingClaimReference& Claim::_internal_repost() const {
   return _internal_has_repost()
       ? *type_.repost_
-      : reinterpret_cast< ::pb::ClaimReference&>(::pb::_ClaimReference_default_instance_);
+      : reinterpret_cast< ::pb::ModifyingClaimReference&>(::pb::_ModifyingClaimReference_default_instance_);
 }
-inline const ::pb::ClaimReference& Claim::repost() const {
+inline const ::pb::ModifyingClaimReference& Claim::repost() const {
   // @@protoc_insertion_point(field_get:pb.Claim.repost)
   return _internal_repost();
 }
-inline ::pb::ClaimReference* Claim::unsafe_arena_release_repost() {
+inline ::pb::ModifyingClaimReference* Claim::unsafe_arena_release_repost() {
   // @@protoc_insertion_point(field_unsafe_arena_release:pb.Claim.repost)
   if (_internal_has_repost()) {
     clear_has_type();
-    ::pb::ClaimReference* temp = type_.repost_;
+    ::pb::ModifyingClaimReference* temp = type_.repost_;
     type_.repost_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline void Claim::unsafe_arena_set_allocated_repost(::pb::ClaimReference* repost) {
+inline void Claim::unsafe_arena_set_allocated_repost(::pb::ModifyingClaimReference* repost) {
   clear_type();
   if (repost) {
     set_has_repost();
@@ -6149,16 +6811,16 @@ inline void Claim::unsafe_arena_set_allocated_repost(::pb::ClaimReference* repos
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pb.Claim.repost)
 }
-inline ::pb::ClaimReference* Claim::_internal_mutable_repost() {
+inline ::pb::ModifyingClaimReference* Claim::_internal_mutable_repost() {
   if (!_internal_has_repost()) {
     clear_type();
     set_has_repost();
-    type_.repost_ = CreateMaybeMessage< ::pb::ClaimReference >(GetArenaForAllocation());
+    type_.repost_ = CreateMaybeMessage< ::pb::ModifyingClaimReference >(GetArenaForAllocation());
   }
   return type_.repost_;
 }
-inline ::pb::ClaimReference* Claim::mutable_repost() {
-  ::pb::ClaimReference* _msg = _internal_mutable_repost();
+inline ::pb::ModifyingClaimReference* Claim::mutable_repost() {
+  ::pb::ModifyingClaimReference* _msg = _internal_mutable_repost();
   // @@protoc_insertion_point(field_mutable:pb.Claim.repost)
   return _msg;
 }
@@ -6517,6 +7179,95 @@ inline void Claim::clear_has_type() {
 inline Claim::TypeCase Claim::type_case() const {
   return Claim::TypeCase(_oneof_case_[0]);
 }
+// -------------------------------------------------------------------
+
+// Stream_Extension
+
+// .google.protobuf.Any any = 1;
+inline bool Stream_Extension::_internal_has_any() const {
+  return this != internal_default_instance() && any_ != nullptr;
+}
+inline bool Stream_Extension::has_any() const {
+  return _internal_has_any();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Any& Stream_Extension::_internal_any() const {
+  const ::PROTOBUF_NAMESPACE_ID::Any* p = any_;
+  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Any&>(
+      ::PROTOBUF_NAMESPACE_ID::_Any_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Any& Stream_Extension::any() const {
+  // @@protoc_insertion_point(field_get:pb.Stream.Extension.any)
+  return _internal_any();
+}
+inline void Stream_Extension::unsafe_arena_set_allocated_any(
+    ::PROTOBUF_NAMESPACE_ID::Any* any) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(any_);
+  }
+  any_ = any;
+  if (any) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pb.Stream.Extension.any)
+}
+inline ::PROTOBUF_NAMESPACE_ID::Any* Stream_Extension::release_any() {
+  
+  ::PROTOBUF_NAMESPACE_ID::Any* temp = any_;
+  any_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Any* Stream_Extension::unsafe_arena_release_any() {
+  // @@protoc_insertion_point(field_release:pb.Stream.Extension.any)
+  
+  ::PROTOBUF_NAMESPACE_ID::Any* temp = any_;
+  any_ = nullptr;
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Any* Stream_Extension::_internal_mutable_any() {
+  
+  if (any_ == nullptr) {
+    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Any>(GetArenaForAllocation());
+    any_ = p;
+  }
+  return any_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Any* Stream_Extension::mutable_any() {
+  ::PROTOBUF_NAMESPACE_ID::Any* _msg = _internal_mutable_any();
+  // @@protoc_insertion_point(field_mutable:pb.Stream.Extension.any)
+  return _msg;
+}
+inline void Stream_Extension::set_allocated_any(::PROTOBUF_NAMESPACE_ID::Any* any) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(any_);
+  }
+  if (any) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(any));
+    if (message_arena != submessage_arena) {
+      any = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, any, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  any_ = any;
+  // @@protoc_insertion_point(field_set_allocated:pb.Stream.Extension.any)
+}
+
 // -------------------------------------------------------------------
 
 // Stream
@@ -7167,6 +7918,46 @@ inline ::pb::Software* Stream::mutable_software() {
   return _msg;
 }
 
+// repeated .pb.Stream.Extension extensions = 14;
+inline int Stream::_internal_extensions_size() const {
+  return extensions_.size();
+}
+inline int Stream::extensions_size() const {
+  return _internal_extensions_size();
+}
+inline void Stream::clear_extensions() {
+  extensions_.Clear();
+}
+inline ::pb::Stream_Extension* Stream::mutable_extensions(int index) {
+  // @@protoc_insertion_point(field_mutable:pb.Stream.extensions)
+  return extensions_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::Stream_Extension >*
+Stream::mutable_extensions() {
+  // @@protoc_insertion_point(field_mutable_list:pb.Stream.extensions)
+  return &extensions_;
+}
+inline const ::pb::Stream_Extension& Stream::_internal_extensions(int index) const {
+  return extensions_.Get(index);
+}
+inline const ::pb::Stream_Extension& Stream::extensions(int index) const {
+  // @@protoc_insertion_point(field_get:pb.Stream.extensions)
+  return _internal_extensions(index);
+}
+inline ::pb::Stream_Extension* Stream::_internal_add_extensions() {
+  return extensions_.Add();
+}
+inline ::pb::Stream_Extension* Stream::add_extensions() {
+  ::pb::Stream_Extension* _add = _internal_add_extensions();
+  // @@protoc_insertion_point(field_add:pb.Stream.extensions)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::Stream_Extension >&
+Stream::extensions() const {
+  // @@protoc_insertion_point(field_list:pb.Stream.extensions)
+  return extensions_;
+}
+
 inline bool Stream::has_type() const {
   return type_case() != TYPE_NOT_SET;
 }
@@ -7176,6 +7967,234 @@ inline void Stream::clear_has_type() {
 inline Stream::TypeCase Stream::type_case() const {
   return Stream::TypeCase(_oneof_case_[0]);
 }
+// -------------------------------------------------------------------
+
+// ModifyStream_Modifiable
+
+// repeated .pb.Stream.Extension extensions = 1;
+inline int ModifyStream_Modifiable::_internal_extensions_size() const {
+  return extensions_.size();
+}
+inline int ModifyStream_Modifiable::extensions_size() const {
+  return _internal_extensions_size();
+}
+inline void ModifyStream_Modifiable::clear_extensions() {
+  extensions_.Clear();
+}
+inline ::pb::Stream_Extension* ModifyStream_Modifiable::mutable_extensions(int index) {
+  // @@protoc_insertion_point(field_mutable:pb.ModifyStream.Modifiable.extensions)
+  return extensions_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::Stream_Extension >*
+ModifyStream_Modifiable::mutable_extensions() {
+  // @@protoc_insertion_point(field_mutable_list:pb.ModifyStream.Modifiable.extensions)
+  return &extensions_;
+}
+inline const ::pb::Stream_Extension& ModifyStream_Modifiable::_internal_extensions(int index) const {
+  return extensions_.Get(index);
+}
+inline const ::pb::Stream_Extension& ModifyStream_Modifiable::extensions(int index) const {
+  // @@protoc_insertion_point(field_get:pb.ModifyStream.Modifiable.extensions)
+  return _internal_extensions(index);
+}
+inline ::pb::Stream_Extension* ModifyStream_Modifiable::_internal_add_extensions() {
+  return extensions_.Add();
+}
+inline ::pb::Stream_Extension* ModifyStream_Modifiable::add_extensions() {
+  ::pb::Stream_Extension* _add = _internal_add_extensions();
+  // @@protoc_insertion_point(field_add:pb.ModifyStream.Modifiable.extensions)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::Stream_Extension >&
+ModifyStream_Modifiable::extensions() const {
+  // @@protoc_insertion_point(field_list:pb.ModifyStream.Modifiable.extensions)
+  return extensions_;
+}
+
+// -------------------------------------------------------------------
+
+// ModifyStream
+
+// .pb.ModifyStream.Modifiable deletions = 1;
+inline bool ModifyStream::_internal_has_deletions() const {
+  return this != internal_default_instance() && deletions_ != nullptr;
+}
+inline bool ModifyStream::has_deletions() const {
+  return _internal_has_deletions();
+}
+inline void ModifyStream::clear_deletions() {
+  if (GetArenaForAllocation() == nullptr && deletions_ != nullptr) {
+    delete deletions_;
+  }
+  deletions_ = nullptr;
+}
+inline const ::pb::ModifyStream_Modifiable& ModifyStream::_internal_deletions() const {
+  const ::pb::ModifyStream_Modifiable* p = deletions_;
+  return p != nullptr ? *p : reinterpret_cast<const ::pb::ModifyStream_Modifiable&>(
+      ::pb::_ModifyStream_Modifiable_default_instance_);
+}
+inline const ::pb::ModifyStream_Modifiable& ModifyStream::deletions() const {
+  // @@protoc_insertion_point(field_get:pb.ModifyStream.deletions)
+  return _internal_deletions();
+}
+inline void ModifyStream::unsafe_arena_set_allocated_deletions(
+    ::pb::ModifyStream_Modifiable* deletions) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(deletions_);
+  }
+  deletions_ = deletions;
+  if (deletions) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pb.ModifyStream.deletions)
+}
+inline ::pb::ModifyStream_Modifiable* ModifyStream::release_deletions() {
+  
+  ::pb::ModifyStream_Modifiable* temp = deletions_;
+  deletions_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::pb::ModifyStream_Modifiable* ModifyStream::unsafe_arena_release_deletions() {
+  // @@protoc_insertion_point(field_release:pb.ModifyStream.deletions)
+  
+  ::pb::ModifyStream_Modifiable* temp = deletions_;
+  deletions_ = nullptr;
+  return temp;
+}
+inline ::pb::ModifyStream_Modifiable* ModifyStream::_internal_mutable_deletions() {
+  
+  if (deletions_ == nullptr) {
+    auto* p = CreateMaybeMessage<::pb::ModifyStream_Modifiable>(GetArenaForAllocation());
+    deletions_ = p;
+  }
+  return deletions_;
+}
+inline ::pb::ModifyStream_Modifiable* ModifyStream::mutable_deletions() {
+  ::pb::ModifyStream_Modifiable* _msg = _internal_mutable_deletions();
+  // @@protoc_insertion_point(field_mutable:pb.ModifyStream.deletions)
+  return _msg;
+}
+inline void ModifyStream::set_allocated_deletions(::pb::ModifyStream_Modifiable* deletions) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete deletions_;
+  }
+  if (deletions) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(deletions);
+    if (message_arena != submessage_arena) {
+      deletions = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, deletions, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  deletions_ = deletions;
+  // @@protoc_insertion_point(field_set_allocated:pb.ModifyStream.deletions)
+}
+
+// .pb.ModifyStream.Modifiable edits = 2;
+inline bool ModifyStream::_internal_has_edits() const {
+  return this != internal_default_instance() && edits_ != nullptr;
+}
+inline bool ModifyStream::has_edits() const {
+  return _internal_has_edits();
+}
+inline void ModifyStream::clear_edits() {
+  if (GetArenaForAllocation() == nullptr && edits_ != nullptr) {
+    delete edits_;
+  }
+  edits_ = nullptr;
+}
+inline const ::pb::ModifyStream_Modifiable& ModifyStream::_internal_edits() const {
+  const ::pb::ModifyStream_Modifiable* p = edits_;
+  return p != nullptr ? *p : reinterpret_cast<const ::pb::ModifyStream_Modifiable&>(
+      ::pb::_ModifyStream_Modifiable_default_instance_);
+}
+inline const ::pb::ModifyStream_Modifiable& ModifyStream::edits() const {
+  // @@protoc_insertion_point(field_get:pb.ModifyStream.edits)
+  return _internal_edits();
+}
+inline void ModifyStream::unsafe_arena_set_allocated_edits(
+    ::pb::ModifyStream_Modifiable* edits) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(edits_);
+  }
+  edits_ = edits;
+  if (edits) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pb.ModifyStream.edits)
+}
+inline ::pb::ModifyStream_Modifiable* ModifyStream::release_edits() {
+  
+  ::pb::ModifyStream_Modifiable* temp = edits_;
+  edits_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::pb::ModifyStream_Modifiable* ModifyStream::unsafe_arena_release_edits() {
+  // @@protoc_insertion_point(field_release:pb.ModifyStream.edits)
+  
+  ::pb::ModifyStream_Modifiable* temp = edits_;
+  edits_ = nullptr;
+  return temp;
+}
+inline ::pb::ModifyStream_Modifiable* ModifyStream::_internal_mutable_edits() {
+  
+  if (edits_ == nullptr) {
+    auto* p = CreateMaybeMessage<::pb::ModifyStream_Modifiable>(GetArenaForAllocation());
+    edits_ = p;
+  }
+  return edits_;
+}
+inline ::pb::ModifyStream_Modifiable* ModifyStream::mutable_edits() {
+  ::pb::ModifyStream_Modifiable* _msg = _internal_mutable_edits();
+  // @@protoc_insertion_point(field_mutable:pb.ModifyStream.edits)
+  return _msg;
+}
+inline void ModifyStream::set_allocated_edits(::pb::ModifyStream_Modifiable* edits) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete edits_;
+  }
+  if (edits) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(edits);
+    if (message_arena != submessage_arena) {
+      edits = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, edits, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  edits_ = edits;
+  // @@protoc_insertion_point(field_set_allocated:pb.ModifyStream.edits)
+}
+
 // -------------------------------------------------------------------
 
 // Channel
@@ -7564,186 +8583,143 @@ inline void ClaimReference::set_allocated_claim_hash(std::string* claim_hash) {
   // @@protoc_insertion_point(field_set_allocated:pb.ClaimReference.claim_hash)
 }
 
-// .pb.Claim deletions = 2;
-inline bool ClaimReference::_internal_has_deletions() const {
-  return this != internal_default_instance() && deletions_ != nullptr;
+// -------------------------------------------------------------------
+
+// ModifyingClaimReference
+
+// bytes claim_hash = 1;
+inline void ModifyingClaimReference::clear_claim_hash() {
+  claim_hash_.ClearToEmpty();
 }
-inline bool ClaimReference::has_deletions() const {
-  return _internal_has_deletions();
+inline const std::string& ModifyingClaimReference::claim_hash() const {
+  // @@protoc_insertion_point(field_get:pb.ModifyingClaimReference.claim_hash)
+  return _internal_claim_hash();
 }
-inline void ClaimReference::clear_deletions() {
-  if (GetArenaForAllocation() == nullptr && deletions_ != nullptr) {
-    delete deletions_;
-  }
-  deletions_ = nullptr;
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ModifyingClaimReference::set_claim_hash(ArgT0&& arg0, ArgT... args) {
+ 
+ claim_hash_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pb.ModifyingClaimReference.claim_hash)
 }
-inline const ::pb::Claim& ClaimReference::_internal_deletions() const {
-  const ::pb::Claim* p = deletions_;
-  return p != nullptr ? *p : reinterpret_cast<const ::pb::Claim&>(
-      ::pb::_Claim_default_instance_);
+inline std::string* ModifyingClaimReference::mutable_claim_hash() {
+  std::string* _s = _internal_mutable_claim_hash();
+  // @@protoc_insertion_point(field_mutable:pb.ModifyingClaimReference.claim_hash)
+  return _s;
 }
-inline const ::pb::Claim& ClaimReference::deletions() const {
-  // @@protoc_insertion_point(field_get:pb.ClaimReference.deletions)
-  return _internal_deletions();
+inline const std::string& ModifyingClaimReference::_internal_claim_hash() const {
+  return claim_hash_.Get();
 }
-inline void ClaimReference::unsafe_arena_set_allocated_deletions(
-    ::pb::Claim* deletions) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(deletions_);
-  }
-  deletions_ = deletions;
-  if (deletions) {
+inline void ModifyingClaimReference::_internal_set_claim_hash(const std::string& value) {
+  
+  claim_hash_.Set(value, GetArenaForAllocation());
+}
+inline std::string* ModifyingClaimReference::_internal_mutable_claim_hash() {
+  
+  return claim_hash_.Mutable(GetArenaForAllocation());
+}
+inline std::string* ModifyingClaimReference::release_claim_hash() {
+  // @@protoc_insertion_point(field_release:pb.ModifyingClaimReference.claim_hash)
+  return claim_hash_.Release();
+}
+inline void ModifyingClaimReference::set_allocated_claim_hash(std::string* claim_hash) {
+  if (claim_hash != nullptr) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pb.ClaimReference.deletions)
-}
-inline ::pb::Claim* ClaimReference::release_deletions() {
-  
-  ::pb::Claim* temp = deletions_;
-  deletions_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  claim_hash_.SetAllocated(claim_hash, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (claim_hash_.IsDefault()) {
+    claim_hash_.Set("", GetArenaForAllocation());
   }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::pb::Claim* ClaimReference::unsafe_arena_release_deletions() {
-  // @@protoc_insertion_point(field_release:pb.ClaimReference.deletions)
-  
-  ::pb::Claim* temp = deletions_;
-  deletions_ = nullptr;
-  return temp;
-}
-inline ::pb::Claim* ClaimReference::_internal_mutable_deletions() {
-  
-  if (deletions_ == nullptr) {
-    auto* p = CreateMaybeMessage<::pb::Claim>(GetArenaForAllocation());
-    deletions_ = p;
-  }
-  return deletions_;
-}
-inline ::pb::Claim* ClaimReference::mutable_deletions() {
-  ::pb::Claim* _msg = _internal_mutable_deletions();
-  // @@protoc_insertion_point(field_mutable:pb.ClaimReference.deletions)
-  return _msg;
-}
-inline void ClaimReference::set_allocated_deletions(::pb::Claim* deletions) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete deletions_;
-  }
-  if (deletions) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(deletions);
-    if (message_arena != submessage_arena) {
-      deletions = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, deletions, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  deletions_ = deletions;
-  // @@protoc_insertion_point(field_set_allocated:pb.ClaimReference.deletions)
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:pb.ModifyingClaimReference.claim_hash)
 }
 
-// .pb.Claim edits = 3;
-inline bool ClaimReference::_internal_has_edits() const {
-  return this != internal_default_instance() && edits_ != nullptr;
+// .pb.ModifyStream stream = 2;
+inline bool ModifyingClaimReference::_internal_has_stream() const {
+  return type_case() == kStream;
 }
-inline bool ClaimReference::has_edits() const {
-  return _internal_has_edits();
+inline bool ModifyingClaimReference::has_stream() const {
+  return _internal_has_stream();
 }
-inline void ClaimReference::clear_edits() {
-  if (GetArenaForAllocation() == nullptr && edits_ != nullptr) {
-    delete edits_;
+inline void ModifyingClaimReference::set_has_stream() {
+  _oneof_case_[0] = kStream;
+}
+inline void ModifyingClaimReference::clear_stream() {
+  if (_internal_has_stream()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete type_.stream_;
+    }
+    clear_has_type();
   }
-  edits_ = nullptr;
 }
-inline const ::pb::Claim& ClaimReference::_internal_edits() const {
-  const ::pb::Claim* p = edits_;
-  return p != nullptr ? *p : reinterpret_cast<const ::pb::Claim&>(
-      ::pb::_Claim_default_instance_);
-}
-inline const ::pb::Claim& ClaimReference::edits() const {
-  // @@protoc_insertion_point(field_get:pb.ClaimReference.edits)
-  return _internal_edits();
-}
-inline void ClaimReference::unsafe_arena_set_allocated_edits(
-    ::pb::Claim* edits) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(edits_);
-  }
-  edits_ = edits;
-  if (edits) {
-    
+inline ::pb::ModifyStream* ModifyingClaimReference::release_stream() {
+  // @@protoc_insertion_point(field_release:pb.ModifyingClaimReference.stream)
+  if (_internal_has_stream()) {
+    clear_has_type();
+    ::pb::ModifyStream* temp = type_.stream_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    type_.stream_ = nullptr;
+    return temp;
   } else {
-    
+    return nullptr;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pb.ClaimReference.edits)
 }
-inline ::pb::Claim* ClaimReference::release_edits() {
-  
-  ::pb::Claim* temp = edits_;
-  edits_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+inline const ::pb::ModifyStream& ModifyingClaimReference::_internal_stream() const {
+  return _internal_has_stream()
+      ? *type_.stream_
+      : reinterpret_cast< ::pb::ModifyStream&>(::pb::_ModifyStream_default_instance_);
+}
+inline const ::pb::ModifyStream& ModifyingClaimReference::stream() const {
+  // @@protoc_insertion_point(field_get:pb.ModifyingClaimReference.stream)
+  return _internal_stream();
+}
+inline ::pb::ModifyStream* ModifyingClaimReference::unsafe_arena_release_stream() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:pb.ModifyingClaimReference.stream)
+  if (_internal_has_stream()) {
+    clear_has_type();
+    ::pb::ModifyStream* temp = type_.stream_;
+    type_.stream_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
   }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
 }
-inline ::pb::Claim* ClaimReference::unsafe_arena_release_edits() {
-  // @@protoc_insertion_point(field_release:pb.ClaimReference.edits)
-  
-  ::pb::Claim* temp = edits_;
-  edits_ = nullptr;
-  return temp;
-}
-inline ::pb::Claim* ClaimReference::_internal_mutable_edits() {
-  
-  if (edits_ == nullptr) {
-    auto* p = CreateMaybeMessage<::pb::Claim>(GetArenaForAllocation());
-    edits_ = p;
+inline void ModifyingClaimReference::unsafe_arena_set_allocated_stream(::pb::ModifyStream* stream) {
+  clear_type();
+  if (stream) {
+    set_has_stream();
+    type_.stream_ = stream;
   }
-  return edits_;
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pb.ModifyingClaimReference.stream)
 }
-inline ::pb::Claim* ClaimReference::mutable_edits() {
-  ::pb::Claim* _msg = _internal_mutable_edits();
-  // @@protoc_insertion_point(field_mutable:pb.ClaimReference.edits)
+inline ::pb::ModifyStream* ModifyingClaimReference::_internal_mutable_stream() {
+  if (!_internal_has_stream()) {
+    clear_type();
+    set_has_stream();
+    type_.stream_ = CreateMaybeMessage< ::pb::ModifyStream >(GetArenaForAllocation());
+  }
+  return type_.stream_;
+}
+inline ::pb::ModifyStream* ModifyingClaimReference::mutable_stream() {
+  ::pb::ModifyStream* _msg = _internal_mutable_stream();
+  // @@protoc_insertion_point(field_mutable:pb.ModifyingClaimReference.stream)
   return _msg;
 }
-inline void ClaimReference::set_allocated_edits(::pb::Claim* edits) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete edits_;
-  }
-  if (edits) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(edits);
-    if (message_arena != submessage_arena) {
-      edits = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, edits, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  edits_ = edits;
-  // @@protoc_insertion_point(field_set_allocated:pb.ClaimReference.edits)
-}
 
+inline bool ModifyingClaimReference::has_type() const {
+  return type_case() != TYPE_NOT_SET;
+}
+inline void ModifyingClaimReference::clear_has_type() {
+  _oneof_case_[0] = TYPE_NOT_SET;
+}
+inline ModifyingClaimReference::TypeCase ModifyingClaimReference::type_case() const {
+  return ModifyingClaimReference::TypeCase(_oneof_case_[0]);
+}
 // -------------------------------------------------------------------
 
 // ClaimList
@@ -8783,6 +9759,14 @@ inline void Location::set_longitude(int32_t value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
