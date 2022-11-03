@@ -1,11 +1,14 @@
 syntax = "proto3";
 
-package pb;
+package ext;
 
 // StringMap is a generic kind of Stream.Extension (see claim.proto) which
 // is useful for testing, but is not space-efficient and does not enforce a
 // limited set of fields.
 message StringMap {
-    string schema = 1; // Hint indicating what keys we should expect in the map.
-    map<string, string> s = 2;
+    map<string, StringList> s = 2;
+}
+
+message StringList {
+    repeated string vs = 1;
 }

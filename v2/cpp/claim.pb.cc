@@ -39,21 +39,43 @@ struct ClaimDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ClaimDefaultTypeInternal _Claim_default_instance_;
-PROTOBUF_CONSTEXPR Stream_Extension::Stream_Extension(
-    ::_pbi::ConstantInitialized)
-  : any_(nullptr){}
-struct Stream_ExtensionDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR Stream_ExtensionDefaultTypeInternal()
+PROTOBUF_CONSTEXPR Stream_ExtensionsEntry_DoNotUse::Stream_ExtensionsEntry_DoNotUse(
+    ::_pbi::ConstantInitialized){}
+struct Stream_ExtensionsEntry_DoNotUseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR Stream_ExtensionsEntry_DoNotUseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
-  ~Stream_ExtensionDefaultTypeInternal() {}
+  ~Stream_ExtensionsEntry_DoNotUseDefaultTypeInternal() {}
   union {
-    Stream_Extension _instance;
+    Stream_ExtensionsEntry_DoNotUse _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Stream_ExtensionDefaultTypeInternal _Stream_Extension_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Stream_ExtensionsEntry_DoNotUseDefaultTypeInternal _Stream_ExtensionsEntry_DoNotUse_default_instance_;
+PROTOBUF_CONSTEXPR Stream_Modifiable_ExtensionsEntry_DoNotUse::Stream_Modifiable_ExtensionsEntry_DoNotUse(
+    ::_pbi::ConstantInitialized){}
+struct Stream_Modifiable_ExtensionsEntry_DoNotUseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR Stream_Modifiable_ExtensionsEntry_DoNotUseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~Stream_Modifiable_ExtensionsEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    Stream_Modifiable_ExtensionsEntry_DoNotUse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Stream_Modifiable_ExtensionsEntry_DoNotUseDefaultTypeInternal _Stream_Modifiable_ExtensionsEntry_DoNotUse_default_instance_;
+PROTOBUF_CONSTEXPR Stream_Modifiable::Stream_Modifiable(
+    ::_pbi::ConstantInitialized)
+  : extensions_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}){}
+struct Stream_ModifiableDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR Stream_ModifiableDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~Stream_ModifiableDefaultTypeInternal() {}
+  union {
+    Stream_Modifiable _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Stream_ModifiableDefaultTypeInternal _Stream_Modifiable_default_instance_;
 PROTOBUF_CONSTEXPR Stream::Stream(
     ::_pbi::ConstantInitialized)
-  : extensions_()
+  : extensions_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
   , author_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
   , license_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
   , license_url_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
@@ -70,18 +92,6 @@ struct StreamDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StreamDefaultTypeInternal _Stream_default_instance_;
-PROTOBUF_CONSTEXPR ModifyStream_Modifiable::ModifyStream_Modifiable(
-    ::_pbi::ConstantInitialized)
-  : extensions_(){}
-struct ModifyStream_ModifiableDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ModifyStream_ModifiableDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~ModifyStream_ModifiableDefaultTypeInternal() {}
-  union {
-    ModifyStream_Modifiable _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ModifyStream_ModifiableDefaultTypeInternal _ModifyStream_Modifiable_default_instance_;
 PROTOBUF_CONSTEXPR ModifyStream::ModifyStream(
     ::_pbi::ConstantInitialized)
   : deletions_(nullptr)
@@ -271,7 +281,7 @@ struct LocationDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 LocationDefaultTypeInternal _Location_default_instance_;
 }  // namespace pb
-static ::_pb::Metadata file_level_metadata_claim_2eproto[17];
+static ::_pb::Metadata file_level_metadata_claim_2eproto[18];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_claim_2eproto[6];
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_claim_2eproto = nullptr;
 
@@ -293,13 +303,33 @@ const uint32_t TableStruct_claim_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(pr
   PROTOBUF_FIELD_OFFSET(::pb::Claim, languages_),
   PROTOBUF_FIELD_OFFSET(::pb::Claim, locations_),
   PROTOBUF_FIELD_OFFSET(::pb::Claim, type_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::pb::Stream_Extension, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::pb::Stream_ExtensionsEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::pb::Stream_ExtensionsEntry_DoNotUse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::pb::Stream_Extension, any_),
+  PROTOBUF_FIELD_OFFSET(::pb::Stream_ExtensionsEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::pb::Stream_ExtensionsEntry_DoNotUse, value_),
+  0,
+  1,
+  PROTOBUF_FIELD_OFFSET(::pb::Stream_Modifiable_ExtensionsEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::pb::Stream_Modifiable_ExtensionsEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::pb::Stream_Modifiable_ExtensionsEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::pb::Stream_Modifiable_ExtensionsEntry_DoNotUse, value_),
+  0,
+  1,
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::pb::Stream_Modifiable, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::pb::Stream_Modifiable, extensions_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::pb::Stream, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -318,13 +348,6 @@ const uint32_t TableStruct_claim_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(pr
   ::_pbi::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::pb::Stream, extensions_),
   PROTOBUF_FIELD_OFFSET(::pb::Stream, type_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::pb::ModifyStream_Modifiable, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::pb::ModifyStream_Modifiable, extensions_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::pb::ModifyStream, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -446,29 +469,31 @@ const uint32_t TableStruct_claim_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(pr
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::pb::Claim)},
-  { 17, -1, -1, sizeof(::pb::Stream_Extension)},
-  { 24, -1, -1, sizeof(::pb::Stream)},
-  { 42, -1, -1, sizeof(::pb::ModifyStream_Modifiable)},
-  { 49, -1, -1, sizeof(::pb::ModifyStream)},
-  { 57, -1, -1, sizeof(::pb::Channel)},
-  { 68, -1, -1, sizeof(::pb::ClaimReference)},
-  { 75, -1, -1, sizeof(::pb::ModifyingClaimReference)},
-  { 84, -1, -1, sizeof(::pb::ClaimList)},
-  { 92, -1, -1, sizeof(::pb::Source)},
-  { 105, -1, -1, sizeof(::pb::Fee)},
-  { 114, -1, -1, sizeof(::pb::Image)},
-  { 122, -1, -1, sizeof(::pb::Video)},
-  { 132, -1, -1, sizeof(::pb::Audio)},
-  { 139, -1, -1, sizeof(::pb::Software)},
-  { 146, -1, -1, sizeof(::pb::Language)},
-  { 155, -1, -1, sizeof(::pb::Location)},
+  { 17, 25, -1, sizeof(::pb::Stream_ExtensionsEntry_DoNotUse)},
+  { 27, 35, -1, sizeof(::pb::Stream_Modifiable_ExtensionsEntry_DoNotUse)},
+  { 37, -1, -1, sizeof(::pb::Stream_Modifiable)},
+  { 44, -1, -1, sizeof(::pb::Stream)},
+  { 62, -1, -1, sizeof(::pb::ModifyStream)},
+  { 70, -1, -1, sizeof(::pb::Channel)},
+  { 81, -1, -1, sizeof(::pb::ClaimReference)},
+  { 88, -1, -1, sizeof(::pb::ModifyingClaimReference)},
+  { 97, -1, -1, sizeof(::pb::ClaimList)},
+  { 105, -1, -1, sizeof(::pb::Source)},
+  { 118, -1, -1, sizeof(::pb::Fee)},
+  { 127, -1, -1, sizeof(::pb::Image)},
+  { 135, -1, -1, sizeof(::pb::Video)},
+  { 145, -1, -1, sizeof(::pb::Audio)},
+  { 152, -1, -1, sizeof(::pb::Software)},
+  { 159, -1, -1, sizeof(::pb::Language)},
+  { 168, -1, -1, sizeof(::pb::Location)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
   &::pb::_Claim_default_instance_._instance,
-  &::pb::_Stream_Extension_default_instance_._instance,
+  &::pb::_Stream_ExtensionsEntry_DoNotUse_default_instance_._instance,
+  &::pb::_Stream_Modifiable_ExtensionsEntry_DoNotUse_default_instance_._instance,
+  &::pb::_Stream_Modifiable_default_instance_._instance,
   &::pb::_Stream_default_instance_._instance,
-  &::pb::_ModifyStream_Modifiable_default_instance_._instance,
   &::pb::_ModifyStream_default_instance_._instance,
   &::pb::_Channel_default_instance_._instance,
   &::pb::_ClaimReference_default_instance_._instance,
@@ -493,281 +518,284 @@ const char descriptor_table_protodef_claim_2eproto[] PROTOBUF_SECTION_VARIABLE(p
   "\022\r\n\005title\030\010 \001(\t\022\023\n\013description\030\t \001(\t\022\035\n\t"
   "thumbnail\030\n \001(\0132\n.pb.Source\022\014\n\004tags\030\013 \003("
   "\t\022\037\n\tlanguages\030\014 \003(\0132\014.pb.Language\022\037\n\tlo"
-  "cations\030\r \003(\0132\014.pb.LocationB\006\n\004type\"\336\002\n\006"
+  "cations\030\r \003(\0132\014.pb.LocationB\006\n\004type\"\220\004\n\006"
   "Stream\022\032\n\006source\030\001 \001(\0132\n.pb.Source\022\016\n\006au"
   "thor\030\002 \001(\t\022\017\n\007license\030\003 \001(\t\022\023\n\013license_u"
   "rl\030\004 \001(\t\022\024\n\014release_time\030\005 \001(\003\022\024\n\003fee\030\006 "
   "\001(\0132\007.pb.Fee\022\032\n\005image\030\n \001(\0132\t.pb.ImageH\000"
   "\022\032\n\005video\030\013 \001(\0132\t.pb.VideoH\000\022\032\n\005audio\030\014 "
   "\001(\0132\t.pb.AudioH\000\022 \n\010software\030\r \001(\0132\014.pb."
-  "SoftwareH\000\022(\n\nextensions\030\016 \003(\0132\024.pb.Stre"
-  "am.Extension\032.\n\tExtension\022!\n\003any\030\001 \001(\0132\024"
-  ".google.protobuf.AnyB\006\n\004type\"\242\001\n\014ModifyS"
-  "tream\022.\n\tdeletions\030\001 \001(\0132\033.pb.ModifyStre"
-  "am.Modifiable\022*\n\005edits\030\002 \001(\0132\033.pb.Modify"
-  "Stream.Modifiable\0326\n\nModifiable\022(\n\nexten"
-  "sions\030\001 \003(\0132\024.pb.Stream.Extension\"}\n\007Cha"
-  "nnel\022\022\n\npublic_key\030\001 \001(\014\022\r\n\005email\030\002 \001(\t\022"
-  "\023\n\013website_url\030\003 \001(\t\022\031\n\005cover\030\004 \001(\0132\n.pb"
-  ".Source\022\037\n\010featured\030\005 \001(\0132\r.pb.ClaimList"
-  "\"$\n\016ClaimReference\022\022\n\nclaim_hash\030\001 \001(\014\"Y"
-  "\n\027ModifyingClaimReference\022\022\n\nclaim_hash\030"
-  "\001 \001(\014\022\"\n\006stream\030\002 \001(\0132\020.pb.ModifyStreamH"
-  "\000B\006\n\004type\"\220\001\n\tClaimList\022)\n\tlist_type\030\001 \001"
-  "(\0162\026.pb.ClaimList.ListType\022,\n\020claim_refe"
-  "rences\030\002 \003(\0132\022.pb.ClaimReference\"*\n\010List"
-  "Type\022\016\n\nCOLLECTION\020\000\022\016\n\nDERIVATION\020\002\"y\n\006"
-  "Source\022\014\n\004hash\030\001 \001(\014\022\014\n\004name\030\002 \001(\t\022\014\n\004si"
-  "ze\030\003 \001(\004\022\022\n\nmedia_type\030\004 \001(\t\022\013\n\003url\030\005 \001("
-  "\t\022\017\n\007sd_hash\030\006 \001(\014\022\023\n\013bt_infohash\030\007 \001(\014\""
-  "\207\001\n\003Fee\022\"\n\010currency\030\001 \001(\0162\020.pb.Fee.Curre"
-  "ncy\022\017\n\007address\030\002 \001(\014\022\016\n\006amount\030\003 \001(\004\";\n\010"
-  "Currency\022\024\n\020UNKNOWN_CURRENCY\020\000\022\007\n\003LBC\020\001\022"
-  "\007\n\003BTC\020\002\022\007\n\003USD\020\003\"&\n\005Image\022\r\n\005width\030\001 \001("
-  "\r\022\016\n\006height\030\002 \001(\r\"R\n\005Video\022\r\n\005width\030\001 \001("
-  "\r\022\016\n\006height\030\002 \001(\r\022\020\n\010duration\030\003 \001(\r\022\030\n\005a"
-  "udio\030\017 \001(\0132\t.pb.Audio\"\031\n\005Audio\022\020\n\010durati"
-  "on\030\001 \001(\r\"l\n\010Software\022\n\n\002os\030\001 \001(\t\"T\n\002OS\022\016"
-  "\n\nUNKNOWN_OS\020\000\022\007\n\003ANY\020\001\022\t\n\005LINUX\020\002\022\013\n\007WI"
-  "NDOWS\020\003\022\007\n\003MAC\020\004\022\013\n\007ANDROID\020\005\022\007\n\003IOS\020\006\"\307"
-  "\035\n\010Language\022\'\n\010language\030\001 \001(\0162\025.pb.Langu"
-  "age.Language\022#\n\006script\030\002 \001(\0162\023.pb.Langua"
-  "ge.Script\022$\n\006region\030\003 \001(\0162\024.pb.Location."
-  "Country\"\231\014\n\010Language\022\024\n\020UNKNOWN_LANGUAGE"
-  "\020\000\022\006\n\002en\020\001\022\006\n\002aa\020\002\022\006\n\002ab\020\003\022\006\n\002ae\020\004\022\006\n\002af"
-  "\020\005\022\006\n\002ak\020\006\022\006\n\002am\020\007\022\006\n\002an\020\010\022\006\n\002ar\020\t\022\006\n\002as"
-  "\020\n\022\006\n\002av\020\013\022\006\n\002ay\020\014\022\006\n\002az\020\r\022\006\n\002ba\020\016\022\006\n\002be"
-  "\020\017\022\006\n\002bg\020\020\022\006\n\002bh\020\021\022\006\n\002bi\020\022\022\006\n\002bm\020\023\022\006\n\002bn"
-  "\020\024\022\006\n\002bo\020\025\022\006\n\002br\020\026\022\006\n\002bs\020\027\022\006\n\002ca\020\030\022\006\n\002ce"
-  "\020\031\022\006\n\002ch\020\032\022\006\n\002co\020\033\022\006\n\002cr\020\034\022\006\n\002cs\020\035\022\006\n\002cu"
-  "\020\036\022\006\n\002cv\020\037\022\006\n\002cy\020 \022\006\n\002da\020!\022\006\n\002de\020\"\022\006\n\002dv"
-  "\020#\022\006\n\002dz\020$\022\006\n\002ee\020%\022\006\n\002el\020&\022\006\n\002eo\020\'\022\006\n\002es"
-  "\020(\022\006\n\002et\020)\022\006\n\002eu\020*\022\006\n\002fa\020+\022\006\n\002ff\020,\022\006\n\002fi"
-  "\020-\022\006\n\002fj\020.\022\006\n\002fo\020/\022\006\n\002fr\0200\022\006\n\002fy\0201\022\006\n\002ga"
-  "\0202\022\006\n\002gd\0203\022\006\n\002gl\0204\022\006\n\002gn\0205\022\006\n\002gu\0206\022\006\n\002gv"
-  "\0207\022\006\n\002ha\0208\022\006\n\002he\0209\022\006\n\002hi\020:\022\006\n\002ho\020;\022\006\n\002hr"
-  "\020<\022\006\n\002ht\020=\022\006\n\002hu\020>\022\006\n\002hy\020\?\022\006\n\002hz\020@\022\006\n\002ia"
-  "\020A\022\006\n\002id\020B\022\006\n\002ie\020C\022\006\n\002ig\020D\022\006\n\002ii\020E\022\006\n\002ik"
-  "\020F\022\006\n\002io\020G\022\006\n\002is\020H\022\006\n\002it\020I\022\006\n\002iu\020J\022\006\n\002ja"
-  "\020K\022\006\n\002jv\020L\022\006\n\002ka\020M\022\006\n\002kg\020N\022\006\n\002ki\020O\022\006\n\002kj"
-  "\020P\022\006\n\002kk\020Q\022\006\n\002kl\020R\022\006\n\002km\020S\022\006\n\002kn\020T\022\006\n\002ko"
-  "\020U\022\006\n\002kr\020V\022\006\n\002ks\020W\022\006\n\002ku\020X\022\006\n\002kv\020Y\022\006\n\002kw"
-  "\020Z\022\006\n\002ky\020[\022\006\n\002la\020\\\022\006\n\002lb\020]\022\006\n\002lg\020^\022\006\n\002li"
-  "\020_\022\006\n\002ln\020`\022\006\n\002lo\020a\022\006\n\002lt\020b\022\006\n\002lu\020c\022\006\n\002lv"
-  "\020d\022\006\n\002mg\020e\022\006\n\002mh\020f\022\006\n\002mi\020g\022\006\n\002mk\020h\022\006\n\002ml"
-  "\020i\022\006\n\002mn\020j\022\006\n\002mr\020k\022\006\n\002ms\020l\022\006\n\002mt\020m\022\006\n\002my"
-  "\020n\022\006\n\002na\020o\022\006\n\002nb\020p\022\006\n\002nd\020q\022\006\n\002ne\020r\022\006\n\002ng"
-  "\020s\022\006\n\002nl\020t\022\006\n\002nn\020u\022\006\n\002no\020v\022\006\n\002nr\020w\022\006\n\002nv"
-  "\020x\022\006\n\002ny\020y\022\006\n\002oc\020z\022\006\n\002oj\020{\022\006\n\002om\020|\022\006\n\002or"
-  "\020}\022\006\n\002os\020~\022\006\n\002pa\020\177\022\007\n\002pi\020\200\001\022\007\n\002pl\020\201\001\022\007\n\002"
-  "ps\020\202\001\022\007\n\002pt\020\203\001\022\007\n\002qu\020\204\001\022\007\n\002rm\020\205\001\022\007\n\002rn\020\206"
-  "\001\022\007\n\002ro\020\207\001\022\007\n\002ru\020\210\001\022\007\n\002rw\020\211\001\022\007\n\002sa\020\212\001\022\007\n"
-  "\002sc\020\213\001\022\007\n\002sd\020\214\001\022\007\n\002se\020\215\001\022\007\n\002sg\020\216\001\022\007\n\002si\020"
-  "\217\001\022\007\n\002sk\020\220\001\022\007\n\002sl\020\221\001\022\007\n\002sm\020\222\001\022\007\n\002sn\020\223\001\022\007"
-  "\n\002so\020\224\001\022\007\n\002sq\020\225\001\022\007\n\002sr\020\226\001\022\007\n\002ss\020\227\001\022\007\n\002st"
-  "\020\230\001\022\007\n\002su\020\231\001\022\007\n\002sv\020\232\001\022\007\n\002sw\020\233\001\022\007\n\002ta\020\234\001\022"
-  "\007\n\002te\020\235\001\022\007\n\002tg\020\236\001\022\007\n\002th\020\237\001\022\007\n\002ti\020\240\001\022\007\n\002t"
-  "k\020\241\001\022\007\n\002tl\020\242\001\022\007\n\002tn\020\243\001\022\007\n\002to\020\244\001\022\007\n\002tr\020\245\001"
-  "\022\007\n\002ts\020\246\001\022\007\n\002tt\020\247\001\022\007\n\002tw\020\250\001\022\007\n\002ty\020\251\001\022\007\n\002"
-  "ug\020\252\001\022\007\n\002uk\020\253\001\022\007\n\002ur\020\254\001\022\007\n\002uz\020\255\001\022\007\n\002ve\020\256"
-  "\001\022\007\n\002vi\020\257\001\022\007\n\002vo\020\260\001\022\007\n\002wa\020\261\001\022\007\n\002wo\020\262\001\022\007\n"
-  "\002xh\020\263\001\022\007\n\002yi\020\264\001\022\007\n\002yo\020\265\001\022\007\n\002za\020\266\001\022\007\n\002zh\020"
-  "\267\001\022\007\n\002zu\020\270\001\"\252\020\n\006Script\022\022\n\016UNKNOWN_SCRIPT"
-  "\020\000\022\010\n\004Adlm\020\001\022\010\n\004Afak\020\002\022\010\n\004Aghb\020\003\022\010\n\004Ahom"
-  "\020\004\022\010\n\004Arab\020\005\022\010\n\004Aran\020\006\022\010\n\004Armi\020\007\022\010\n\004Armn"
-  "\020\010\022\010\n\004Avst\020\t\022\010\n\004Bali\020\n\022\010\n\004Bamu\020\013\022\010\n\004Bass"
-  "\020\014\022\010\n\004Batk\020\r\022\010\n\004Beng\020\016\022\010\n\004Bhks\020\017\022\010\n\004Blis"
-  "\020\020\022\010\n\004Bopo\020\021\022\010\n\004Brah\020\022\022\010\n\004Brai\020\023\022\010\n\004Bugi"
-  "\020\024\022\010\n\004Buhd\020\025\022\010\n\004Cakm\020\026\022\010\n\004Cans\020\027\022\010\n\004Cari"
-  "\020\030\022\010\n\004Cham\020\031\022\010\n\004Cher\020\032\022\010\n\004Cirt\020\033\022\010\n\004Copt"
-  "\020\034\022\010\n\004Cpmn\020\035\022\010\n\004Cprt\020\036\022\010\n\004Cyrl\020\037\022\010\n\004Cyrs"
-  "\020 \022\010\n\004Deva\020!\022\010\n\004Dogr\020\"\022\010\n\004Dsrt\020#\022\010\n\004Dupl"
-  "\020$\022\010\n\004Egyd\020%\022\010\n\004Egyh\020&\022\010\n\004Egyp\020\'\022\010\n\004Elba"
-  "\020(\022\010\n\004Elym\020)\022\010\n\004Ethi\020*\022\010\n\004Geok\020+\022\010\n\004Geor"
-  "\020,\022\010\n\004Glag\020-\022\010\n\004Gong\020.\022\010\n\004Gonm\020/\022\010\n\004Goth"
-  "\0200\022\010\n\004Gran\0201\022\010\n\004Grek\0202\022\010\n\004Gujr\0203\022\010\n\004Guru"
-  "\0204\022\010\n\004Hanb\0205\022\010\n\004Hang\0206\022\010\n\004Hani\0207\022\010\n\004Hano"
-  "\0208\022\010\n\004Hans\0209\022\010\n\004Hant\020:\022\010\n\004Hatr\020;\022\010\n\004Hebr"
-  "\020<\022\010\n\004Hira\020=\022\010\n\004Hluw\020>\022\010\n\004Hmng\020\?\022\010\n\004Hmnp"
-  "\020@\022\010\n\004Hrkt\020A\022\010\n\004Hung\020B\022\010\n\004Inds\020C\022\010\n\004Ital"
-  "\020D\022\010\n\004Jamo\020E\022\010\n\004Java\020F\022\010\n\004Jpan\020G\022\010\n\004Jurc"
-  "\020H\022\010\n\004Kali\020I\022\010\n\004Kana\020J\022\010\n\004Khar\020K\022\010\n\004Khmr"
-  "\020L\022\010\n\004Khoj\020M\022\010\n\004Kitl\020N\022\010\n\004Kits\020O\022\010\n\004Knda"
-  "\020P\022\010\n\004Kore\020Q\022\010\n\004Kpel\020R\022\010\n\004Kthi\020S\022\010\n\004Lana"
-  "\020T\022\010\n\004Laoo\020U\022\010\n\004Latf\020V\022\010\n\004Latg\020W\022\010\n\004Latn"
-  "\020X\022\010\n\004Leke\020Y\022\010\n\004Lepc\020Z\022\010\n\004Limb\020[\022\010\n\004Lina"
-  "\020\\\022\010\n\004Linb\020]\022\010\n\004Lisu\020^\022\010\n\004Loma\020_\022\010\n\004Lyci"
-  "\020`\022\010\n\004Lydi\020a\022\010\n\004Mahj\020b\022\010\n\004Maka\020c\022\010\n\004Mand"
-  "\020d\022\010\n\004Mani\020e\022\010\n\004Marc\020f\022\010\n\004Maya\020g\022\010\n\004Medf"
-  "\020h\022\010\n\004Mend\020i\022\010\n\004Merc\020j\022\010\n\004Mero\020k\022\010\n\004Mlym"
-  "\020l\022\010\n\004Modi\020m\022\010\n\004Mong\020n\022\010\n\004Moon\020o\022\010\n\004Mroo"
-  "\020p\022\010\n\004Mtei\020q\022\010\n\004Mult\020r\022\010\n\004Mymr\020s\022\010\n\004Nand"
-  "\020t\022\010\n\004Narb\020u\022\010\n\004Nbat\020v\022\010\n\004Newa\020w\022\010\n\004Nkdb"
-  "\020x\022\010\n\004Nkgb\020y\022\010\n\004Nkoo\020z\022\010\n\004Nshu\020{\022\010\n\004Ogam"
-  "\020|\022\010\n\004Olck\020}\022\010\n\004Orkh\020~\022\010\n\004Orya\020\177\022\t\n\004Osge"
-  "\020\200\001\022\t\n\004Osma\020\201\001\022\t\n\004Palm\020\202\001\022\t\n\004Pauc\020\203\001\022\t\n\004"
-  "Perm\020\204\001\022\t\n\004Phag\020\205\001\022\t\n\004Phli\020\206\001\022\t\n\004Phlp\020\207\001"
-  "\022\t\n\004Phlv\020\210\001\022\t\n\004Phnx\020\211\001\022\t\n\004Plrd\020\212\001\022\t\n\004Piq"
-  "d\020\213\001\022\t\n\004Prti\020\214\001\022\t\n\004Qaaa\020\215\001\022\t\n\004Qabx\020\216\001\022\t\n"
-  "\004Rjng\020\217\001\022\t\n\004Rohg\020\220\001\022\t\n\004Roro\020\221\001\022\t\n\004Runr\020\222"
-  "\001\022\t\n\004Samr\020\223\001\022\t\n\004Sara\020\224\001\022\t\n\004Sarb\020\225\001\022\t\n\004Sa"
-  "ur\020\226\001\022\t\n\004Sgnw\020\227\001\022\t\n\004Shaw\020\230\001\022\t\n\004Shrd\020\231\001\022\t"
-  "\n\004Shui\020\232\001\022\t\n\004Sidd\020\233\001\022\t\n\004Sind\020\234\001\022\t\n\004Sinh\020"
-  "\235\001\022\t\n\004Sogd\020\236\001\022\t\n\004Sogo\020\237\001\022\t\n\004Sora\020\240\001\022\t\n\004S"
-  "oyo\020\241\001\022\t\n\004Sund\020\242\001\022\t\n\004Sylo\020\243\001\022\t\n\004Syrc\020\244\001\022"
-  "\t\n\004Syre\020\245\001\022\t\n\004Syrj\020\246\001\022\t\n\004Syrn\020\247\001\022\t\n\004Tagb"
-  "\020\250\001\022\t\n\004Takr\020\251\001\022\t\n\004Tale\020\252\001\022\t\n\004Talu\020\253\001\022\t\n\004"
-  "Taml\020\254\001\022\t\n\004Tang\020\255\001\022\t\n\004Tavt\020\256\001\022\t\n\004Telu\020\257\001"
-  "\022\t\n\004Teng\020\260\001\022\t\n\004Tfng\020\261\001\022\t\n\004Tglg\020\262\001\022\t\n\004Tha"
-  "a\020\263\001\022\t\n\004Thai\020\264\001\022\t\n\004Tibt\020\265\001\022\t\n\004Tirh\020\266\001\022\t\n"
-  "\004Ugar\020\267\001\022\t\n\004Vaii\020\270\001\022\t\n\004Visp\020\271\001\022\t\n\004Wara\020\272"
-  "\001\022\t\n\004Wcho\020\273\001\022\t\n\004Wole\020\274\001\022\t\n\004Xpeo\020\275\001\022\t\n\004Xs"
-  "ux\020\276\001\022\t\n\004Yiii\020\277\001\022\t\n\004Zanb\020\300\001\022\t\n\004Zinh\020\301\001\022\t"
-  "\n\004Zmth\020\302\001\022\t\n\004Zsye\020\303\001\022\t\n\004Zsym\020\304\001\022\t\n\004Zxxx\020"
-  "\305\001\022\t\n\004Zyyy\020\306\001\022\t\n\004Zzzz\020\307\001\"\354)\n\010Location\022%\n"
-  "\007country\030\001 \001(\0162\024.pb.Location.Country\022\r\n\005"
-  "state\030\002 \001(\t\022\014\n\004city\030\003 \001(\t\022\014\n\004code\030\004 \001(\t\022"
-  "\020\n\010latitude\030\005 \001(\021\022\021\n\tlongitude\030\006 \001(\021\"\350(\n"
-  "\007Country\022\023\n\017UNKNOWN_COUNTRY\020\000\022\006\n\002AF\020\001\022\006\n"
-  "\002AX\020\002\022\006\n\002AL\020\003\022\006\n\002DZ\020\004\022\006\n\002AS\020\005\022\006\n\002AD\020\006\022\006\n"
-  "\002AO\020\007\022\006\n\002AI\020\010\022\006\n\002AQ\020\t\022\006\n\002AG\020\n\022\006\n\002AR\020\013\022\006\n"
-  "\002AM\020\014\022\006\n\002AW\020\r\022\006\n\002AU\020\016\022\006\n\002AT\020\017\022\006\n\002AZ\020\020\022\006\n"
-  "\002BS\020\021\022\006\n\002BH\020\022\022\006\n\002BD\020\023\022\006\n\002BB\020\024\022\006\n\002BY\020\025\022\006\n"
-  "\002BE\020\026\022\006\n\002BZ\020\027\022\006\n\002BJ\020\030\022\006\n\002BM\020\031\022\006\n\002BT\020\032\022\006\n"
-  "\002BO\020\033\022\006\n\002BQ\020\034\022\006\n\002BA\020\035\022\006\n\002BW\020\036\022\006\n\002BV\020\037\022\006\n"
-  "\002BR\020 \022\006\n\002IO\020!\022\006\n\002BN\020\"\022\006\n\002BG\020#\022\006\n\002BF\020$\022\006\n"
-  "\002BI\020%\022\006\n\002KH\020&\022\006\n\002CM\020\'\022\006\n\002CA\020(\022\006\n\002CV\020)\022\006\n"
-  "\002KY\020*\022\006\n\002CF\020+\022\006\n\002TD\020,\022\006\n\002CL\020-\022\006\n\002CN\020.\022\006\n"
-  "\002CX\020/\022\006\n\002CC\0200\022\006\n\002CO\0201\022\006\n\002KM\0202\022\006\n\002CG\0203\022\006\n"
-  "\002CD\0204\022\006\n\002CK\0205\022\006\n\002CR\0206\022\006\n\002CI\0207\022\006\n\002HR\0208\022\006\n"
-  "\002CU\0209\022\006\n\002CW\020:\022\006\n\002CY\020;\022\006\n\002CZ\020<\022\006\n\002DK\020=\022\006\n"
-  "\002DJ\020>\022\006\n\002DM\020\?\022\006\n\002DO\020@\022\006\n\002EC\020A\022\006\n\002EG\020B\022\006\n"
-  "\002SV\020C\022\006\n\002GQ\020D\022\006\n\002ER\020E\022\006\n\002EE\020F\022\006\n\002ET\020G\022\006\n"
-  "\002FK\020H\022\006\n\002FO\020I\022\006\n\002FJ\020J\022\006\n\002FI\020K\022\006\n\002FR\020L\022\006\n"
-  "\002GF\020M\022\006\n\002PF\020N\022\006\n\002TF\020O\022\006\n\002GA\020P\022\006\n\002GM\020Q\022\006\n"
-  "\002GE\020R\022\006\n\002DE\020S\022\006\n\002GH\020T\022\006\n\002GI\020U\022\006\n\002GR\020V\022\006\n"
-  "\002GL\020W\022\006\n\002GD\020X\022\006\n\002GP\020Y\022\006\n\002GU\020Z\022\006\n\002GT\020[\022\006\n"
-  "\002GG\020\\\022\006\n\002GN\020]\022\006\n\002GW\020^\022\006\n\002GY\020_\022\006\n\002HT\020`\022\006\n"
-  "\002HM\020a\022\006\n\002VA\020b\022\006\n\002HN\020c\022\006\n\002HK\020d\022\006\n\002HU\020e\022\006\n"
-  "\002IS\020f\022\006\n\002IN\020g\022\006\n\002ID\020h\022\006\n\002IR\020i\022\006\n\002IQ\020j\022\006\n"
-  "\002IE\020k\022\006\n\002IM\020l\022\006\n\002IL\020m\022\006\n\002IT\020n\022\006\n\002JM\020o\022\006\n"
-  "\002JP\020p\022\006\n\002JE\020q\022\006\n\002JO\020r\022\006\n\002KZ\020s\022\006\n\002KE\020t\022\006\n"
-  "\002KI\020u\022\006\n\002KP\020v\022\006\n\002KR\020w\022\006\n\002KW\020x\022\006\n\002KG\020y\022\006\n"
-  "\002LA\020z\022\006\n\002LV\020{\022\006\n\002LB\020|\022\006\n\002LS\020}\022\006\n\002LR\020~\022\006\n"
-  "\002LY\020\177\022\007\n\002LI\020\200\001\022\007\n\002LT\020\201\001\022\007\n\002LU\020\202\001\022\007\n\002MO\020\203"
-  "\001\022\007\n\002MK\020\204\001\022\007\n\002MG\020\205\001\022\007\n\002MW\020\206\001\022\007\n\002MY\020\207\001\022\007\n"
-  "\002MV\020\210\001\022\007\n\002ML\020\211\001\022\007\n\002MT\020\212\001\022\007\n\002MH\020\213\001\022\007\n\002MQ\020"
-  "\214\001\022\007\n\002MR\020\215\001\022\007\n\002MU\020\216\001\022\007\n\002YT\020\217\001\022\007\n\002MX\020\220\001\022\007"
-  "\n\002FM\020\221\001\022\007\n\002MD\020\222\001\022\007\n\002MC\020\223\001\022\007\n\002MN\020\224\001\022\007\n\002ME"
-  "\020\225\001\022\007\n\002MS\020\226\001\022\007\n\002MA\020\227\001\022\007\n\002MZ\020\230\001\022\007\n\002MM\020\231\001\022"
-  "\007\n\002NA\020\232\001\022\007\n\002NR\020\233\001\022\007\n\002NP\020\234\001\022\007\n\002NL\020\235\001\022\007\n\002N"
-  "C\020\236\001\022\007\n\002NZ\020\237\001\022\007\n\002NI\020\240\001\022\007\n\002NE\020\241\001\022\007\n\002NG\020\242\001"
-  "\022\007\n\002NU\020\243\001\022\007\n\002NF\020\244\001\022\007\n\002MP\020\245\001\022\007\n\002NO\020\246\001\022\007\n\002"
-  "OM\020\247\001\022\007\n\002PK\020\250\001\022\007\n\002PW\020\251\001\022\007\n\002PS\020\252\001\022\007\n\002PA\020\253"
-  "\001\022\007\n\002PG\020\254\001\022\007\n\002PY\020\255\001\022\007\n\002PE\020\256\001\022\007\n\002PH\020\257\001\022\007\n"
-  "\002PN\020\260\001\022\007\n\002PL\020\261\001\022\007\n\002PT\020\262\001\022\007\n\002PR\020\263\001\022\007\n\002QA\020"
-  "\264\001\022\007\n\002RE\020\265\001\022\007\n\002RO\020\266\001\022\007\n\002RU\020\267\001\022\007\n\002RW\020\270\001\022\007"
-  "\n\002BL\020\271\001\022\007\n\002SH\020\272\001\022\007\n\002KN\020\273\001\022\007\n\002LC\020\274\001\022\007\n\002MF"
-  "\020\275\001\022\007\n\002PM\020\276\001\022\007\n\002VC\020\277\001\022\007\n\002WS\020\300\001\022\007\n\002SM\020\301\001\022"
-  "\007\n\002ST\020\302\001\022\007\n\002SA\020\303\001\022\007\n\002SN\020\304\001\022\007\n\002RS\020\305\001\022\007\n\002S"
-  "C\020\306\001\022\007\n\002SL\020\307\001\022\007\n\002SG\020\310\001\022\007\n\002SX\020\311\001\022\007\n\002SK\020\312\001"
-  "\022\007\n\002SI\020\313\001\022\007\n\002SB\020\314\001\022\007\n\002SO\020\315\001\022\007\n\002ZA\020\316\001\022\007\n\002"
-  "GS\020\317\001\022\007\n\002SS\020\320\001\022\007\n\002ES\020\321\001\022\007\n\002LK\020\322\001\022\007\n\002SD\020\323"
-  "\001\022\007\n\002SR\020\324\001\022\007\n\002SJ\020\325\001\022\007\n\002SZ\020\326\001\022\007\n\002SE\020\327\001\022\007\n"
-  "\002CH\020\330\001\022\007\n\002SY\020\331\001\022\007\n\002TW\020\332\001\022\007\n\002TJ\020\333\001\022\007\n\002TZ\020"
-  "\334\001\022\007\n\002TH\020\335\001\022\007\n\002TL\020\336\001\022\007\n\002TG\020\337\001\022\007\n\002TK\020\340\001\022\007"
-  "\n\002TO\020\341\001\022\007\n\002TT\020\342\001\022\007\n\002TN\020\343\001\022\007\n\002TR\020\344\001\022\007\n\002TM"
-  "\020\345\001\022\007\n\002TC\020\346\001\022\007\n\002TV\020\347\001\022\007\n\002UG\020\350\001\022\007\n\002UA\020\351\001\022"
-  "\007\n\002AE\020\352\001\022\007\n\002GB\020\353\001\022\007\n\002US\020\354\001\022\007\n\002UM\020\355\001\022\007\n\002U"
-  "Y\020\356\001\022\007\n\002UZ\020\357\001\022\007\n\002VU\020\360\001\022\007\n\002VE\020\361\001\022\007\n\002VN\020\362\001"
-  "\022\007\n\002VG\020\363\001\022\007\n\002VI\020\364\001\022\007\n\002WF\020\365\001\022\007\n\002EH\020\366\001\022\007\n\002"
-  "YE\020\367\001\022\007\n\002ZM\020\370\001\022\007\n\002ZW\020\371\001\022\t\n\004R001\020\372\001\022\t\n\004R0"
-  "02\020\373\001\022\t\n\004R015\020\374\001\022\t\n\004R012\020\375\001\022\t\n\004R818\020\376\001\022\t"
-  "\n\004R434\020\377\001\022\t\n\004R504\020\200\002\022\t\n\004R729\020\201\002\022\t\n\004R788\020"
-  "\202\002\022\t\n\004R732\020\203\002\022\t\n\004R202\020\204\002\022\t\n\004R014\020\205\002\022\t\n\004R"
-  "086\020\206\002\022\t\n\004R108\020\207\002\022\t\n\004R174\020\210\002\022\t\n\004R262\020\211\002\022"
-  "\t\n\004R232\020\212\002\022\t\n\004R231\020\213\002\022\t\n\004R260\020\214\002\022\t\n\004R404"
-  "\020\215\002\022\t\n\004R450\020\216\002\022\t\n\004R454\020\217\002\022\t\n\004R480\020\220\002\022\t\n\004"
-  "R175\020\221\002\022\t\n\004R508\020\222\002\022\t\n\004R638\020\223\002\022\t\n\004R646\020\224\002"
-  "\022\t\n\004R690\020\225\002\022\t\n\004R706\020\226\002\022\t\n\004R728\020\227\002\022\t\n\004R80"
-  "0\020\230\002\022\t\n\004R834\020\231\002\022\t\n\004R894\020\232\002\022\t\n\004R716\020\233\002\022\t\n"
-  "\004R017\020\234\002\022\t\n\004R024\020\235\002\022\t\n\004R120\020\236\002\022\t\n\004R140\020\237"
-  "\002\022\t\n\004R148\020\240\002\022\t\n\004R178\020\241\002\022\t\n\004R180\020\242\002\022\t\n\004R2"
-  "26\020\243\002\022\t\n\004R266\020\244\002\022\t\n\004R678\020\245\002\022\t\n\004R018\020\246\002\022\t"
-  "\n\004R072\020\247\002\022\t\n\004R748\020\250\002\022\t\n\004R426\020\251\002\022\t\n\004R516\020"
-  "\252\002\022\t\n\004R710\020\253\002\022\t\n\004R011\020\254\002\022\t\n\004R204\020\255\002\022\t\n\004R"
-  "854\020\256\002\022\t\n\004R132\020\257\002\022\t\n\004R384\020\260\002\022\t\n\004R270\020\261\002\022"
-  "\t\n\004R288\020\262\002\022\t\n\004R324\020\263\002\022\t\n\004R624\020\264\002\022\t\n\004R430"
-  "\020\265\002\022\t\n\004R466\020\266\002\022\t\n\004R478\020\267\002\022\t\n\004R562\020\270\002\022\t\n\004"
-  "R566\020\271\002\022\t\n\004R654\020\272\002\022\t\n\004R686\020\273\002\022\t\n\004R694\020\274\002"
-  "\022\t\n\004R768\020\275\002\022\t\n\004R019\020\276\002\022\t\n\004R419\020\277\002\022\t\n\004R02"
-  "9\020\300\002\022\t\n\004R660\020\301\002\022\t\n\004R028\020\302\002\022\t\n\004R533\020\303\002\022\t\n"
-  "\004R044\020\304\002\022\t\n\004R052\020\305\002\022\t\n\004R535\020\306\002\022\t\n\004R092\020\307"
-  "\002\022\t\n\004R136\020\310\002\022\t\n\004R192\020\311\002\022\t\n\004R531\020\312\002\022\t\n\004R2"
-  "12\020\313\002\022\t\n\004R214\020\314\002\022\t\n\004R308\020\315\002\022\t\n\004R312\020\316\002\022\t"
-  "\n\004R332\020\317\002\022\t\n\004R388\020\320\002\022\t\n\004R474\020\321\002\022\t\n\004R500\020"
-  "\322\002\022\t\n\004R630\020\323\002\022\t\n\004R652\020\324\002\022\t\n\004R659\020\325\002\022\t\n\004R"
-  "662\020\326\002\022\t\n\004R663\020\327\002\022\t\n\004R670\020\330\002\022\t\n\004R534\020\331\002\022"
-  "\t\n\004R780\020\332\002\022\t\n\004R796\020\333\002\022\t\n\004R850\020\334\002\022\t\n\004R013"
-  "\020\335\002\022\t\n\004R084\020\336\002\022\t\n\004R188\020\337\002\022\t\n\004R222\020\340\002\022\t\n\004"
-  "R320\020\341\002\022\t\n\004R340\020\342\002\022\t\n\004R484\020\343\002\022\t\n\004R558\020\344\002"
-  "\022\t\n\004R591\020\345\002\022\t\n\004R005\020\346\002\022\t\n\004R032\020\347\002\022\t\n\004R06"
-  "8\020\350\002\022\t\n\004R074\020\351\002\022\t\n\004R076\020\352\002\022\t\n\004R152\020\353\002\022\t\n"
-  "\004R170\020\354\002\022\t\n\004R218\020\355\002\022\t\n\004R238\020\356\002\022\t\n\004R254\020\357"
-  "\002\022\t\n\004R328\020\360\002\022\t\n\004R600\020\361\002\022\t\n\004R604\020\362\002\022\t\n\004R2"
-  "39\020\363\002\022\t\n\004R740\020\364\002\022\t\n\004R858\020\365\002\022\t\n\004R862\020\366\002\022\t"
-  "\n\004R021\020\367\002\022\t\n\004R060\020\370\002\022\t\n\004R124\020\371\002\022\t\n\004R304\020"
-  "\372\002\022\t\n\004R666\020\373\002\022\t\n\004R840\020\374\002\022\t\n\004R010\020\375\002\022\t\n\004R"
-  "142\020\376\002\022\t\n\004R143\020\377\002\022\t\n\004R398\020\200\003\022\t\n\004R417\020\201\003\022"
-  "\t\n\004R762\020\202\003\022\t\n\004R795\020\203\003\022\t\n\004R860\020\204\003\022\t\n\004R030"
-  "\020\205\003\022\t\n\004R156\020\206\003\022\t\n\004R344\020\207\003\022\t\n\004R446\020\210\003\022\t\n\004"
-  "R408\020\211\003\022\t\n\004R392\020\212\003\022\t\n\004R496\020\213\003\022\t\n\004R410\020\214\003"
-  "\022\t\n\004R035\020\215\003\022\t\n\004R096\020\216\003\022\t\n\004R116\020\217\003\022\t\n\004R36"
-  "0\020\220\003\022\t\n\004R418\020\221\003\022\t\n\004R458\020\222\003\022\t\n\004R104\020\223\003\022\t\n"
-  "\004R608\020\224\003\022\t\n\004R702\020\225\003\022\t\n\004R764\020\226\003\022\t\n\004R626\020\227"
-  "\003\022\t\n\004R704\020\230\003\022\t\n\004R034\020\231\003\022\t\n\004R004\020\232\003\022\t\n\004R0"
-  "50\020\233\003\022\t\n\004R064\020\234\003\022\t\n\004R356\020\235\003\022\t\n\004R364\020\236\003\022\t"
-  "\n\004R462\020\237\003\022\t\n\004R524\020\240\003\022\t\n\004R586\020\241\003\022\t\n\004R144\020"
-  "\242\003\022\t\n\004R145\020\243\003\022\t\n\004R051\020\244\003\022\t\n\004R031\020\245\003\022\t\n\004R"
-  "048\020\246\003\022\t\n\004R196\020\247\003\022\t\n\004R268\020\250\003\022\t\n\004R368\020\251\003\022"
-  "\t\n\004R376\020\252\003\022\t\n\004R400\020\253\003\022\t\n\004R414\020\254\003\022\t\n\004R422"
-  "\020\255\003\022\t\n\004R512\020\256\003\022\t\n\004R634\020\257\003\022\t\n\004R682\020\260\003\022\t\n\004"
-  "R275\020\261\003\022\t\n\004R760\020\262\003\022\t\n\004R792\020\263\003\022\t\n\004R784\020\264\003"
-  "\022\t\n\004R887\020\265\003\022\t\n\004R150\020\266\003\022\t\n\004R151\020\267\003\022\t\n\004R11"
-  "2\020\270\003\022\t\n\004R100\020\271\003\022\t\n\004R203\020\272\003\022\t\n\004R348\020\273\003\022\t\n"
-  "\004R616\020\274\003\022\t\n\004R498\020\275\003\022\t\n\004R642\020\276\003\022\t\n\004R643\020\277"
-  "\003\022\t\n\004R703\020\300\003\022\t\n\004R804\020\301\003\022\t\n\004R154\020\302\003\022\t\n\004R2"
-  "48\020\303\003\022\t\n\004R830\020\304\003\022\t\n\004R831\020\305\003\022\t\n\004R832\020\306\003\022\t"
-  "\n\004R680\020\307\003\022\t\n\004R208\020\310\003\022\t\n\004R233\020\311\003\022\t\n\004R234\020"
-  "\312\003\022\t\n\004R246\020\313\003\022\t\n\004R352\020\314\003\022\t\n\004R372\020\315\003\022\t\n\004R"
-  "833\020\316\003\022\t\n\004R428\020\317\003\022\t\n\004R440\020\320\003\022\t\n\004R578\020\321\003\022"
-  "\t\n\004R744\020\322\003\022\t\n\004R752\020\323\003\022\t\n\004R826\020\324\003\022\t\n\004R039"
-  "\020\325\003\022\t\n\004R008\020\326\003\022\t\n\004R020\020\327\003\022\t\n\004R070\020\330\003\022\t\n\004"
-  "R191\020\331\003\022\t\n\004R292\020\332\003\022\t\n\004R300\020\333\003\022\t\n\004R336\020\334\003"
-  "\022\t\n\004R380\020\335\003\022\t\n\004R470\020\336\003\022\t\n\004R499\020\337\003\022\t\n\004R80"
-  "7\020\340\003\022\t\n\004R620\020\341\003\022\t\n\004R674\020\342\003\022\t\n\004R688\020\343\003\022\t\n"
-  "\004R705\020\344\003\022\t\n\004R724\020\345\003\022\t\n\004R155\020\346\003\022\t\n\004R040\020\347"
-  "\003\022\t\n\004R056\020\350\003\022\t\n\004R250\020\351\003\022\t\n\004R276\020\352\003\022\t\n\004R4"
-  "38\020\353\003\022\t\n\004R442\020\354\003\022\t\n\004R492\020\355\003\022\t\n\004R528\020\356\003\022\t"
-  "\n\004R756\020\357\003\022\t\n\004R009\020\360\003\022\t\n\004R053\020\361\003\022\t\n\004R036\020"
-  "\362\003\022\t\n\004R162\020\363\003\022\t\n\004R166\020\364\003\022\t\n\004R334\020\365\003\022\t\n\004R"
-  "554\020\366\003\022\t\n\004R574\020\367\003\022\t\n\004R054\020\370\003\022\t\n\004R242\020\371\003\022"
-  "\t\n\004R540\020\372\003\022\t\n\004R598\020\373\003\022\t\n\004R090\020\374\003\022\t\n\004R548"
-  "\020\375\003\022\t\n\004R057\020\376\003\022\t\n\004R316\020\377\003\022\t\n\004R296\020\200\004\022\t\n\004"
-  "R584\020\201\004\022\t\n\004R583\020\202\004\022\t\n\004R520\020\203\004\022\t\n\004R580\020\204\004"
-  "\022\t\n\004R585\020\205\004\022\t\n\004R581\020\206\004\022\t\n\004R061\020\207\004\022\t\n\004R01"
-  "6\020\210\004\022\t\n\004R184\020\211\004\022\t\n\004R258\020\212\004\022\t\n\004R570\020\213\004\022\t\n"
-  "\004R612\020\214\004\022\t\n\004R882\020\215\004\022\t\n\004R772\020\216\004\022\t\n\004R776\020\217"
-  "\004\022\t\n\004R798\020\220\004\022\t\n\004R876\020\221\004b\006proto3"
+  "SoftwareH\000\022.\n\nextensions\030\016 \003(\0132\032.pb.Stre"
+  "am.ExtensionsEntry\032G\n\017ExtensionsEntry\022\013\n"
+  "\003key\030\001 \001(\t\022#\n\005value\030\002 \001(\0132\024.google.proto"
+  "buf.Any:\0028\001\032\220\001\n\nModifiable\0229\n\nextensions"
+  "\030\001 \003(\0132%.pb.Stream.Modifiable.Extensions"
+  "Entry\032G\n\017ExtensionsEntry\022\013\n\003key\030\001 \001(\t\022#\n"
+  "\005value\030\002 \001(\0132\024.google.protobuf.Any:\0028\001B\006"
+  "\n\004type\"^\n\014ModifyStream\022(\n\tdeletions\030\001 \001("
+  "\0132\025.pb.Stream.Modifiable\022$\n\005edits\030\002 \001(\0132"
+  "\025.pb.Stream.Modifiable\"}\n\007Channel\022\022\n\npub"
+  "lic_key\030\001 \001(\014\022\r\n\005email\030\002 \001(\t\022\023\n\013website_"
+  "url\030\003 \001(\t\022\031\n\005cover\030\004 \001(\0132\n.pb.Source\022\037\n\010"
+  "featured\030\005 \001(\0132\r.pb.ClaimList\"$\n\016ClaimRe"
+  "ference\022\022\n\nclaim_hash\030\001 \001(\014\"Y\n\027Modifying"
+  "ClaimReference\022\022\n\nclaim_hash\030\001 \001(\014\022\"\n\006st"
+  "ream\030\002 \001(\0132\020.pb.ModifyStreamH\000B\006\n\004type\"\220"
+  "\001\n\tClaimList\022)\n\tlist_type\030\001 \001(\0162\026.pb.Cla"
+  "imList.ListType\022,\n\020claim_references\030\002 \003("
+  "\0132\022.pb.ClaimReference\"*\n\010ListType\022\016\n\nCOL"
+  "LECTION\020\000\022\016\n\nDERIVATION\020\002\"y\n\006Source\022\014\n\004h"
+  "ash\030\001 \001(\014\022\014\n\004name\030\002 \001(\t\022\014\n\004size\030\003 \001(\004\022\022\n"
+  "\nmedia_type\030\004 \001(\t\022\013\n\003url\030\005 \001(\t\022\017\n\007sd_has"
+  "h\030\006 \001(\014\022\023\n\013bt_infohash\030\007 \001(\014\"\207\001\n\003Fee\022\"\n\010"
+  "currency\030\001 \001(\0162\020.pb.Fee.Currency\022\017\n\007addr"
+  "ess\030\002 \001(\014\022\016\n\006amount\030\003 \001(\004\";\n\010Currency\022\024\n"
+  "\020UNKNOWN_CURRENCY\020\000\022\007\n\003LBC\020\001\022\007\n\003BTC\020\002\022\007\n"
+  "\003USD\020\003\"&\n\005Image\022\r\n\005width\030\001 \001(\r\022\016\n\006height"
+  "\030\002 \001(\r\"R\n\005Video\022\r\n\005width\030\001 \001(\r\022\016\n\006height"
+  "\030\002 \001(\r\022\020\n\010duration\030\003 \001(\r\022\030\n\005audio\030\017 \001(\0132"
+  "\t.pb.Audio\"\031\n\005Audio\022\020\n\010duration\030\001 \001(\r\"l\n"
+  "\010Software\022\n\n\002os\030\001 \001(\t\"T\n\002OS\022\016\n\nUNKNOWN_O"
+  "S\020\000\022\007\n\003ANY\020\001\022\t\n\005LINUX\020\002\022\013\n\007WINDOWS\020\003\022\007\n\003"
+  "MAC\020\004\022\013\n\007ANDROID\020\005\022\007\n\003IOS\020\006\"\307\035\n\010Language"
+  "\022\'\n\010language\030\001 \001(\0162\025.pb.Language.Languag"
+  "e\022#\n\006script\030\002 \001(\0162\023.pb.Language.Script\022$"
+  "\n\006region\030\003 \001(\0162\024.pb.Location.Country\"\231\014\n"
+  "\010Language\022\024\n\020UNKNOWN_LANGUAGE\020\000\022\006\n\002en\020\001\022"
+  "\006\n\002aa\020\002\022\006\n\002ab\020\003\022\006\n\002ae\020\004\022\006\n\002af\020\005\022\006\n\002ak\020\006\022"
+  "\006\n\002am\020\007\022\006\n\002an\020\010\022\006\n\002ar\020\t\022\006\n\002as\020\n\022\006\n\002av\020\013\022"
+  "\006\n\002ay\020\014\022\006\n\002az\020\r\022\006\n\002ba\020\016\022\006\n\002be\020\017\022\006\n\002bg\020\020\022"
+  "\006\n\002bh\020\021\022\006\n\002bi\020\022\022\006\n\002bm\020\023\022\006\n\002bn\020\024\022\006\n\002bo\020\025\022"
+  "\006\n\002br\020\026\022\006\n\002bs\020\027\022\006\n\002ca\020\030\022\006\n\002ce\020\031\022\006\n\002ch\020\032\022"
+  "\006\n\002co\020\033\022\006\n\002cr\020\034\022\006\n\002cs\020\035\022\006\n\002cu\020\036\022\006\n\002cv\020\037\022"
+  "\006\n\002cy\020 \022\006\n\002da\020!\022\006\n\002de\020\"\022\006\n\002dv\020#\022\006\n\002dz\020$\022"
+  "\006\n\002ee\020%\022\006\n\002el\020&\022\006\n\002eo\020\'\022\006\n\002es\020(\022\006\n\002et\020)\022"
+  "\006\n\002eu\020*\022\006\n\002fa\020+\022\006\n\002ff\020,\022\006\n\002fi\020-\022\006\n\002fj\020.\022"
+  "\006\n\002fo\020/\022\006\n\002fr\0200\022\006\n\002fy\0201\022\006\n\002ga\0202\022\006\n\002gd\0203\022"
+  "\006\n\002gl\0204\022\006\n\002gn\0205\022\006\n\002gu\0206\022\006\n\002gv\0207\022\006\n\002ha\0208\022"
+  "\006\n\002he\0209\022\006\n\002hi\020:\022\006\n\002ho\020;\022\006\n\002hr\020<\022\006\n\002ht\020=\022"
+  "\006\n\002hu\020>\022\006\n\002hy\020\?\022\006\n\002hz\020@\022\006\n\002ia\020A\022\006\n\002id\020B\022"
+  "\006\n\002ie\020C\022\006\n\002ig\020D\022\006\n\002ii\020E\022\006\n\002ik\020F\022\006\n\002io\020G\022"
+  "\006\n\002is\020H\022\006\n\002it\020I\022\006\n\002iu\020J\022\006\n\002ja\020K\022\006\n\002jv\020L\022"
+  "\006\n\002ka\020M\022\006\n\002kg\020N\022\006\n\002ki\020O\022\006\n\002kj\020P\022\006\n\002kk\020Q\022"
+  "\006\n\002kl\020R\022\006\n\002km\020S\022\006\n\002kn\020T\022\006\n\002ko\020U\022\006\n\002kr\020V\022"
+  "\006\n\002ks\020W\022\006\n\002ku\020X\022\006\n\002kv\020Y\022\006\n\002kw\020Z\022\006\n\002ky\020[\022"
+  "\006\n\002la\020\\\022\006\n\002lb\020]\022\006\n\002lg\020^\022\006\n\002li\020_\022\006\n\002ln\020`\022"
+  "\006\n\002lo\020a\022\006\n\002lt\020b\022\006\n\002lu\020c\022\006\n\002lv\020d\022\006\n\002mg\020e\022"
+  "\006\n\002mh\020f\022\006\n\002mi\020g\022\006\n\002mk\020h\022\006\n\002ml\020i\022\006\n\002mn\020j\022"
+  "\006\n\002mr\020k\022\006\n\002ms\020l\022\006\n\002mt\020m\022\006\n\002my\020n\022\006\n\002na\020o\022"
+  "\006\n\002nb\020p\022\006\n\002nd\020q\022\006\n\002ne\020r\022\006\n\002ng\020s\022\006\n\002nl\020t\022"
+  "\006\n\002nn\020u\022\006\n\002no\020v\022\006\n\002nr\020w\022\006\n\002nv\020x\022\006\n\002ny\020y\022"
+  "\006\n\002oc\020z\022\006\n\002oj\020{\022\006\n\002om\020|\022\006\n\002or\020}\022\006\n\002os\020~\022"
+  "\006\n\002pa\020\177\022\007\n\002pi\020\200\001\022\007\n\002pl\020\201\001\022\007\n\002ps\020\202\001\022\007\n\002pt"
+  "\020\203\001\022\007\n\002qu\020\204\001\022\007\n\002rm\020\205\001\022\007\n\002rn\020\206\001\022\007\n\002ro\020\207\001\022"
+  "\007\n\002ru\020\210\001\022\007\n\002rw\020\211\001\022\007\n\002sa\020\212\001\022\007\n\002sc\020\213\001\022\007\n\002s"
+  "d\020\214\001\022\007\n\002se\020\215\001\022\007\n\002sg\020\216\001\022\007\n\002si\020\217\001\022\007\n\002sk\020\220\001"
+  "\022\007\n\002sl\020\221\001\022\007\n\002sm\020\222\001\022\007\n\002sn\020\223\001\022\007\n\002so\020\224\001\022\007\n\002"
+  "sq\020\225\001\022\007\n\002sr\020\226\001\022\007\n\002ss\020\227\001\022\007\n\002st\020\230\001\022\007\n\002su\020\231"
+  "\001\022\007\n\002sv\020\232\001\022\007\n\002sw\020\233\001\022\007\n\002ta\020\234\001\022\007\n\002te\020\235\001\022\007\n"
+  "\002tg\020\236\001\022\007\n\002th\020\237\001\022\007\n\002ti\020\240\001\022\007\n\002tk\020\241\001\022\007\n\002tl\020"
+  "\242\001\022\007\n\002tn\020\243\001\022\007\n\002to\020\244\001\022\007\n\002tr\020\245\001\022\007\n\002ts\020\246\001\022\007"
+  "\n\002tt\020\247\001\022\007\n\002tw\020\250\001\022\007\n\002ty\020\251\001\022\007\n\002ug\020\252\001\022\007\n\002uk"
+  "\020\253\001\022\007\n\002ur\020\254\001\022\007\n\002uz\020\255\001\022\007\n\002ve\020\256\001\022\007\n\002vi\020\257\001\022"
+  "\007\n\002vo\020\260\001\022\007\n\002wa\020\261\001\022\007\n\002wo\020\262\001\022\007\n\002xh\020\263\001\022\007\n\002y"
+  "i\020\264\001\022\007\n\002yo\020\265\001\022\007\n\002za\020\266\001\022\007\n\002zh\020\267\001\022\007\n\002zu\020\270\001"
+  "\"\252\020\n\006Script\022\022\n\016UNKNOWN_SCRIPT\020\000\022\010\n\004Adlm\020"
+  "\001\022\010\n\004Afak\020\002\022\010\n\004Aghb\020\003\022\010\n\004Ahom\020\004\022\010\n\004Arab\020"
+  "\005\022\010\n\004Aran\020\006\022\010\n\004Armi\020\007\022\010\n\004Armn\020\010\022\010\n\004Avst\020"
+  "\t\022\010\n\004Bali\020\n\022\010\n\004Bamu\020\013\022\010\n\004Bass\020\014\022\010\n\004Batk\020"
+  "\r\022\010\n\004Beng\020\016\022\010\n\004Bhks\020\017\022\010\n\004Blis\020\020\022\010\n\004Bopo\020"
+  "\021\022\010\n\004Brah\020\022\022\010\n\004Brai\020\023\022\010\n\004Bugi\020\024\022\010\n\004Buhd\020"
+  "\025\022\010\n\004Cakm\020\026\022\010\n\004Cans\020\027\022\010\n\004Cari\020\030\022\010\n\004Cham\020"
+  "\031\022\010\n\004Cher\020\032\022\010\n\004Cirt\020\033\022\010\n\004Copt\020\034\022\010\n\004Cpmn\020"
+  "\035\022\010\n\004Cprt\020\036\022\010\n\004Cyrl\020\037\022\010\n\004Cyrs\020 \022\010\n\004Deva\020"
+  "!\022\010\n\004Dogr\020\"\022\010\n\004Dsrt\020#\022\010\n\004Dupl\020$\022\010\n\004Egyd\020"
+  "%\022\010\n\004Egyh\020&\022\010\n\004Egyp\020\'\022\010\n\004Elba\020(\022\010\n\004Elym\020"
+  ")\022\010\n\004Ethi\020*\022\010\n\004Geok\020+\022\010\n\004Geor\020,\022\010\n\004Glag\020"
+  "-\022\010\n\004Gong\020.\022\010\n\004Gonm\020/\022\010\n\004Goth\0200\022\010\n\004Gran\020"
+  "1\022\010\n\004Grek\0202\022\010\n\004Gujr\0203\022\010\n\004Guru\0204\022\010\n\004Hanb\020"
+  "5\022\010\n\004Hang\0206\022\010\n\004Hani\0207\022\010\n\004Hano\0208\022\010\n\004Hans\020"
+  "9\022\010\n\004Hant\020:\022\010\n\004Hatr\020;\022\010\n\004Hebr\020<\022\010\n\004Hira\020"
+  "=\022\010\n\004Hluw\020>\022\010\n\004Hmng\020\?\022\010\n\004Hmnp\020@\022\010\n\004Hrkt\020"
+  "A\022\010\n\004Hung\020B\022\010\n\004Inds\020C\022\010\n\004Ital\020D\022\010\n\004Jamo\020"
+  "E\022\010\n\004Java\020F\022\010\n\004Jpan\020G\022\010\n\004Jurc\020H\022\010\n\004Kali\020"
+  "I\022\010\n\004Kana\020J\022\010\n\004Khar\020K\022\010\n\004Khmr\020L\022\010\n\004Khoj\020"
+  "M\022\010\n\004Kitl\020N\022\010\n\004Kits\020O\022\010\n\004Knda\020P\022\010\n\004Kore\020"
+  "Q\022\010\n\004Kpel\020R\022\010\n\004Kthi\020S\022\010\n\004Lana\020T\022\010\n\004Laoo\020"
+  "U\022\010\n\004Latf\020V\022\010\n\004Latg\020W\022\010\n\004Latn\020X\022\010\n\004Leke\020"
+  "Y\022\010\n\004Lepc\020Z\022\010\n\004Limb\020[\022\010\n\004Lina\020\\\022\010\n\004Linb\020"
+  "]\022\010\n\004Lisu\020^\022\010\n\004Loma\020_\022\010\n\004Lyci\020`\022\010\n\004Lydi\020"
+  "a\022\010\n\004Mahj\020b\022\010\n\004Maka\020c\022\010\n\004Mand\020d\022\010\n\004Mani\020"
+  "e\022\010\n\004Marc\020f\022\010\n\004Maya\020g\022\010\n\004Medf\020h\022\010\n\004Mend\020"
+  "i\022\010\n\004Merc\020j\022\010\n\004Mero\020k\022\010\n\004Mlym\020l\022\010\n\004Modi\020"
+  "m\022\010\n\004Mong\020n\022\010\n\004Moon\020o\022\010\n\004Mroo\020p\022\010\n\004Mtei\020"
+  "q\022\010\n\004Mult\020r\022\010\n\004Mymr\020s\022\010\n\004Nand\020t\022\010\n\004Narb\020"
+  "u\022\010\n\004Nbat\020v\022\010\n\004Newa\020w\022\010\n\004Nkdb\020x\022\010\n\004Nkgb\020"
+  "y\022\010\n\004Nkoo\020z\022\010\n\004Nshu\020{\022\010\n\004Ogam\020|\022\010\n\004Olck\020"
+  "}\022\010\n\004Orkh\020~\022\010\n\004Orya\020\177\022\t\n\004Osge\020\200\001\022\t\n\004Osma"
+  "\020\201\001\022\t\n\004Palm\020\202\001\022\t\n\004Pauc\020\203\001\022\t\n\004Perm\020\204\001\022\t\n\004"
+  "Phag\020\205\001\022\t\n\004Phli\020\206\001\022\t\n\004Phlp\020\207\001\022\t\n\004Phlv\020\210\001"
+  "\022\t\n\004Phnx\020\211\001\022\t\n\004Plrd\020\212\001\022\t\n\004Piqd\020\213\001\022\t\n\004Prt"
+  "i\020\214\001\022\t\n\004Qaaa\020\215\001\022\t\n\004Qabx\020\216\001\022\t\n\004Rjng\020\217\001\022\t\n"
+  "\004Rohg\020\220\001\022\t\n\004Roro\020\221\001\022\t\n\004Runr\020\222\001\022\t\n\004Samr\020\223"
+  "\001\022\t\n\004Sara\020\224\001\022\t\n\004Sarb\020\225\001\022\t\n\004Saur\020\226\001\022\t\n\004Sg"
+  "nw\020\227\001\022\t\n\004Shaw\020\230\001\022\t\n\004Shrd\020\231\001\022\t\n\004Shui\020\232\001\022\t"
+  "\n\004Sidd\020\233\001\022\t\n\004Sind\020\234\001\022\t\n\004Sinh\020\235\001\022\t\n\004Sogd\020"
+  "\236\001\022\t\n\004Sogo\020\237\001\022\t\n\004Sora\020\240\001\022\t\n\004Soyo\020\241\001\022\t\n\004S"
+  "und\020\242\001\022\t\n\004Sylo\020\243\001\022\t\n\004Syrc\020\244\001\022\t\n\004Syre\020\245\001\022"
+  "\t\n\004Syrj\020\246\001\022\t\n\004Syrn\020\247\001\022\t\n\004Tagb\020\250\001\022\t\n\004Takr"
+  "\020\251\001\022\t\n\004Tale\020\252\001\022\t\n\004Talu\020\253\001\022\t\n\004Taml\020\254\001\022\t\n\004"
+  "Tang\020\255\001\022\t\n\004Tavt\020\256\001\022\t\n\004Telu\020\257\001\022\t\n\004Teng\020\260\001"
+  "\022\t\n\004Tfng\020\261\001\022\t\n\004Tglg\020\262\001\022\t\n\004Thaa\020\263\001\022\t\n\004Tha"
+  "i\020\264\001\022\t\n\004Tibt\020\265\001\022\t\n\004Tirh\020\266\001\022\t\n\004Ugar\020\267\001\022\t\n"
+  "\004Vaii\020\270\001\022\t\n\004Visp\020\271\001\022\t\n\004Wara\020\272\001\022\t\n\004Wcho\020\273"
+  "\001\022\t\n\004Wole\020\274\001\022\t\n\004Xpeo\020\275\001\022\t\n\004Xsux\020\276\001\022\t\n\004Yi"
+  "ii\020\277\001\022\t\n\004Zanb\020\300\001\022\t\n\004Zinh\020\301\001\022\t\n\004Zmth\020\302\001\022\t"
+  "\n\004Zsye\020\303\001\022\t\n\004Zsym\020\304\001\022\t\n\004Zxxx\020\305\001\022\t\n\004Zyyy\020"
+  "\306\001\022\t\n\004Zzzz\020\307\001\"\354)\n\010Location\022%\n\007country\030\001 "
+  "\001(\0162\024.pb.Location.Country\022\r\n\005state\030\002 \001(\t"
+  "\022\014\n\004city\030\003 \001(\t\022\014\n\004code\030\004 \001(\t\022\020\n\010latitude"
+  "\030\005 \001(\021\022\021\n\tlongitude\030\006 \001(\021\"\350(\n\007Country\022\023\n"
+  "\017UNKNOWN_COUNTRY\020\000\022\006\n\002AF\020\001\022\006\n\002AX\020\002\022\006\n\002AL"
+  "\020\003\022\006\n\002DZ\020\004\022\006\n\002AS\020\005\022\006\n\002AD\020\006\022\006\n\002AO\020\007\022\006\n\002AI"
+  "\020\010\022\006\n\002AQ\020\t\022\006\n\002AG\020\n\022\006\n\002AR\020\013\022\006\n\002AM\020\014\022\006\n\002AW"
+  "\020\r\022\006\n\002AU\020\016\022\006\n\002AT\020\017\022\006\n\002AZ\020\020\022\006\n\002BS\020\021\022\006\n\002BH"
+  "\020\022\022\006\n\002BD\020\023\022\006\n\002BB\020\024\022\006\n\002BY\020\025\022\006\n\002BE\020\026\022\006\n\002BZ"
+  "\020\027\022\006\n\002BJ\020\030\022\006\n\002BM\020\031\022\006\n\002BT\020\032\022\006\n\002BO\020\033\022\006\n\002BQ"
+  "\020\034\022\006\n\002BA\020\035\022\006\n\002BW\020\036\022\006\n\002BV\020\037\022\006\n\002BR\020 \022\006\n\002IO"
+  "\020!\022\006\n\002BN\020\"\022\006\n\002BG\020#\022\006\n\002BF\020$\022\006\n\002BI\020%\022\006\n\002KH"
+  "\020&\022\006\n\002CM\020\'\022\006\n\002CA\020(\022\006\n\002CV\020)\022\006\n\002KY\020*\022\006\n\002CF"
+  "\020+\022\006\n\002TD\020,\022\006\n\002CL\020-\022\006\n\002CN\020.\022\006\n\002CX\020/\022\006\n\002CC"
+  "\0200\022\006\n\002CO\0201\022\006\n\002KM\0202\022\006\n\002CG\0203\022\006\n\002CD\0204\022\006\n\002CK"
+  "\0205\022\006\n\002CR\0206\022\006\n\002CI\0207\022\006\n\002HR\0208\022\006\n\002CU\0209\022\006\n\002CW"
+  "\020:\022\006\n\002CY\020;\022\006\n\002CZ\020<\022\006\n\002DK\020=\022\006\n\002DJ\020>\022\006\n\002DM"
+  "\020\?\022\006\n\002DO\020@\022\006\n\002EC\020A\022\006\n\002EG\020B\022\006\n\002SV\020C\022\006\n\002GQ"
+  "\020D\022\006\n\002ER\020E\022\006\n\002EE\020F\022\006\n\002ET\020G\022\006\n\002FK\020H\022\006\n\002FO"
+  "\020I\022\006\n\002FJ\020J\022\006\n\002FI\020K\022\006\n\002FR\020L\022\006\n\002GF\020M\022\006\n\002PF"
+  "\020N\022\006\n\002TF\020O\022\006\n\002GA\020P\022\006\n\002GM\020Q\022\006\n\002GE\020R\022\006\n\002DE"
+  "\020S\022\006\n\002GH\020T\022\006\n\002GI\020U\022\006\n\002GR\020V\022\006\n\002GL\020W\022\006\n\002GD"
+  "\020X\022\006\n\002GP\020Y\022\006\n\002GU\020Z\022\006\n\002GT\020[\022\006\n\002GG\020\\\022\006\n\002GN"
+  "\020]\022\006\n\002GW\020^\022\006\n\002GY\020_\022\006\n\002HT\020`\022\006\n\002HM\020a\022\006\n\002VA"
+  "\020b\022\006\n\002HN\020c\022\006\n\002HK\020d\022\006\n\002HU\020e\022\006\n\002IS\020f\022\006\n\002IN"
+  "\020g\022\006\n\002ID\020h\022\006\n\002IR\020i\022\006\n\002IQ\020j\022\006\n\002IE\020k\022\006\n\002IM"
+  "\020l\022\006\n\002IL\020m\022\006\n\002IT\020n\022\006\n\002JM\020o\022\006\n\002JP\020p\022\006\n\002JE"
+  "\020q\022\006\n\002JO\020r\022\006\n\002KZ\020s\022\006\n\002KE\020t\022\006\n\002KI\020u\022\006\n\002KP"
+  "\020v\022\006\n\002KR\020w\022\006\n\002KW\020x\022\006\n\002KG\020y\022\006\n\002LA\020z\022\006\n\002LV"
+  "\020{\022\006\n\002LB\020|\022\006\n\002LS\020}\022\006\n\002LR\020~\022\006\n\002LY\020\177\022\007\n\002LI"
+  "\020\200\001\022\007\n\002LT\020\201\001\022\007\n\002LU\020\202\001\022\007\n\002MO\020\203\001\022\007\n\002MK\020\204\001\022"
+  "\007\n\002MG\020\205\001\022\007\n\002MW\020\206\001\022\007\n\002MY\020\207\001\022\007\n\002MV\020\210\001\022\007\n\002M"
+  "L\020\211\001\022\007\n\002MT\020\212\001\022\007\n\002MH\020\213\001\022\007\n\002MQ\020\214\001\022\007\n\002MR\020\215\001"
+  "\022\007\n\002MU\020\216\001\022\007\n\002YT\020\217\001\022\007\n\002MX\020\220\001\022\007\n\002FM\020\221\001\022\007\n\002"
+  "MD\020\222\001\022\007\n\002MC\020\223\001\022\007\n\002MN\020\224\001\022\007\n\002ME\020\225\001\022\007\n\002MS\020\226"
+  "\001\022\007\n\002MA\020\227\001\022\007\n\002MZ\020\230\001\022\007\n\002MM\020\231\001\022\007\n\002NA\020\232\001\022\007\n"
+  "\002NR\020\233\001\022\007\n\002NP\020\234\001\022\007\n\002NL\020\235\001\022\007\n\002NC\020\236\001\022\007\n\002NZ\020"
+  "\237\001\022\007\n\002NI\020\240\001\022\007\n\002NE\020\241\001\022\007\n\002NG\020\242\001\022\007\n\002NU\020\243\001\022\007"
+  "\n\002NF\020\244\001\022\007\n\002MP\020\245\001\022\007\n\002NO\020\246\001\022\007\n\002OM\020\247\001\022\007\n\002PK"
+  "\020\250\001\022\007\n\002PW\020\251\001\022\007\n\002PS\020\252\001\022\007\n\002PA\020\253\001\022\007\n\002PG\020\254\001\022"
+  "\007\n\002PY\020\255\001\022\007\n\002PE\020\256\001\022\007\n\002PH\020\257\001\022\007\n\002PN\020\260\001\022\007\n\002P"
+  "L\020\261\001\022\007\n\002PT\020\262\001\022\007\n\002PR\020\263\001\022\007\n\002QA\020\264\001\022\007\n\002RE\020\265\001"
+  "\022\007\n\002RO\020\266\001\022\007\n\002RU\020\267\001\022\007\n\002RW\020\270\001\022\007\n\002BL\020\271\001\022\007\n\002"
+  "SH\020\272\001\022\007\n\002KN\020\273\001\022\007\n\002LC\020\274\001\022\007\n\002MF\020\275\001\022\007\n\002PM\020\276"
+  "\001\022\007\n\002VC\020\277\001\022\007\n\002WS\020\300\001\022\007\n\002SM\020\301\001\022\007\n\002ST\020\302\001\022\007\n"
+  "\002SA\020\303\001\022\007\n\002SN\020\304\001\022\007\n\002RS\020\305\001\022\007\n\002SC\020\306\001\022\007\n\002SL\020"
+  "\307\001\022\007\n\002SG\020\310\001\022\007\n\002SX\020\311\001\022\007\n\002SK\020\312\001\022\007\n\002SI\020\313\001\022\007"
+  "\n\002SB\020\314\001\022\007\n\002SO\020\315\001\022\007\n\002ZA\020\316\001\022\007\n\002GS\020\317\001\022\007\n\002SS"
+  "\020\320\001\022\007\n\002ES\020\321\001\022\007\n\002LK\020\322\001\022\007\n\002SD\020\323\001\022\007\n\002SR\020\324\001\022"
+  "\007\n\002SJ\020\325\001\022\007\n\002SZ\020\326\001\022\007\n\002SE\020\327\001\022\007\n\002CH\020\330\001\022\007\n\002S"
+  "Y\020\331\001\022\007\n\002TW\020\332\001\022\007\n\002TJ\020\333\001\022\007\n\002TZ\020\334\001\022\007\n\002TH\020\335\001"
+  "\022\007\n\002TL\020\336\001\022\007\n\002TG\020\337\001\022\007\n\002TK\020\340\001\022\007\n\002TO\020\341\001\022\007\n\002"
+  "TT\020\342\001\022\007\n\002TN\020\343\001\022\007\n\002TR\020\344\001\022\007\n\002TM\020\345\001\022\007\n\002TC\020\346"
+  "\001\022\007\n\002TV\020\347\001\022\007\n\002UG\020\350\001\022\007\n\002UA\020\351\001\022\007\n\002AE\020\352\001\022\007\n"
+  "\002GB\020\353\001\022\007\n\002US\020\354\001\022\007\n\002UM\020\355\001\022\007\n\002UY\020\356\001\022\007\n\002UZ\020"
+  "\357\001\022\007\n\002VU\020\360\001\022\007\n\002VE\020\361\001\022\007\n\002VN\020\362\001\022\007\n\002VG\020\363\001\022\007"
+  "\n\002VI\020\364\001\022\007\n\002WF\020\365\001\022\007\n\002EH\020\366\001\022\007\n\002YE\020\367\001\022\007\n\002ZM"
+  "\020\370\001\022\007\n\002ZW\020\371\001\022\t\n\004R001\020\372\001\022\t\n\004R002\020\373\001\022\t\n\004R0"
+  "15\020\374\001\022\t\n\004R012\020\375\001\022\t\n\004R818\020\376\001\022\t\n\004R434\020\377\001\022\t"
+  "\n\004R504\020\200\002\022\t\n\004R729\020\201\002\022\t\n\004R788\020\202\002\022\t\n\004R732\020"
+  "\203\002\022\t\n\004R202\020\204\002\022\t\n\004R014\020\205\002\022\t\n\004R086\020\206\002\022\t\n\004R"
+  "108\020\207\002\022\t\n\004R174\020\210\002\022\t\n\004R262\020\211\002\022\t\n\004R232\020\212\002\022"
+  "\t\n\004R231\020\213\002\022\t\n\004R260\020\214\002\022\t\n\004R404\020\215\002\022\t\n\004R450"
+  "\020\216\002\022\t\n\004R454\020\217\002\022\t\n\004R480\020\220\002\022\t\n\004R175\020\221\002\022\t\n\004"
+  "R508\020\222\002\022\t\n\004R638\020\223\002\022\t\n\004R646\020\224\002\022\t\n\004R690\020\225\002"
+  "\022\t\n\004R706\020\226\002\022\t\n\004R728\020\227\002\022\t\n\004R800\020\230\002\022\t\n\004R83"
+  "4\020\231\002\022\t\n\004R894\020\232\002\022\t\n\004R716\020\233\002\022\t\n\004R017\020\234\002\022\t\n"
+  "\004R024\020\235\002\022\t\n\004R120\020\236\002\022\t\n\004R140\020\237\002\022\t\n\004R148\020\240"
+  "\002\022\t\n\004R178\020\241\002\022\t\n\004R180\020\242\002\022\t\n\004R226\020\243\002\022\t\n\004R2"
+  "66\020\244\002\022\t\n\004R678\020\245\002\022\t\n\004R018\020\246\002\022\t\n\004R072\020\247\002\022\t"
+  "\n\004R748\020\250\002\022\t\n\004R426\020\251\002\022\t\n\004R516\020\252\002\022\t\n\004R710\020"
+  "\253\002\022\t\n\004R011\020\254\002\022\t\n\004R204\020\255\002\022\t\n\004R854\020\256\002\022\t\n\004R"
+  "132\020\257\002\022\t\n\004R384\020\260\002\022\t\n\004R270\020\261\002\022\t\n\004R288\020\262\002\022"
+  "\t\n\004R324\020\263\002\022\t\n\004R624\020\264\002\022\t\n\004R430\020\265\002\022\t\n\004R466"
+  "\020\266\002\022\t\n\004R478\020\267\002\022\t\n\004R562\020\270\002\022\t\n\004R566\020\271\002\022\t\n\004"
+  "R654\020\272\002\022\t\n\004R686\020\273\002\022\t\n\004R694\020\274\002\022\t\n\004R768\020\275\002"
+  "\022\t\n\004R019\020\276\002\022\t\n\004R419\020\277\002\022\t\n\004R029\020\300\002\022\t\n\004R66"
+  "0\020\301\002\022\t\n\004R028\020\302\002\022\t\n\004R533\020\303\002\022\t\n\004R044\020\304\002\022\t\n"
+  "\004R052\020\305\002\022\t\n\004R535\020\306\002\022\t\n\004R092\020\307\002\022\t\n\004R136\020\310"
+  "\002\022\t\n\004R192\020\311\002\022\t\n\004R531\020\312\002\022\t\n\004R212\020\313\002\022\t\n\004R2"
+  "14\020\314\002\022\t\n\004R308\020\315\002\022\t\n\004R312\020\316\002\022\t\n\004R332\020\317\002\022\t"
+  "\n\004R388\020\320\002\022\t\n\004R474\020\321\002\022\t\n\004R500\020\322\002\022\t\n\004R630\020"
+  "\323\002\022\t\n\004R652\020\324\002\022\t\n\004R659\020\325\002\022\t\n\004R662\020\326\002\022\t\n\004R"
+  "663\020\327\002\022\t\n\004R670\020\330\002\022\t\n\004R534\020\331\002\022\t\n\004R780\020\332\002\022"
+  "\t\n\004R796\020\333\002\022\t\n\004R850\020\334\002\022\t\n\004R013\020\335\002\022\t\n\004R084"
+  "\020\336\002\022\t\n\004R188\020\337\002\022\t\n\004R222\020\340\002\022\t\n\004R320\020\341\002\022\t\n\004"
+  "R340\020\342\002\022\t\n\004R484\020\343\002\022\t\n\004R558\020\344\002\022\t\n\004R591\020\345\002"
+  "\022\t\n\004R005\020\346\002\022\t\n\004R032\020\347\002\022\t\n\004R068\020\350\002\022\t\n\004R07"
+  "4\020\351\002\022\t\n\004R076\020\352\002\022\t\n\004R152\020\353\002\022\t\n\004R170\020\354\002\022\t\n"
+  "\004R218\020\355\002\022\t\n\004R238\020\356\002\022\t\n\004R254\020\357\002\022\t\n\004R328\020\360"
+  "\002\022\t\n\004R600\020\361\002\022\t\n\004R604\020\362\002\022\t\n\004R239\020\363\002\022\t\n\004R7"
+  "40\020\364\002\022\t\n\004R858\020\365\002\022\t\n\004R862\020\366\002\022\t\n\004R021\020\367\002\022\t"
+  "\n\004R060\020\370\002\022\t\n\004R124\020\371\002\022\t\n\004R304\020\372\002\022\t\n\004R666\020"
+  "\373\002\022\t\n\004R840\020\374\002\022\t\n\004R010\020\375\002\022\t\n\004R142\020\376\002\022\t\n\004R"
+  "143\020\377\002\022\t\n\004R398\020\200\003\022\t\n\004R417\020\201\003\022\t\n\004R762\020\202\003\022"
+  "\t\n\004R795\020\203\003\022\t\n\004R860\020\204\003\022\t\n\004R030\020\205\003\022\t\n\004R156"
+  "\020\206\003\022\t\n\004R344\020\207\003\022\t\n\004R446\020\210\003\022\t\n\004R408\020\211\003\022\t\n\004"
+  "R392\020\212\003\022\t\n\004R496\020\213\003\022\t\n\004R410\020\214\003\022\t\n\004R035\020\215\003"
+  "\022\t\n\004R096\020\216\003\022\t\n\004R116\020\217\003\022\t\n\004R360\020\220\003\022\t\n\004R41"
+  "8\020\221\003\022\t\n\004R458\020\222\003\022\t\n\004R104\020\223\003\022\t\n\004R608\020\224\003\022\t\n"
+  "\004R702\020\225\003\022\t\n\004R764\020\226\003\022\t\n\004R626\020\227\003\022\t\n\004R704\020\230"
+  "\003\022\t\n\004R034\020\231\003\022\t\n\004R004\020\232\003\022\t\n\004R050\020\233\003\022\t\n\004R0"
+  "64\020\234\003\022\t\n\004R356\020\235\003\022\t\n\004R364\020\236\003\022\t\n\004R462\020\237\003\022\t"
+  "\n\004R524\020\240\003\022\t\n\004R586\020\241\003\022\t\n\004R144\020\242\003\022\t\n\004R145\020"
+  "\243\003\022\t\n\004R051\020\244\003\022\t\n\004R031\020\245\003\022\t\n\004R048\020\246\003\022\t\n\004R"
+  "196\020\247\003\022\t\n\004R268\020\250\003\022\t\n\004R368\020\251\003\022\t\n\004R376\020\252\003\022"
+  "\t\n\004R400\020\253\003\022\t\n\004R414\020\254\003\022\t\n\004R422\020\255\003\022\t\n\004R512"
+  "\020\256\003\022\t\n\004R634\020\257\003\022\t\n\004R682\020\260\003\022\t\n\004R275\020\261\003\022\t\n\004"
+  "R760\020\262\003\022\t\n\004R792\020\263\003\022\t\n\004R784\020\264\003\022\t\n\004R887\020\265\003"
+  "\022\t\n\004R150\020\266\003\022\t\n\004R151\020\267\003\022\t\n\004R112\020\270\003\022\t\n\004R10"
+  "0\020\271\003\022\t\n\004R203\020\272\003\022\t\n\004R348\020\273\003\022\t\n\004R616\020\274\003\022\t\n"
+  "\004R498\020\275\003\022\t\n\004R642\020\276\003\022\t\n\004R643\020\277\003\022\t\n\004R703\020\300"
+  "\003\022\t\n\004R804\020\301\003\022\t\n\004R154\020\302\003\022\t\n\004R248\020\303\003\022\t\n\004R8"
+  "30\020\304\003\022\t\n\004R831\020\305\003\022\t\n\004R832\020\306\003\022\t\n\004R680\020\307\003\022\t"
+  "\n\004R208\020\310\003\022\t\n\004R233\020\311\003\022\t\n\004R234\020\312\003\022\t\n\004R246\020"
+  "\313\003\022\t\n\004R352\020\314\003\022\t\n\004R372\020\315\003\022\t\n\004R833\020\316\003\022\t\n\004R"
+  "428\020\317\003\022\t\n\004R440\020\320\003\022\t\n\004R578\020\321\003\022\t\n\004R744\020\322\003\022"
+  "\t\n\004R752\020\323\003\022\t\n\004R826\020\324\003\022\t\n\004R039\020\325\003\022\t\n\004R008"
+  "\020\326\003\022\t\n\004R020\020\327\003\022\t\n\004R070\020\330\003\022\t\n\004R191\020\331\003\022\t\n\004"
+  "R292\020\332\003\022\t\n\004R300\020\333\003\022\t\n\004R336\020\334\003\022\t\n\004R380\020\335\003"
+  "\022\t\n\004R470\020\336\003\022\t\n\004R499\020\337\003\022\t\n\004R807\020\340\003\022\t\n\004R62"
+  "0\020\341\003\022\t\n\004R674\020\342\003\022\t\n\004R688\020\343\003\022\t\n\004R705\020\344\003\022\t\n"
+  "\004R724\020\345\003\022\t\n\004R155\020\346\003\022\t\n\004R040\020\347\003\022\t\n\004R056\020\350"
+  "\003\022\t\n\004R250\020\351\003\022\t\n\004R276\020\352\003\022\t\n\004R438\020\353\003\022\t\n\004R4"
+  "42\020\354\003\022\t\n\004R492\020\355\003\022\t\n\004R528\020\356\003\022\t\n\004R756\020\357\003\022\t"
+  "\n\004R009\020\360\003\022\t\n\004R053\020\361\003\022\t\n\004R036\020\362\003\022\t\n\004R162\020"
+  "\363\003\022\t\n\004R166\020\364\003\022\t\n\004R334\020\365\003\022\t\n\004R554\020\366\003\022\t\n\004R"
+  "574\020\367\003\022\t\n\004R054\020\370\003\022\t\n\004R242\020\371\003\022\t\n\004R540\020\372\003\022"
+  "\t\n\004R598\020\373\003\022\t\n\004R090\020\374\003\022\t\n\004R548\020\375\003\022\t\n\004R057"
+  "\020\376\003\022\t\n\004R316\020\377\003\022\t\n\004R296\020\200\004\022\t\n\004R584\020\201\004\022\t\n\004"
+  "R583\020\202\004\022\t\n\004R520\020\203\004\022\t\n\004R580\020\204\004\022\t\n\004R585\020\205\004"
+  "\022\t\n\004R581\020\206\004\022\t\n\004R061\020\207\004\022\t\n\004R016\020\210\004\022\t\n\004R18"
+  "4\020\211\004\022\t\n\004R258\020\212\004\022\t\n\004R570\020\213\004\022\t\n\004R612\020\214\004\022\t\n"
+  "\004R882\020\215\004\022\t\n\004R772\020\216\004\022\t\n\004R776\020\217\004\022\t\n\004R798\020\220"
+  "\004\022\t\n\004R876\020\221\004b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_claim_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fany_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_claim_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_claim_2eproto = {
-    false, false, 10951, descriptor_table_protodef_claim_2eproto,
+    false, false, 11060, descriptor_table_protodef_claim_2eproto,
     "claim.proto",
-    &descriptor_table_claim_2eproto_once, descriptor_table_claim_2eproto_deps, 1, 17,
+    &descriptor_table_claim_2eproto_once, descriptor_table_claim_2eproto_deps, 1, 18,
     schemas, file_default_instances, TableStruct_claim_2eproto::offsets,
     file_level_metadata_claim_2eproto, file_level_enum_descriptors_claim_2eproto,
     file_level_service_descriptors_claim_2eproto,
@@ -3387,84 +3415,110 @@ void Claim::InternalSwap(Claim* other) {
 
 // ===================================================================
 
-class Stream_Extension::_Internal {
+Stream_ExtensionsEntry_DoNotUse::Stream_ExtensionsEntry_DoNotUse() {}
+Stream_ExtensionsEntry_DoNotUse::Stream_ExtensionsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void Stream_ExtensionsEntry_DoNotUse::MergeFrom(const Stream_ExtensionsEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata Stream_ExtensionsEntry_DoNotUse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_claim_2eproto_getter, &descriptor_table_claim_2eproto_once,
+      file_level_metadata_claim_2eproto[1]);
+}
+
+// ===================================================================
+
+Stream_Modifiable_ExtensionsEntry_DoNotUse::Stream_Modifiable_ExtensionsEntry_DoNotUse() {}
+Stream_Modifiable_ExtensionsEntry_DoNotUse::Stream_Modifiable_ExtensionsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void Stream_Modifiable_ExtensionsEntry_DoNotUse::MergeFrom(const Stream_Modifiable_ExtensionsEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata Stream_Modifiable_ExtensionsEntry_DoNotUse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_claim_2eproto_getter, &descriptor_table_claim_2eproto_once,
+      file_level_metadata_claim_2eproto[2]);
+}
+
+// ===================================================================
+
+class Stream_Modifiable::_Internal {
  public:
-  static const ::PROTOBUF_NAMESPACE_ID::Any& any(const Stream_Extension* msg);
 };
 
-const ::PROTOBUF_NAMESPACE_ID::Any&
-Stream_Extension::_Internal::any(const Stream_Extension* msg) {
-  return *msg->any_;
+void Stream_Modifiable::clear_extensions() {
+  extensions_.Clear();
 }
-void Stream_Extension::clear_any() {
-  if (GetArenaForAllocation() == nullptr && any_ != nullptr) {
-    delete any_;
-  }
-  any_ = nullptr;
-}
-Stream_Extension::Stream_Extension(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+Stream_Modifiable::Stream_Modifiable(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  extensions_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(arena_constructor:pb.Stream.Extension)
+  if (arena != nullptr && !is_message_owned) {
+    arena->OwnCustomDestructor(this, &Stream_Modifiable::ArenaDtor);
+  }
+  // @@protoc_insertion_point(arena_constructor:pb.Stream.Modifiable)
 }
-Stream_Extension::Stream_Extension(const Stream_Extension& from)
+Stream_Modifiable::Stream_Modifiable(const Stream_Modifiable& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_any()) {
-    any_ = new ::PROTOBUF_NAMESPACE_ID::Any(*from.any_);
-  } else {
-    any_ = nullptr;
-  }
-  // @@protoc_insertion_point(copy_constructor:pb.Stream.Extension)
+  extensions_.MergeFrom(from.extensions_);
+  // @@protoc_insertion_point(copy_constructor:pb.Stream.Modifiable)
 }
 
-inline void Stream_Extension::SharedCtor() {
-any_ = nullptr;
+inline void Stream_Modifiable::SharedCtor() {
 }
 
-Stream_Extension::~Stream_Extension() {
-  // @@protoc_insertion_point(destructor:pb.Stream.Extension)
+Stream_Modifiable::~Stream_Modifiable() {
+  // @@protoc_insertion_point(destructor:pb.Stream.Modifiable)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
+    ArenaDtor(this);
     return;
   }
   SharedDtor();
 }
 
-inline void Stream_Extension::SharedDtor() {
+inline void Stream_Modifiable::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete any_;
+  extensions_.Destruct();
 }
 
-void Stream_Extension::SetCachedSize(int size) const {
+void Stream_Modifiable::ArenaDtor(void* object) {
+  Stream_Modifiable* _this = reinterpret_cast< Stream_Modifiable* >(object);
+  _this->extensions_.Destruct();
+}
+void Stream_Modifiable::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
-void Stream_Extension::Clear() {
-// @@protoc_insertion_point(message_clear_start:pb.Stream.Extension)
+void Stream_Modifiable::Clear() {
+// @@protoc_insertion_point(message_clear_start:pb.Stream.Modifiable)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && any_ != nullptr) {
-    delete any_;
-  }
-  any_ = nullptr;
+  extensions_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Stream_Extension::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* Stream_Modifiable::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .google.protobuf.Any any = 1;
+      // map<string, .google.protobuf.Any> extensions = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_any(), ptr);
-          CHK_(ptr);
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(&extensions_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
         } else
           goto handle_unusual;
         continue;
@@ -3491,91 +3545,110 @@ failure:
 #undef CHK_
 }
 
-uint8_t* Stream_Extension::_InternalSerialize(
+uint8_t* Stream_Modifiable::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:pb.Stream.Extension)
+  // @@protoc_insertion_point(serialize_to_array_start:pb.Stream.Modifiable)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .google.protobuf.Any any = 1;
-  if (this->_internal_has_any()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, _Internal::any(this),
-        _Internal::any(this).GetCachedSize(), target, stream);
+  // map<string, .google.protobuf.Any> extensions = 1;
+  if (!this->_internal_extensions().empty()) {
+    using MapType = ::_pb::Map<std::string, ::PROTOBUF_NAMESPACE_ID::Any>;
+    using WireHelper = Stream_Modifiable_ExtensionsEntry_DoNotUse::Funcs;
+    const auto& map_field = this->_internal_extensions();
+    auto check_utf8 = [](const MapType::value_type& entry) {
+      (void)entry;
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+        entry.first.data(), static_cast<int>(entry.first.length()),
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+        "pb.Stream.Modifiable.ExtensionsEntry.key");
+    };
+
+    if (stream->IsSerializationDeterministic() && map_field.size() > 1) {
+      for (const auto& entry : ::_pbi::MapSorterPtr<MapType>(map_field)) {
+        target = WireHelper::InternalSerialize(1, entry.first, entry.second, target, stream);
+        check_utf8(entry);
+      }
+    } else {
+      for (const auto& entry : map_field) {
+        target = WireHelper::InternalSerialize(1, entry.first, entry.second, target, stream);
+        check_utf8(entry);
+      }
+    }
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:pb.Stream.Extension)
+  // @@protoc_insertion_point(serialize_to_array_end:pb.Stream.Modifiable)
   return target;
 }
 
-size_t Stream_Extension::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:pb.Stream.Extension)
+size_t Stream_Modifiable::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:pb.Stream.Modifiable)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .google.protobuf.Any any = 1;
-  if (this->_internal_has_any()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *any_);
+  // map<string, .google.protobuf.Any> extensions = 1;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_extensions_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >::const_iterator
+      it = this->_internal_extensions().begin();
+      it != this->_internal_extensions().end(); ++it) {
+    total_size += Stream_Modifiable_ExtensionsEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Stream_Extension::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Stream_Modifiable::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    Stream_Extension::MergeImpl
+    Stream_Modifiable::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Stream_Extension::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Stream_Modifiable::GetClassData() const { return &_class_data_; }
 
-void Stream_Extension::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+void Stream_Modifiable::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
                       const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<Stream_Extension *>(to)->MergeFrom(
-      static_cast<const Stream_Extension &>(from));
+  static_cast<Stream_Modifiable *>(to)->MergeFrom(
+      static_cast<const Stream_Modifiable &>(from));
 }
 
 
-void Stream_Extension::MergeFrom(const Stream_Extension& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:pb.Stream.Extension)
+void Stream_Modifiable::MergeFrom(const Stream_Modifiable& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:pb.Stream.Modifiable)
   GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_any()) {
-    _internal_mutable_any()->::PROTOBUF_NAMESPACE_ID::Any::MergeFrom(from._internal_any());
-  }
+  extensions_.MergeFrom(from.extensions_);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void Stream_Extension::CopyFrom(const Stream_Extension& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:pb.Stream.Extension)
+void Stream_Modifiable::CopyFrom(const Stream_Modifiable& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:pb.Stream.Modifiable)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool Stream_Extension::IsInitialized() const {
+bool Stream_Modifiable::IsInitialized() const {
   return true;
 }
 
-void Stream_Extension::InternalSwap(Stream_Extension* other) {
+void Stream_Modifiable::InternalSwap(Stream_Modifiable* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(any_, other->any_);
+  extensions_.InternalSwap(&other->extensions_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata Stream_Extension::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata Stream_Modifiable::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_claim_2eproto_getter, &descriptor_table_claim_2eproto_once,
-      file_level_metadata_claim_2eproto[1]);
+      file_level_metadata_claim_2eproto[3]);
 }
 
 // ===================================================================
@@ -3674,17 +3747,23 @@ void Stream::set_allocated_software(::pb::Software* software) {
   }
   // @@protoc_insertion_point(field_set_allocated:pb.Stream.software)
 }
+void Stream::clear_extensions() {
+  extensions_.Clear();
+}
 Stream::Stream(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
   extensions_(arena) {
   SharedCtor();
+  if (arena != nullptr && !is_message_owned) {
+    arena->OwnCustomDestructor(this, &Stream::ArenaDtor);
+  }
   // @@protoc_insertion_point(arena_constructor:pb.Stream)
 }
 Stream::Stream(const Stream& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      extensions_(from.extensions_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  extensions_.MergeFrom(from.extensions_);
   author_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     author_.Set("", GetArenaForAllocation());
@@ -3769,6 +3848,7 @@ Stream::~Stream() {
   // @@protoc_insertion_point(destructor:pb.Stream)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
+    ArenaDtor(this);
     return;
   }
   SharedDtor();
@@ -3776,6 +3856,7 @@ Stream::~Stream() {
 
 inline void Stream::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  extensions_.Destruct();
   author_.Destroy();
   license_.Destroy();
   license_url_.Destroy();
@@ -3786,6 +3867,10 @@ inline void Stream::SharedDtor() {
   }
 }
 
+void Stream::ArenaDtor(void* object) {
+  Stream* _this = reinterpret_cast< Stream* >(object);
+  _this->extensions_.Destruct();
+}
 void Stream::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -3940,13 +4025,13 @@ const char* Stream::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
-      // repeated .pb.Stream.Extension extensions = 14;
+      // map<string, .google.protobuf.Any> extensions = 14;
       case 14:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 114)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_extensions(), ptr);
+            ptr = ctx->ParseMessage(&extensions_, ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<114>(ptr));
@@ -4060,12 +4145,30 @@ uint8_t* Stream::_InternalSerialize(
         _Internal::software(this).GetCachedSize(), target, stream);
   }
 
-  // repeated .pb.Stream.Extension extensions = 14;
-  for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_extensions_size()); i < n; i++) {
-    const auto& repfield = this->_internal_extensions(i);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(14, repfield, repfield.GetCachedSize(), target, stream);
+  // map<string, .google.protobuf.Any> extensions = 14;
+  if (!this->_internal_extensions().empty()) {
+    using MapType = ::_pb::Map<std::string, ::PROTOBUF_NAMESPACE_ID::Any>;
+    using WireHelper = Stream_ExtensionsEntry_DoNotUse::Funcs;
+    const auto& map_field = this->_internal_extensions();
+    auto check_utf8 = [](const MapType::value_type& entry) {
+      (void)entry;
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+        entry.first.data(), static_cast<int>(entry.first.length()),
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+        "pb.Stream.ExtensionsEntry.key");
+    };
+
+    if (stream->IsSerializationDeterministic() && map_field.size() > 1) {
+      for (const auto& entry : ::_pbi::MapSorterPtr<MapType>(map_field)) {
+        target = WireHelper::InternalSerialize(14, entry.first, entry.second, target, stream);
+        check_utf8(entry);
+      }
+    } else {
+      for (const auto& entry : map_field) {
+        target = WireHelper::InternalSerialize(14, entry.first, entry.second, target, stream);
+        check_utf8(entry);
+      }
+    }
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4084,11 +4187,13 @@ size_t Stream::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .pb.Stream.Extension extensions = 14;
-  total_size += 1UL * this->_internal_extensions_size();
-  for (const auto& msg : this->extensions_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  // map<string, .google.protobuf.Any> extensions = 14;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_extensions_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >::const_iterator
+      it = this->_internal_extensions().begin();
+      it != this->_internal_extensions().end(); ++it) {
+    total_size += Stream_ExtensionsEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
   }
 
   // string author = 2;
@@ -4271,200 +4376,22 @@ void Stream::InternalSwap(Stream* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Stream::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_claim_2eproto_getter, &descriptor_table_claim_2eproto_once,
-      file_level_metadata_claim_2eproto[2]);
-}
-
-// ===================================================================
-
-class ModifyStream_Modifiable::_Internal {
- public:
-};
-
-ModifyStream_Modifiable::ModifyStream_Modifiable(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  extensions_(arena) {
-  SharedCtor();
-  // @@protoc_insertion_point(arena_constructor:pb.ModifyStream.Modifiable)
-}
-ModifyStream_Modifiable::ModifyStream_Modifiable(const ModifyStream_Modifiable& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      extensions_(from.extensions_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:pb.ModifyStream.Modifiable)
-}
-
-inline void ModifyStream_Modifiable::SharedCtor() {
-}
-
-ModifyStream_Modifiable::~ModifyStream_Modifiable() {
-  // @@protoc_insertion_point(destructor:pb.ModifyStream.Modifiable)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void ModifyStream_Modifiable::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-}
-
-void ModifyStream_Modifiable::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-
-void ModifyStream_Modifiable::Clear() {
-// @@protoc_insertion_point(message_clear_start:pb.ModifyStream.Modifiable)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  extensions_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* ModifyStream_Modifiable::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // repeated .pb.Stream.Extension extensions = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_extensions(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* ModifyStream_Modifiable::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:pb.ModifyStream.Modifiable)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // repeated .pb.Stream.Extension extensions = 1;
-  for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_extensions_size()); i < n; i++) {
-    const auto& repfield = this->_internal_extensions(i);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:pb.ModifyStream.Modifiable)
-  return target;
-}
-
-size_t ModifyStream_Modifiable::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:pb.ModifyStream.Modifiable)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // repeated .pb.Stream.Extension extensions = 1;
-  total_size += 1UL * this->_internal_extensions_size();
-  for (const auto& msg : this->extensions_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ModifyStream_Modifiable::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    ModifyStream_Modifiable::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ModifyStream_Modifiable::GetClassData() const { return &_class_data_; }
-
-void ModifyStream_Modifiable::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<ModifyStream_Modifiable *>(to)->MergeFrom(
-      static_cast<const ModifyStream_Modifiable &>(from));
-}
-
-
-void ModifyStream_Modifiable::MergeFrom(const ModifyStream_Modifiable& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:pb.ModifyStream.Modifiable)
-  GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  extensions_.MergeFrom(from.extensions_);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void ModifyStream_Modifiable::CopyFrom(const ModifyStream_Modifiable& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:pb.ModifyStream.Modifiable)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool ModifyStream_Modifiable::IsInitialized() const {
-  return true;
-}
-
-void ModifyStream_Modifiable::InternalSwap(ModifyStream_Modifiable* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  extensions_.InternalSwap(&other->extensions_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata ModifyStream_Modifiable::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_claim_2eproto_getter, &descriptor_table_claim_2eproto_once,
-      file_level_metadata_claim_2eproto[3]);
+      file_level_metadata_claim_2eproto[4]);
 }
 
 // ===================================================================
 
 class ModifyStream::_Internal {
  public:
-  static const ::pb::ModifyStream_Modifiable& deletions(const ModifyStream* msg);
-  static const ::pb::ModifyStream_Modifiable& edits(const ModifyStream* msg);
+  static const ::pb::Stream_Modifiable& deletions(const ModifyStream* msg);
+  static const ::pb::Stream_Modifiable& edits(const ModifyStream* msg);
 };
 
-const ::pb::ModifyStream_Modifiable&
+const ::pb::Stream_Modifiable&
 ModifyStream::_Internal::deletions(const ModifyStream* msg) {
   return *msg->deletions_;
 }
-const ::pb::ModifyStream_Modifiable&
+const ::pb::Stream_Modifiable&
 ModifyStream::_Internal::edits(const ModifyStream* msg) {
   return *msg->edits_;
 }
@@ -4478,12 +4405,12 @@ ModifyStream::ModifyStream(const ModifyStream& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_deletions()) {
-    deletions_ = new ::pb::ModifyStream_Modifiable(*from.deletions_);
+    deletions_ = new ::pb::Stream_Modifiable(*from.deletions_);
   } else {
     deletions_ = nullptr;
   }
   if (from._internal_has_edits()) {
-    edits_ = new ::pb::ModifyStream_Modifiable(*from.edits_);
+    edits_ = new ::pb::Stream_Modifiable(*from.edits_);
   } else {
     edits_ = nullptr;
   }
@@ -4539,7 +4466,7 @@ const char* ModifyStream::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .pb.ModifyStream.Modifiable deletions = 1;
+      // .pb.Stream.Modifiable deletions = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_deletions(), ptr);
@@ -4547,7 +4474,7 @@ const char* ModifyStream::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
         } else
           goto handle_unusual;
         continue;
-      // .pb.ModifyStream.Modifiable edits = 2;
+      // .pb.Stream.Modifiable edits = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_edits(), ptr);
@@ -4584,14 +4511,14 @@ uint8_t* ModifyStream::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .pb.ModifyStream.Modifiable deletions = 1;
+  // .pb.Stream.Modifiable deletions = 1;
   if (this->_internal_has_deletions()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(1, _Internal::deletions(this),
         _Internal::deletions(this).GetCachedSize(), target, stream);
   }
 
-  // .pb.ModifyStream.Modifiable edits = 2;
+  // .pb.Stream.Modifiable edits = 2;
   if (this->_internal_has_edits()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(2, _Internal::edits(this),
@@ -4614,14 +4541,14 @@ size_t ModifyStream::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .pb.ModifyStream.Modifiable deletions = 1;
+  // .pb.Stream.Modifiable deletions = 1;
   if (this->_internal_has_deletions()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *deletions_);
   }
 
-  // .pb.ModifyStream.Modifiable edits = 2;
+  // .pb.Stream.Modifiable edits = 2;
   if (this->_internal_has_edits()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -4651,10 +4578,10 @@ void ModifyStream::MergeFrom(const ModifyStream& from) {
   (void) cached_has_bits;
 
   if (from._internal_has_deletions()) {
-    _internal_mutable_deletions()->::pb::ModifyStream_Modifiable::MergeFrom(from._internal_deletions());
+    _internal_mutable_deletions()->::pb::Stream_Modifiable::MergeFrom(from._internal_deletions());
   }
   if (from._internal_has_edits()) {
-    _internal_mutable_edits()->::pb::ModifyStream_Modifiable::MergeFrom(from._internal_edits());
+    _internal_mutable_edits()->::pb::Stream_Modifiable::MergeFrom(from._internal_edits());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -4684,7 +4611,7 @@ void ModifyStream::InternalSwap(ModifyStream* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ModifyStream::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_claim_2eproto_getter, &descriptor_table_claim_2eproto_once,
-      file_level_metadata_claim_2eproto[4]);
+      file_level_metadata_claim_2eproto[5]);
 }
 
 // ===================================================================
@@ -5060,7 +4987,7 @@ void Channel::InternalSwap(Channel* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Channel::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_claim_2eproto_getter, &descriptor_table_claim_2eproto_once,
-      file_level_metadata_claim_2eproto[5]);
+      file_level_metadata_claim_2eproto[6]);
 }
 
 // ===================================================================
@@ -5250,7 +5177,7 @@ void ClaimReference::InternalSwap(ClaimReference* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ClaimReference::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_claim_2eproto_getter, &descriptor_table_claim_2eproto_once,
-      file_level_metadata_claim_2eproto[6]);
+      file_level_metadata_claim_2eproto[7]);
 }
 
 // ===================================================================
@@ -5530,7 +5457,7 @@ void ModifyingClaimReference::InternalSwap(ModifyingClaimReference* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ModifyingClaimReference::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_claim_2eproto_getter, &descriptor_table_claim_2eproto_once,
-      file_level_metadata_claim_2eproto[7]);
+      file_level_metadata_claim_2eproto[8]);
 }
 
 // ===================================================================
@@ -5737,7 +5664,7 @@ void ClaimList::InternalSwap(ClaimList* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ClaimList::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_claim_2eproto_getter, &descriptor_table_claim_2eproto_once,
-      file_level_metadata_claim_2eproto[8]);
+      file_level_metadata_claim_2eproto[9]);
 }
 
 // ===================================================================
@@ -6183,7 +6110,7 @@ void Source::InternalSwap(Source* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Source::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_claim_2eproto_getter, &descriptor_table_claim_2eproto_once,
-      file_level_metadata_claim_2eproto[9]);
+      file_level_metadata_claim_2eproto[10]);
 }
 
 // ===================================================================
@@ -6436,7 +6363,7 @@ void Fee::InternalSwap(Fee* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Fee::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_claim_2eproto_getter, &descriptor_table_claim_2eproto_once,
-      file_level_metadata_claim_2eproto[10]);
+      file_level_metadata_claim_2eproto[11]);
 }
 
 // ===================================================================
@@ -6641,7 +6568,7 @@ void Image::InternalSwap(Image* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Image::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_claim_2eproto_getter, &descriptor_table_claim_2eproto_once,
-      file_level_metadata_claim_2eproto[11]);
+      file_level_metadata_claim_2eproto[12]);
 }
 
 // ===================================================================
@@ -6908,7 +6835,7 @@ void Video::InternalSwap(Video* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Video::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_claim_2eproto_getter, &descriptor_table_claim_2eproto_once,
-      file_level_metadata_claim_2eproto[12]);
+      file_level_metadata_claim_2eproto[13]);
 }
 
 // ===================================================================
@@ -7079,7 +7006,7 @@ void Audio::InternalSwap(Audio* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Audio::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_claim_2eproto_getter, &descriptor_table_claim_2eproto_once,
-      file_level_metadata_claim_2eproto[13]);
+      file_level_metadata_claim_2eproto[14]);
 }
 
 // ===================================================================
@@ -7274,7 +7201,7 @@ void Software::InternalSwap(Software* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Software::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_claim_2eproto_getter, &descriptor_table_claim_2eproto_once,
-      file_level_metadata_claim_2eproto[14]);
+      file_level_metadata_claim_2eproto[15]);
 }
 
 // ===================================================================
@@ -7510,7 +7437,7 @@ void Language::InternalSwap(Language* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Language::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_claim_2eproto_getter, &descriptor_table_claim_2eproto_once,
-      file_level_metadata_claim_2eproto[15]);
+      file_level_metadata_claim_2eproto[16]);
 }
 
 // ===================================================================
@@ -7886,7 +7813,7 @@ void Location::InternalSwap(Location* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Location::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_claim_2eproto_getter, &descriptor_table_claim_2eproto_once,
-      file_level_metadata_claim_2eproto[16]);
+      file_level_metadata_claim_2eproto[17]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -7896,17 +7823,21 @@ template<> PROTOBUF_NOINLINE ::pb::Claim*
 Arena::CreateMaybeMessage< ::pb::Claim >(Arena* arena) {
   return Arena::CreateMessageInternal< ::pb::Claim >(arena);
 }
-template<> PROTOBUF_NOINLINE ::pb::Stream_Extension*
-Arena::CreateMaybeMessage< ::pb::Stream_Extension >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::pb::Stream_Extension >(arena);
+template<> PROTOBUF_NOINLINE ::pb::Stream_ExtensionsEntry_DoNotUse*
+Arena::CreateMaybeMessage< ::pb::Stream_ExtensionsEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::pb::Stream_ExtensionsEntry_DoNotUse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::pb::Stream_Modifiable_ExtensionsEntry_DoNotUse*
+Arena::CreateMaybeMessage< ::pb::Stream_Modifiable_ExtensionsEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::pb::Stream_Modifiable_ExtensionsEntry_DoNotUse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::pb::Stream_Modifiable*
+Arena::CreateMaybeMessage< ::pb::Stream_Modifiable >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::pb::Stream_Modifiable >(arena);
 }
 template<> PROTOBUF_NOINLINE ::pb::Stream*
 Arena::CreateMaybeMessage< ::pb::Stream >(Arena* arena) {
   return Arena::CreateMessageInternal< ::pb::Stream >(arena);
-}
-template<> PROTOBUF_NOINLINE ::pb::ModifyStream_Modifiable*
-Arena::CreateMaybeMessage< ::pb::ModifyStream_Modifiable >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::pb::ModifyStream_Modifiable >(arena);
 }
 template<> PROTOBUF_NOINLINE ::pb::ModifyStream*
 Arena::CreateMaybeMessage< ::pb::ModifyStream >(Arena* arena) {

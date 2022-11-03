@@ -33,20 +33,19 @@ message Stream {
         Software software = 13;
     }
 
-    message Extension {
-        // Field "any" should contain one of the extension types (e.g. StringMap).
-        google.protobuf.Any any = 1;
+    // Value should contain one of the extension types (e.g. StringMap).
+    // Key provides a hint indicating what keys we should expect in the map.
+    map<string, google.protobuf.Any> extensions = 14;
+
+    message Modifiable {
+        // Limit modifications to extensions for now.
+        map<string, google.protobuf.Any> extensions = 1;
     }
-    repeated Extension extensions = 14;
 }
 
 message ModifyStream {
-    message Modifiable {
-        // Limit modifications to Stream.Extension for now.
-        repeated Stream.Extension extensions = 1;
-    }
-    Modifiable deletions = 1;
-    Modifiable edits = 2;
+    Stream.Modifiable deletions = 1;
+    Stream.Modifiable edits = 2;
 }
 
 message Channel {

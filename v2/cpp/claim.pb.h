@@ -29,6 +29,9 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/map.h>  // IWYU pragma: export
+#include <google/protobuf/map_entry.h>
+#include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include <google/protobuf/any.pb.h>
@@ -77,9 +80,6 @@ extern LocationDefaultTypeInternal _Location_default_instance_;
 class ModifyStream;
 struct ModifyStreamDefaultTypeInternal;
 extern ModifyStreamDefaultTypeInternal _ModifyStream_default_instance_;
-class ModifyStream_Modifiable;
-struct ModifyStream_ModifiableDefaultTypeInternal;
-extern ModifyStream_ModifiableDefaultTypeInternal _ModifyStream_Modifiable_default_instance_;
 class ModifyingClaimReference;
 struct ModifyingClaimReferenceDefaultTypeInternal;
 extern ModifyingClaimReferenceDefaultTypeInternal _ModifyingClaimReference_default_instance_;
@@ -92,9 +92,15 @@ extern SourceDefaultTypeInternal _Source_default_instance_;
 class Stream;
 struct StreamDefaultTypeInternal;
 extern StreamDefaultTypeInternal _Stream_default_instance_;
-class Stream_Extension;
-struct Stream_ExtensionDefaultTypeInternal;
-extern Stream_ExtensionDefaultTypeInternal _Stream_Extension_default_instance_;
+class Stream_ExtensionsEntry_DoNotUse;
+struct Stream_ExtensionsEntry_DoNotUseDefaultTypeInternal;
+extern Stream_ExtensionsEntry_DoNotUseDefaultTypeInternal _Stream_ExtensionsEntry_DoNotUse_default_instance_;
+class Stream_Modifiable;
+struct Stream_ModifiableDefaultTypeInternal;
+extern Stream_ModifiableDefaultTypeInternal _Stream_Modifiable_default_instance_;
+class Stream_Modifiable_ExtensionsEntry_DoNotUse;
+struct Stream_Modifiable_ExtensionsEntry_DoNotUseDefaultTypeInternal;
+extern Stream_Modifiable_ExtensionsEntry_DoNotUseDefaultTypeInternal _Stream_Modifiable_ExtensionsEntry_DoNotUse_default_instance_;
 class Video;
 struct VideoDefaultTypeInternal;
 extern VideoDefaultTypeInternal _Video_default_instance_;
@@ -110,12 +116,13 @@ template<> ::pb::Image* Arena::CreateMaybeMessage<::pb::Image>(Arena*);
 template<> ::pb::Language* Arena::CreateMaybeMessage<::pb::Language>(Arena*);
 template<> ::pb::Location* Arena::CreateMaybeMessage<::pb::Location>(Arena*);
 template<> ::pb::ModifyStream* Arena::CreateMaybeMessage<::pb::ModifyStream>(Arena*);
-template<> ::pb::ModifyStream_Modifiable* Arena::CreateMaybeMessage<::pb::ModifyStream_Modifiable>(Arena*);
 template<> ::pb::ModifyingClaimReference* Arena::CreateMaybeMessage<::pb::ModifyingClaimReference>(Arena*);
 template<> ::pb::Software* Arena::CreateMaybeMessage<::pb::Software>(Arena*);
 template<> ::pb::Source* Arena::CreateMaybeMessage<::pb::Source>(Arena*);
 template<> ::pb::Stream* Arena::CreateMaybeMessage<::pb::Stream>(Arena*);
-template<> ::pb::Stream_Extension* Arena::CreateMaybeMessage<::pb::Stream_Extension>(Arena*);
+template<> ::pb::Stream_ExtensionsEntry_DoNotUse* Arena::CreateMaybeMessage<::pb::Stream_ExtensionsEntry_DoNotUse>(Arena*);
+template<> ::pb::Stream_Modifiable* Arena::CreateMaybeMessage<::pb::Stream_Modifiable>(Arena*);
+template<> ::pb::Stream_Modifiable_ExtensionsEntry_DoNotUse* Arena::CreateMaybeMessage<::pb::Stream_Modifiable_ExtensionsEntry_DoNotUse>(Arena*);
 template<> ::pb::Video* Arena::CreateMaybeMessage<::pb::Video>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace pb {
@@ -1541,24 +1548,76 @@ class Claim final :
 };
 // -------------------------------------------------------------------
 
-class Stream_Extension final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.Stream.Extension) */ {
- public:
-  inline Stream_Extension() : Stream_Extension(nullptr) {}
-  ~Stream_Extension() override;
-  explicit PROTOBUF_CONSTEXPR Stream_Extension(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+class Stream_ExtensionsEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Stream_ExtensionsEntry_DoNotUse, 
+    std::string, ::PROTOBUF_NAMESPACE_ID::Any,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Stream_ExtensionsEntry_DoNotUse, 
+    std::string, ::PROTOBUF_NAMESPACE_ID::Any,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> SuperType;
+  Stream_ExtensionsEntry_DoNotUse();
+  explicit PROTOBUF_CONSTEXPR Stream_ExtensionsEntry_DoNotUse(
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit Stream_ExtensionsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const Stream_ExtensionsEntry_DoNotUse& other);
+  static const Stream_ExtensionsEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const Stream_ExtensionsEntry_DoNotUse*>(&_Stream_ExtensionsEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "pb.Stream.ExtensionsEntry.key");
+ }
+  static bool ValidateValue(void*) { return true; }
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  friend struct ::TableStruct_claim_2eproto;
+};
 
-  Stream_Extension(const Stream_Extension& from);
-  Stream_Extension(Stream_Extension&& from) noexcept
-    : Stream_Extension() {
+// -------------------------------------------------------------------
+
+class Stream_Modifiable_ExtensionsEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Stream_Modifiable_ExtensionsEntry_DoNotUse, 
+    std::string, ::PROTOBUF_NAMESPACE_ID::Any,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Stream_Modifiable_ExtensionsEntry_DoNotUse, 
+    std::string, ::PROTOBUF_NAMESPACE_ID::Any,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> SuperType;
+  Stream_Modifiable_ExtensionsEntry_DoNotUse();
+  explicit PROTOBUF_CONSTEXPR Stream_Modifiable_ExtensionsEntry_DoNotUse(
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit Stream_Modifiable_ExtensionsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const Stream_Modifiable_ExtensionsEntry_DoNotUse& other);
+  static const Stream_Modifiable_ExtensionsEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const Stream_Modifiable_ExtensionsEntry_DoNotUse*>(&_Stream_Modifiable_ExtensionsEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "pb.Stream.Modifiable.ExtensionsEntry.key");
+ }
+  static bool ValidateValue(void*) { return true; }
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  friend struct ::TableStruct_claim_2eproto;
+};
+
+// -------------------------------------------------------------------
+
+class Stream_Modifiable final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.Stream.Modifiable) */ {
+ public:
+  inline Stream_Modifiable() : Stream_Modifiable(nullptr) {}
+  ~Stream_Modifiable() override;
+  explicit PROTOBUF_CONSTEXPR Stream_Modifiable(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  Stream_Modifiable(const Stream_Modifiable& from);
+  Stream_Modifiable(Stream_Modifiable&& from) noexcept
+    : Stream_Modifiable() {
     *this = ::std::move(from);
   }
 
-  inline Stream_Extension& operator=(const Stream_Extension& from) {
+  inline Stream_Modifiable& operator=(const Stream_Modifiable& from) {
     CopyFrom(from);
     return *this;
   }
-  inline Stream_Extension& operator=(Stream_Extension&& from) noexcept {
+  inline Stream_Modifiable& operator=(Stream_Modifiable&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -1581,20 +1640,20 @@ class Stream_Extension final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const Stream_Extension& default_instance() {
+  static const Stream_Modifiable& default_instance() {
     return *internal_default_instance();
   }
-  static inline const Stream_Extension* internal_default_instance() {
-    return reinterpret_cast<const Stream_Extension*>(
-               &_Stream_Extension_default_instance_);
+  static inline const Stream_Modifiable* internal_default_instance() {
+    return reinterpret_cast<const Stream_Modifiable*>(
+               &_Stream_Modifiable_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    3;
 
-  friend void swap(Stream_Extension& a, Stream_Extension& b) {
+  friend void swap(Stream_Modifiable& a, Stream_Modifiable& b) {
     a.Swap(&b);
   }
-  inline void Swap(Stream_Extension* other) {
+  inline void Swap(Stream_Modifiable* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -1607,7 +1666,7 @@ class Stream_Extension final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(Stream_Extension* other) {
+  void UnsafeArenaSwap(Stream_Modifiable* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -1615,13 +1674,13 @@ class Stream_Extension final :
 
   // implements Message ----------------------------------------------
 
-  Stream_Extension* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<Stream_Extension>(arena);
+  Stream_Modifiable* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<Stream_Modifiable>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const Stream_Extension& from);
+  void CopyFrom(const Stream_Modifiable& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const Stream_Extension& from);
+  void MergeFrom(const Stream_Modifiable& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
   public:
@@ -1638,16 +1697,18 @@ class Stream_Extension final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(Stream_Extension* other);
+  void InternalSwap(Stream_Modifiable* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "pb.Stream.Extension";
+    return "pb.Stream.Modifiable";
   }
   protected:
-  explicit Stream_Extension(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit Stream_Modifiable(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
   public:
 
   static const ClassData _class_data_;
@@ -1657,37 +1718,41 @@ class Stream_Extension final :
 
   // nested types ----------------------------------------------------
 
+
   // accessors -------------------------------------------------------
 
   enum : int {
-    kAnyFieldNumber = 1,
+    kExtensionsFieldNumber = 1,
   };
-  // .google.protobuf.Any any = 1;
-  bool has_any() const;
+  // map<string, .google.protobuf.Any> extensions = 1;
+  int extensions_size() const;
   private:
-  bool _internal_has_any() const;
+  int _internal_extensions_size() const;
   public:
-  void clear_any();
-  const ::PROTOBUF_NAMESPACE_ID::Any& any() const;
-  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Any* release_any();
-  ::PROTOBUF_NAMESPACE_ID::Any* mutable_any();
-  void set_allocated_any(::PROTOBUF_NAMESPACE_ID::Any* any);
+  void clear_extensions();
   private:
-  const ::PROTOBUF_NAMESPACE_ID::Any& _internal_any() const;
-  ::PROTOBUF_NAMESPACE_ID::Any* _internal_mutable_any();
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >&
+      _internal_extensions() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >*
+      _internal_mutable_extensions();
   public:
-  void unsafe_arena_set_allocated_any(
-      ::PROTOBUF_NAMESPACE_ID::Any* any);
-  ::PROTOBUF_NAMESPACE_ID::Any* unsafe_arena_release_any();
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >&
+      extensions() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >*
+      mutable_extensions();
 
-  // @@protoc_insertion_point(class_scope:pb.Stream.Extension)
+  // @@protoc_insertion_point(class_scope:pb.Stream.Modifiable)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::Any* any_;
+  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+      Stream_Modifiable_ExtensionsEntry_DoNotUse,
+      std::string, ::PROTOBUF_NAMESPACE_ID::Any,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> extensions_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_claim_2eproto;
 };
@@ -1749,7 +1814,7 @@ class Stream final :
                &_Stream_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    4;
 
   friend void swap(Stream& a, Stream& b) {
     a.Swap(&b);
@@ -1808,6 +1873,8 @@ class Stream final :
   protected:
   explicit Stream(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
   public:
 
   static const ClassData _class_data_;
@@ -1817,7 +1884,7 @@ class Stream final :
 
   // nested types ----------------------------------------------------
 
-  typedef Stream_Extension Extension;
+  typedef Stream_Modifiable Modifiable;
 
   // accessors -------------------------------------------------------
 
@@ -1834,23 +1901,22 @@ class Stream final :
     kAudioFieldNumber = 12,
     kSoftwareFieldNumber = 13,
   };
-  // repeated .pb.Stream.Extension extensions = 14;
+  // map<string, .google.protobuf.Any> extensions = 14;
   int extensions_size() const;
   private:
   int _internal_extensions_size() const;
   public:
   void clear_extensions();
-  ::pb::Stream_Extension* mutable_extensions(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::Stream_Extension >*
-      mutable_extensions();
   private:
-  const ::pb::Stream_Extension& _internal_extensions(int index) const;
-  ::pb::Stream_Extension* _internal_add_extensions();
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >&
+      _internal_extensions() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >*
+      _internal_mutable_extensions();
   public:
-  const ::pb::Stream_Extension& extensions(int index) const;
-  ::pb::Stream_Extension* add_extensions();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::Stream_Extension >&
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >&
       extensions() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >*
+      mutable_extensions();
 
   // string author = 2;
   void clear_author();
@@ -2027,7 +2093,11 @@ class Stream final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::Stream_Extension > extensions_;
+  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+      Stream_ExtensionsEntry_DoNotUse,
+      std::string, ::PROTOBUF_NAMESPACE_ID::Any,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> extensions_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr author_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr license_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr license_url_;
@@ -2045,158 +2115,6 @@ class Stream final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   uint32_t _oneof_case_[1];
 
-  friend struct ::TableStruct_claim_2eproto;
-};
-// -------------------------------------------------------------------
-
-class ModifyStream_Modifiable final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.ModifyStream.Modifiable) */ {
- public:
-  inline ModifyStream_Modifiable() : ModifyStream_Modifiable(nullptr) {}
-  ~ModifyStream_Modifiable() override;
-  explicit PROTOBUF_CONSTEXPR ModifyStream_Modifiable(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  ModifyStream_Modifiable(const ModifyStream_Modifiable& from);
-  ModifyStream_Modifiable(ModifyStream_Modifiable&& from) noexcept
-    : ModifyStream_Modifiable() {
-    *this = ::std::move(from);
-  }
-
-  inline ModifyStream_Modifiable& operator=(const ModifyStream_Modifiable& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline ModifyStream_Modifiable& operator=(ModifyStream_Modifiable&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const ModifyStream_Modifiable& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const ModifyStream_Modifiable* internal_default_instance() {
-    return reinterpret_cast<const ModifyStream_Modifiable*>(
-               &_ModifyStream_Modifiable_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    3;
-
-  friend void swap(ModifyStream_Modifiable& a, ModifyStream_Modifiable& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(ModifyStream_Modifiable* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(ModifyStream_Modifiable* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  ModifyStream_Modifiable* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<ModifyStream_Modifiable>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const ModifyStream_Modifiable& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const ModifyStream_Modifiable& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  uint8_t* _InternalSerialize(
-      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(ModifyStream_Modifiable* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "pb.ModifyStream.Modifiable";
-  }
-  protected:
-  explicit ModifyStream_Modifiable(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kExtensionsFieldNumber = 1,
-  };
-  // repeated .pb.Stream.Extension extensions = 1;
-  int extensions_size() const;
-  private:
-  int _internal_extensions_size() const;
-  public:
-  void clear_extensions();
-  ::pb::Stream_Extension* mutable_extensions(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::Stream_Extension >*
-      mutable_extensions();
-  private:
-  const ::pb::Stream_Extension& _internal_extensions(int index) const;
-  ::pb::Stream_Extension* _internal_add_extensions();
-  public:
-  const ::pb::Stream_Extension& extensions(int index) const;
-  ::pb::Stream_Extension* add_extensions();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::Stream_Extension >&
-      extensions() const;
-
-  // @@protoc_insertion_point(class_scope:pb.ModifyStream.Modifiable)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::Stream_Extension > extensions_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_claim_2eproto;
 };
 // -------------------------------------------------------------------
@@ -2249,7 +2167,7 @@ class ModifyStream final :
                &_ModifyStream_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   friend void swap(ModifyStream& a, ModifyStream& b) {
     a.Swap(&b);
@@ -2317,49 +2235,47 @@ class ModifyStream final :
 
   // nested types ----------------------------------------------------
 
-  typedef ModifyStream_Modifiable Modifiable;
-
   // accessors -------------------------------------------------------
 
   enum : int {
     kDeletionsFieldNumber = 1,
     kEditsFieldNumber = 2,
   };
-  // .pb.ModifyStream.Modifiable deletions = 1;
+  // .pb.Stream.Modifiable deletions = 1;
   bool has_deletions() const;
   private:
   bool _internal_has_deletions() const;
   public:
   void clear_deletions();
-  const ::pb::ModifyStream_Modifiable& deletions() const;
-  PROTOBUF_NODISCARD ::pb::ModifyStream_Modifiable* release_deletions();
-  ::pb::ModifyStream_Modifiable* mutable_deletions();
-  void set_allocated_deletions(::pb::ModifyStream_Modifiable* deletions);
+  const ::pb::Stream_Modifiable& deletions() const;
+  PROTOBUF_NODISCARD ::pb::Stream_Modifiable* release_deletions();
+  ::pb::Stream_Modifiable* mutable_deletions();
+  void set_allocated_deletions(::pb::Stream_Modifiable* deletions);
   private:
-  const ::pb::ModifyStream_Modifiable& _internal_deletions() const;
-  ::pb::ModifyStream_Modifiable* _internal_mutable_deletions();
+  const ::pb::Stream_Modifiable& _internal_deletions() const;
+  ::pb::Stream_Modifiable* _internal_mutable_deletions();
   public:
   void unsafe_arena_set_allocated_deletions(
-      ::pb::ModifyStream_Modifiable* deletions);
-  ::pb::ModifyStream_Modifiable* unsafe_arena_release_deletions();
+      ::pb::Stream_Modifiable* deletions);
+  ::pb::Stream_Modifiable* unsafe_arena_release_deletions();
 
-  // .pb.ModifyStream.Modifiable edits = 2;
+  // .pb.Stream.Modifiable edits = 2;
   bool has_edits() const;
   private:
   bool _internal_has_edits() const;
   public:
   void clear_edits();
-  const ::pb::ModifyStream_Modifiable& edits() const;
-  PROTOBUF_NODISCARD ::pb::ModifyStream_Modifiable* release_edits();
-  ::pb::ModifyStream_Modifiable* mutable_edits();
-  void set_allocated_edits(::pb::ModifyStream_Modifiable* edits);
+  const ::pb::Stream_Modifiable& edits() const;
+  PROTOBUF_NODISCARD ::pb::Stream_Modifiable* release_edits();
+  ::pb::Stream_Modifiable* mutable_edits();
+  void set_allocated_edits(::pb::Stream_Modifiable* edits);
   private:
-  const ::pb::ModifyStream_Modifiable& _internal_edits() const;
-  ::pb::ModifyStream_Modifiable* _internal_mutable_edits();
+  const ::pb::Stream_Modifiable& _internal_edits() const;
+  ::pb::Stream_Modifiable* _internal_mutable_edits();
   public:
   void unsafe_arena_set_allocated_edits(
-      ::pb::ModifyStream_Modifiable* edits);
-  ::pb::ModifyStream_Modifiable* unsafe_arena_release_edits();
+      ::pb::Stream_Modifiable* edits);
+  ::pb::Stream_Modifiable* unsafe_arena_release_edits();
 
   // @@protoc_insertion_point(class_scope:pb.ModifyStream)
  private:
@@ -2368,8 +2284,8 @@ class ModifyStream final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::pb::ModifyStream_Modifiable* deletions_;
-  ::pb::ModifyStream_Modifiable* edits_;
+  ::pb::Stream_Modifiable* deletions_;
+  ::pb::Stream_Modifiable* edits_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_claim_2eproto;
 };
@@ -2423,7 +2339,7 @@ class Channel final :
                &_Channel_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   friend void swap(Channel& a, Channel& b) {
     a.Swap(&b);
@@ -2643,7 +2559,7 @@ class ClaimReference final :
                &_ClaimReference_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   friend void swap(ClaimReference& a, ClaimReference& b) {
     a.Swap(&b);
@@ -2796,7 +2712,7 @@ class ModifyingClaimReference final :
                &_ModifyingClaimReference_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   friend void swap(ModifyingClaimReference& a, ModifyingClaimReference& b) {
     a.Swap(&b);
@@ -2976,7 +2892,7 @@ class ClaimList final :
                &_ClaimList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
   friend void swap(ClaimList& a, ClaimList& b) {
     a.Swap(&b);
@@ -3169,7 +3085,7 @@ class Source final :
                &_Source_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    10;
 
   friend void swap(Source& a, Source& b) {
     a.Swap(&b);
@@ -3408,7 +3324,7 @@ class Fee final :
                &_Fee_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    11;
 
   friend void swap(Fee& a, Fee& b) {
     a.Swap(&b);
@@ -3612,7 +3528,7 @@ class Image final :
                &_Image_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    12;
 
   friend void swap(Image& a, Image& b) {
     a.Swap(&b);
@@ -3766,7 +3682,7 @@ class Video final :
                &_Video_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    13;
 
   friend void swap(Video& a, Video& b) {
     a.Swap(&b);
@@ -3951,7 +3867,7 @@ class Audio final :
                &_Audio_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    14;
 
   friend void swap(Audio& a, Audio& b) {
     a.Swap(&b);
@@ -4094,7 +4010,7 @@ class Software final :
                &_Software_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    15;
 
   friend void swap(Software& a, Software& b) {
     a.Swap(&b);
@@ -4282,7 +4198,7 @@ class Language final :
                &_Language_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    16;
 
   friend void swap(Language& a, Language& b) {
     a.Swap(&b);
@@ -5269,7 +5185,7 @@ class Location final :
                &_Location_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    17;
 
   friend void swap(Location& a, Location& b) {
     a.Swap(&b);
@@ -7181,91 +7097,36 @@ inline Claim::TypeCase Claim::type_case() const {
 }
 // -------------------------------------------------------------------
 
-// Stream_Extension
+// -------------------------------------------------------------------
 
-// .google.protobuf.Any any = 1;
-inline bool Stream_Extension::_internal_has_any() const {
-  return this != internal_default_instance() && any_ != nullptr;
+// -------------------------------------------------------------------
+
+// Stream_Modifiable
+
+// map<string, .google.protobuf.Any> extensions = 1;
+inline int Stream_Modifiable::_internal_extensions_size() const {
+  return extensions_.size();
 }
-inline bool Stream_Extension::has_any() const {
-  return _internal_has_any();
+inline int Stream_Modifiable::extensions_size() const {
+  return _internal_extensions_size();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Any& Stream_Extension::_internal_any() const {
-  const ::PROTOBUF_NAMESPACE_ID::Any* p = any_;
-  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Any&>(
-      ::PROTOBUF_NAMESPACE_ID::_Any_default_instance_);
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >&
+Stream_Modifiable::_internal_extensions() const {
+  return extensions_.GetMap();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Any& Stream_Extension::any() const {
-  // @@protoc_insertion_point(field_get:pb.Stream.Extension.any)
-  return _internal_any();
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >&
+Stream_Modifiable::extensions() const {
+  // @@protoc_insertion_point(field_map:pb.Stream.Modifiable.extensions)
+  return _internal_extensions();
 }
-inline void Stream_Extension::unsafe_arena_set_allocated_any(
-    ::PROTOBUF_NAMESPACE_ID::Any* any) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(any_);
-  }
-  any_ = any;
-  if (any) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pb.Stream.Extension.any)
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >*
+Stream_Modifiable::_internal_mutable_extensions() {
+  return extensions_.MutableMap();
 }
-inline ::PROTOBUF_NAMESPACE_ID::Any* Stream_Extension::release_any() {
-  
-  ::PROTOBUF_NAMESPACE_ID::Any* temp = any_;
-  any_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::PROTOBUF_NAMESPACE_ID::Any* Stream_Extension::unsafe_arena_release_any() {
-  // @@protoc_insertion_point(field_release:pb.Stream.Extension.any)
-  
-  ::PROTOBUF_NAMESPACE_ID::Any* temp = any_;
-  any_ = nullptr;
-  return temp;
-}
-inline ::PROTOBUF_NAMESPACE_ID::Any* Stream_Extension::_internal_mutable_any() {
-  
-  if (any_ == nullptr) {
-    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Any>(GetArenaForAllocation());
-    any_ = p;
-  }
-  return any_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::Any* Stream_Extension::mutable_any() {
-  ::PROTOBUF_NAMESPACE_ID::Any* _msg = _internal_mutable_any();
-  // @@protoc_insertion_point(field_mutable:pb.Stream.Extension.any)
-  return _msg;
-}
-inline void Stream_Extension::set_allocated_any(::PROTOBUF_NAMESPACE_ID::Any* any) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(any_);
-  }
-  if (any) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(any));
-    if (message_arena != submessage_arena) {
-      any = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, any, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  any_ = any;
-  // @@protoc_insertion_point(field_set_allocated:pb.Stream.Extension.any)
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >*
+Stream_Modifiable::mutable_extensions() {
+  // @@protoc_insertion_point(field_mutable_map:pb.Stream.Modifiable.extensions)
+  return _internal_mutable_extensions();
 }
 
 // -------------------------------------------------------------------
@@ -7918,44 +7779,30 @@ inline ::pb::Software* Stream::mutable_software() {
   return _msg;
 }
 
-// repeated .pb.Stream.Extension extensions = 14;
+// map<string, .google.protobuf.Any> extensions = 14;
 inline int Stream::_internal_extensions_size() const {
   return extensions_.size();
 }
 inline int Stream::extensions_size() const {
   return _internal_extensions_size();
 }
-inline void Stream::clear_extensions() {
-  extensions_.Clear();
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >&
+Stream::_internal_extensions() const {
+  return extensions_.GetMap();
 }
-inline ::pb::Stream_Extension* Stream::mutable_extensions(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.Stream.extensions)
-  return extensions_.Mutable(index);
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::Stream_Extension >*
-Stream::mutable_extensions() {
-  // @@protoc_insertion_point(field_mutable_list:pb.Stream.extensions)
-  return &extensions_;
-}
-inline const ::pb::Stream_Extension& Stream::_internal_extensions(int index) const {
-  return extensions_.Get(index);
-}
-inline const ::pb::Stream_Extension& Stream::extensions(int index) const {
-  // @@protoc_insertion_point(field_get:pb.Stream.extensions)
-  return _internal_extensions(index);
-}
-inline ::pb::Stream_Extension* Stream::_internal_add_extensions() {
-  return extensions_.Add();
-}
-inline ::pb::Stream_Extension* Stream::add_extensions() {
-  ::pb::Stream_Extension* _add = _internal_add_extensions();
-  // @@protoc_insertion_point(field_add:pb.Stream.extensions)
-  return _add;
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::Stream_Extension >&
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >&
 Stream::extensions() const {
-  // @@protoc_insertion_point(field_list:pb.Stream.extensions)
-  return extensions_;
+  // @@protoc_insertion_point(field_map:pb.Stream.extensions)
+  return _internal_extensions();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >*
+Stream::_internal_mutable_extensions() {
+  return extensions_.MutableMap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >*
+Stream::mutable_extensions() {
+  // @@protoc_insertion_point(field_mutable_map:pb.Stream.extensions)
+  return _internal_mutable_extensions();
 }
 
 inline bool Stream::has_type() const {
@@ -7969,53 +7816,9 @@ inline Stream::TypeCase Stream::type_case() const {
 }
 // -------------------------------------------------------------------
 
-// ModifyStream_Modifiable
-
-// repeated .pb.Stream.Extension extensions = 1;
-inline int ModifyStream_Modifiable::_internal_extensions_size() const {
-  return extensions_.size();
-}
-inline int ModifyStream_Modifiable::extensions_size() const {
-  return _internal_extensions_size();
-}
-inline void ModifyStream_Modifiable::clear_extensions() {
-  extensions_.Clear();
-}
-inline ::pb::Stream_Extension* ModifyStream_Modifiable::mutable_extensions(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.ModifyStream.Modifiable.extensions)
-  return extensions_.Mutable(index);
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::Stream_Extension >*
-ModifyStream_Modifiable::mutable_extensions() {
-  // @@protoc_insertion_point(field_mutable_list:pb.ModifyStream.Modifiable.extensions)
-  return &extensions_;
-}
-inline const ::pb::Stream_Extension& ModifyStream_Modifiable::_internal_extensions(int index) const {
-  return extensions_.Get(index);
-}
-inline const ::pb::Stream_Extension& ModifyStream_Modifiable::extensions(int index) const {
-  // @@protoc_insertion_point(field_get:pb.ModifyStream.Modifiable.extensions)
-  return _internal_extensions(index);
-}
-inline ::pb::Stream_Extension* ModifyStream_Modifiable::_internal_add_extensions() {
-  return extensions_.Add();
-}
-inline ::pb::Stream_Extension* ModifyStream_Modifiable::add_extensions() {
-  ::pb::Stream_Extension* _add = _internal_add_extensions();
-  // @@protoc_insertion_point(field_add:pb.ModifyStream.Modifiable.extensions)
-  return _add;
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::Stream_Extension >&
-ModifyStream_Modifiable::extensions() const {
-  // @@protoc_insertion_point(field_list:pb.ModifyStream.Modifiable.extensions)
-  return extensions_;
-}
-
-// -------------------------------------------------------------------
-
 // ModifyStream
 
-// .pb.ModifyStream.Modifiable deletions = 1;
+// .pb.Stream.Modifiable deletions = 1;
 inline bool ModifyStream::_internal_has_deletions() const {
   return this != internal_default_instance() && deletions_ != nullptr;
 }
@@ -8028,17 +7831,17 @@ inline void ModifyStream::clear_deletions() {
   }
   deletions_ = nullptr;
 }
-inline const ::pb::ModifyStream_Modifiable& ModifyStream::_internal_deletions() const {
-  const ::pb::ModifyStream_Modifiable* p = deletions_;
-  return p != nullptr ? *p : reinterpret_cast<const ::pb::ModifyStream_Modifiable&>(
-      ::pb::_ModifyStream_Modifiable_default_instance_);
+inline const ::pb::Stream_Modifiable& ModifyStream::_internal_deletions() const {
+  const ::pb::Stream_Modifiable* p = deletions_;
+  return p != nullptr ? *p : reinterpret_cast<const ::pb::Stream_Modifiable&>(
+      ::pb::_Stream_Modifiable_default_instance_);
 }
-inline const ::pb::ModifyStream_Modifiable& ModifyStream::deletions() const {
+inline const ::pb::Stream_Modifiable& ModifyStream::deletions() const {
   // @@protoc_insertion_point(field_get:pb.ModifyStream.deletions)
   return _internal_deletions();
 }
 inline void ModifyStream::unsafe_arena_set_allocated_deletions(
-    ::pb::ModifyStream_Modifiable* deletions) {
+    ::pb::Stream_Modifiable* deletions) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(deletions_);
   }
@@ -8050,9 +7853,9 @@ inline void ModifyStream::unsafe_arena_set_allocated_deletions(
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pb.ModifyStream.deletions)
 }
-inline ::pb::ModifyStream_Modifiable* ModifyStream::release_deletions() {
+inline ::pb::Stream_Modifiable* ModifyStream::release_deletions() {
   
-  ::pb::ModifyStream_Modifiable* temp = deletions_;
+  ::pb::Stream_Modifiable* temp = deletions_;
   deletions_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
@@ -8065,27 +7868,27 @@ inline ::pb::ModifyStream_Modifiable* ModifyStream::release_deletions() {
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::pb::ModifyStream_Modifiable* ModifyStream::unsafe_arena_release_deletions() {
+inline ::pb::Stream_Modifiable* ModifyStream::unsafe_arena_release_deletions() {
   // @@protoc_insertion_point(field_release:pb.ModifyStream.deletions)
   
-  ::pb::ModifyStream_Modifiable* temp = deletions_;
+  ::pb::Stream_Modifiable* temp = deletions_;
   deletions_ = nullptr;
   return temp;
 }
-inline ::pb::ModifyStream_Modifiable* ModifyStream::_internal_mutable_deletions() {
+inline ::pb::Stream_Modifiable* ModifyStream::_internal_mutable_deletions() {
   
   if (deletions_ == nullptr) {
-    auto* p = CreateMaybeMessage<::pb::ModifyStream_Modifiable>(GetArenaForAllocation());
+    auto* p = CreateMaybeMessage<::pb::Stream_Modifiable>(GetArenaForAllocation());
     deletions_ = p;
   }
   return deletions_;
 }
-inline ::pb::ModifyStream_Modifiable* ModifyStream::mutable_deletions() {
-  ::pb::ModifyStream_Modifiable* _msg = _internal_mutable_deletions();
+inline ::pb::Stream_Modifiable* ModifyStream::mutable_deletions() {
+  ::pb::Stream_Modifiable* _msg = _internal_mutable_deletions();
   // @@protoc_insertion_point(field_mutable:pb.ModifyStream.deletions)
   return _msg;
 }
-inline void ModifyStream::set_allocated_deletions(::pb::ModifyStream_Modifiable* deletions) {
+inline void ModifyStream::set_allocated_deletions(::pb::Stream_Modifiable* deletions) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete deletions_;
@@ -8105,7 +7908,7 @@ inline void ModifyStream::set_allocated_deletions(::pb::ModifyStream_Modifiable*
   // @@protoc_insertion_point(field_set_allocated:pb.ModifyStream.deletions)
 }
 
-// .pb.ModifyStream.Modifiable edits = 2;
+// .pb.Stream.Modifiable edits = 2;
 inline bool ModifyStream::_internal_has_edits() const {
   return this != internal_default_instance() && edits_ != nullptr;
 }
@@ -8118,17 +7921,17 @@ inline void ModifyStream::clear_edits() {
   }
   edits_ = nullptr;
 }
-inline const ::pb::ModifyStream_Modifiable& ModifyStream::_internal_edits() const {
-  const ::pb::ModifyStream_Modifiable* p = edits_;
-  return p != nullptr ? *p : reinterpret_cast<const ::pb::ModifyStream_Modifiable&>(
-      ::pb::_ModifyStream_Modifiable_default_instance_);
+inline const ::pb::Stream_Modifiable& ModifyStream::_internal_edits() const {
+  const ::pb::Stream_Modifiable* p = edits_;
+  return p != nullptr ? *p : reinterpret_cast<const ::pb::Stream_Modifiable&>(
+      ::pb::_Stream_Modifiable_default_instance_);
 }
-inline const ::pb::ModifyStream_Modifiable& ModifyStream::edits() const {
+inline const ::pb::Stream_Modifiable& ModifyStream::edits() const {
   // @@protoc_insertion_point(field_get:pb.ModifyStream.edits)
   return _internal_edits();
 }
 inline void ModifyStream::unsafe_arena_set_allocated_edits(
-    ::pb::ModifyStream_Modifiable* edits) {
+    ::pb::Stream_Modifiable* edits) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(edits_);
   }
@@ -8140,9 +7943,9 @@ inline void ModifyStream::unsafe_arena_set_allocated_edits(
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pb.ModifyStream.edits)
 }
-inline ::pb::ModifyStream_Modifiable* ModifyStream::release_edits() {
+inline ::pb::Stream_Modifiable* ModifyStream::release_edits() {
   
-  ::pb::ModifyStream_Modifiable* temp = edits_;
+  ::pb::Stream_Modifiable* temp = edits_;
   edits_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
@@ -8155,27 +7958,27 @@ inline ::pb::ModifyStream_Modifiable* ModifyStream::release_edits() {
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::pb::ModifyStream_Modifiable* ModifyStream::unsafe_arena_release_edits() {
+inline ::pb::Stream_Modifiable* ModifyStream::unsafe_arena_release_edits() {
   // @@protoc_insertion_point(field_release:pb.ModifyStream.edits)
   
-  ::pb::ModifyStream_Modifiable* temp = edits_;
+  ::pb::Stream_Modifiable* temp = edits_;
   edits_ = nullptr;
   return temp;
 }
-inline ::pb::ModifyStream_Modifiable* ModifyStream::_internal_mutable_edits() {
+inline ::pb::Stream_Modifiable* ModifyStream::_internal_mutable_edits() {
   
   if (edits_ == nullptr) {
-    auto* p = CreateMaybeMessage<::pb::ModifyStream_Modifiable>(GetArenaForAllocation());
+    auto* p = CreateMaybeMessage<::pb::Stream_Modifiable>(GetArenaForAllocation());
     edits_ = p;
   }
   return edits_;
 }
-inline ::pb::ModifyStream_Modifiable* ModifyStream::mutable_edits() {
-  ::pb::ModifyStream_Modifiable* _msg = _internal_mutable_edits();
+inline ::pb::Stream_Modifiable* ModifyStream::mutable_edits() {
+  ::pb::Stream_Modifiable* _msg = _internal_mutable_edits();
   // @@protoc_insertion_point(field_mutable:pb.ModifyStream.edits)
   return _msg;
 }
-inline void ModifyStream::set_allocated_edits(::pb::ModifyStream_Modifiable* edits) {
+inline void ModifyStream::set_allocated_edits(::pb::Stream_Modifiable* edits) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete edits_;
@@ -9759,6 +9562,8 @@ inline void Location::set_longitude(int32_t value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
