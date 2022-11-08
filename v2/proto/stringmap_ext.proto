@@ -3,12 +3,11 @@ syntax = "proto3";
 package ext;
 
 // StringMap is a generic kind of Stream.Extension (see claim.proto) which
-// is useful for testing, but is not space-efficient and does not enforce a
-// limited set of fields.
+// is useful for testing & prototyping, but is not space-efficient and does
+// not enforce a fixed set of fields.
 message StringMap {
-    map<string, StringList> s = 2;
-}
-
-message StringList {
-    repeated string vs = 1;
+    message Value {
+        repeated string vs = 1;
+    }
+    map<string, Value> s = 1;
 }

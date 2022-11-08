@@ -48,32 +48,190 @@ struct TableStruct_stringmap_5fext_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_stringmap_5fext_2eproto;
 namespace ext {
-class StringList;
-struct StringListDefaultTypeInternal;
-extern StringListDefaultTypeInternal _StringList_default_instance_;
 class StringMap;
 struct StringMapDefaultTypeInternal;
 extern StringMapDefaultTypeInternal _StringMap_default_instance_;
 class StringMap_SEntry_DoNotUse;
 struct StringMap_SEntry_DoNotUseDefaultTypeInternal;
 extern StringMap_SEntry_DoNotUseDefaultTypeInternal _StringMap_SEntry_DoNotUse_default_instance_;
+class StringMap_Value;
+struct StringMap_ValueDefaultTypeInternal;
+extern StringMap_ValueDefaultTypeInternal _StringMap_Value_default_instance_;
 }  // namespace ext
 PROTOBUF_NAMESPACE_OPEN
-template<> ::ext::StringList* Arena::CreateMaybeMessage<::ext::StringList>(Arena*);
 template<> ::ext::StringMap* Arena::CreateMaybeMessage<::ext::StringMap>(Arena*);
 template<> ::ext::StringMap_SEntry_DoNotUse* Arena::CreateMaybeMessage<::ext::StringMap_SEntry_DoNotUse>(Arena*);
+template<> ::ext::StringMap_Value* Arena::CreateMaybeMessage<::ext::StringMap_Value>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace ext {
 
 // ===================================================================
 
+class StringMap_Value final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:ext.StringMap.Value) */ {
+ public:
+  inline StringMap_Value() : StringMap_Value(nullptr) {}
+  ~StringMap_Value() override;
+  explicit PROTOBUF_CONSTEXPR StringMap_Value(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  StringMap_Value(const StringMap_Value& from);
+  StringMap_Value(StringMap_Value&& from) noexcept
+    : StringMap_Value() {
+    *this = ::std::move(from);
+  }
+
+  inline StringMap_Value& operator=(const StringMap_Value& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline StringMap_Value& operator=(StringMap_Value&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const StringMap_Value& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const StringMap_Value* internal_default_instance() {
+    return reinterpret_cast<const StringMap_Value*>(
+               &_StringMap_Value_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  friend void swap(StringMap_Value& a, StringMap_Value& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(StringMap_Value* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(StringMap_Value* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  StringMap_Value* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<StringMap_Value>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const StringMap_Value& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const StringMap_Value& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(StringMap_Value* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "ext.StringMap.Value";
+  }
+  protected:
+  explicit StringMap_Value(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kVsFieldNumber = 1,
+  };
+  // repeated string vs = 1;
+  int vs_size() const;
+  private:
+  int _internal_vs_size() const;
+  public:
+  void clear_vs();
+  const std::string& vs(int index) const;
+  std::string* mutable_vs(int index);
+  void set_vs(int index, const std::string& value);
+  void set_vs(int index, std::string&& value);
+  void set_vs(int index, const char* value);
+  void set_vs(int index, const char* value, size_t size);
+  std::string* add_vs();
+  void add_vs(const std::string& value);
+  void add_vs(std::string&& value);
+  void add_vs(const char* value);
+  void add_vs(const char* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& vs() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_vs();
+  private:
+  const std::string& _internal_vs(int index) const;
+  std::string* _internal_add_vs();
+  public:
+
+  // @@protoc_insertion_point(class_scope:ext.StringMap.Value)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> vs_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_stringmap_5fext_2eproto;
+};
+// -------------------------------------------------------------------
+
 class StringMap_SEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<StringMap_SEntry_DoNotUse, 
-    std::string, ::ext::StringList,
+    std::string, ::ext::StringMap_Value,
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> {
 public:
   typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<StringMap_SEntry_DoNotUse, 
-    std::string, ::ext::StringList,
+    std::string, ::ext::StringMap_Value,
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> SuperType;
   StringMap_SEntry_DoNotUse();
@@ -141,7 +299,7 @@ class StringMap final :
                &_StringMap_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   friend void swap(StringMap& a, StringMap& b) {
     a.Swap(&b);
@@ -211,27 +369,28 @@ class StringMap final :
 
   // nested types ----------------------------------------------------
 
+  typedef StringMap_Value Value;
 
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSFieldNumber = 2,
+    kSFieldNumber = 1,
   };
-  // map<string, .ext.StringList> s = 2;
+  // map<string, .ext.StringMap.Value> s = 1;
   int s_size() const;
   private:
   int _internal_s_size() const;
   public:
   void clear_s();
   private:
-  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::ext::StringList >&
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::ext::StringMap_Value >&
       _internal_s() const;
-  ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::ext::StringList >*
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::ext::StringMap_Value >*
       _internal_mutable_s();
   public:
-  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::ext::StringList >&
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::ext::StringMap_Value >&
       s() const;
-  ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::ext::StringList >*
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::ext::StringMap_Value >*
       mutable_s();
 
   // @@protoc_insertion_point(class_scope:ext.StringMap)
@@ -243,167 +402,9 @@ class StringMap final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::MapField<
       StringMap_SEntry_DoNotUse,
-      std::string, ::ext::StringList,
+      std::string, ::ext::StringMap_Value,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> s_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_stringmap_5fext_2eproto;
-};
-// -------------------------------------------------------------------
-
-class StringList final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:ext.StringList) */ {
- public:
-  inline StringList() : StringList(nullptr) {}
-  ~StringList() override;
-  explicit PROTOBUF_CONSTEXPR StringList(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  StringList(const StringList& from);
-  StringList(StringList&& from) noexcept
-    : StringList() {
-    *this = ::std::move(from);
-  }
-
-  inline StringList& operator=(const StringList& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline StringList& operator=(StringList&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const StringList& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const StringList* internal_default_instance() {
-    return reinterpret_cast<const StringList*>(
-               &_StringList_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    2;
-
-  friend void swap(StringList& a, StringList& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(StringList* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(StringList* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  StringList* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<StringList>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const StringList& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const StringList& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  uint8_t* _InternalSerialize(
-      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(StringList* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "ext.StringList";
-  }
-  protected:
-  explicit StringList(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kVsFieldNumber = 1,
-  };
-  // repeated string vs = 1;
-  int vs_size() const;
-  private:
-  int _internal_vs_size() const;
-  public:
-  void clear_vs();
-  const std::string& vs(int index) const;
-  std::string* mutable_vs(int index);
-  void set_vs(int index, const std::string& value);
-  void set_vs(int index, std::string&& value);
-  void set_vs(int index, const char* value);
-  void set_vs(int index, const char* value, size_t size);
-  std::string* add_vs();
-  void add_vs(const std::string& value);
-  void add_vs(std::string&& value);
-  void add_vs(const char* value);
-  void add_vs(const char* value, size_t size);
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& vs() const;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_vs();
-  private:
-  const std::string& _internal_vs(int index) const;
-  std::string* _internal_add_vs();
-  public:
-
-  // @@protoc_insertion_point(class_scope:ext.StringList)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> vs_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_stringmap_5fext_2eproto;
 };
@@ -416,11 +417,90 @@ class StringList final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// StringMap_Value
+
+// repeated string vs = 1;
+inline int StringMap_Value::_internal_vs_size() const {
+  return vs_.size();
+}
+inline int StringMap_Value::vs_size() const {
+  return _internal_vs_size();
+}
+inline void StringMap_Value::clear_vs() {
+  vs_.Clear();
+}
+inline std::string* StringMap_Value::add_vs() {
+  std::string* _s = _internal_add_vs();
+  // @@protoc_insertion_point(field_add_mutable:ext.StringMap.Value.vs)
+  return _s;
+}
+inline const std::string& StringMap_Value::_internal_vs(int index) const {
+  return vs_.Get(index);
+}
+inline const std::string& StringMap_Value::vs(int index) const {
+  // @@protoc_insertion_point(field_get:ext.StringMap.Value.vs)
+  return _internal_vs(index);
+}
+inline std::string* StringMap_Value::mutable_vs(int index) {
+  // @@protoc_insertion_point(field_mutable:ext.StringMap.Value.vs)
+  return vs_.Mutable(index);
+}
+inline void StringMap_Value::set_vs(int index, const std::string& value) {
+  vs_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set:ext.StringMap.Value.vs)
+}
+inline void StringMap_Value::set_vs(int index, std::string&& value) {
+  vs_.Mutable(index)->assign(std::move(value));
+  // @@protoc_insertion_point(field_set:ext.StringMap.Value.vs)
+}
+inline void StringMap_Value::set_vs(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  vs_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:ext.StringMap.Value.vs)
+}
+inline void StringMap_Value::set_vs(int index, const char* value, size_t size) {
+  vs_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:ext.StringMap.Value.vs)
+}
+inline std::string* StringMap_Value::_internal_add_vs() {
+  return vs_.Add();
+}
+inline void StringMap_Value::add_vs(const std::string& value) {
+  vs_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:ext.StringMap.Value.vs)
+}
+inline void StringMap_Value::add_vs(std::string&& value) {
+  vs_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:ext.StringMap.Value.vs)
+}
+inline void StringMap_Value::add_vs(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  vs_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:ext.StringMap.Value.vs)
+}
+inline void StringMap_Value::add_vs(const char* value, size_t size) {
+  vs_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:ext.StringMap.Value.vs)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+StringMap_Value::vs() const {
+  // @@protoc_insertion_point(field_list:ext.StringMap.Value.vs)
+  return vs_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+StringMap_Value::mutable_vs() {
+  // @@protoc_insertion_point(field_mutable_list:ext.StringMap.Value.vs)
+  return &vs_;
+}
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // StringMap
 
-// map<string, .ext.StringList> s = 2;
+// map<string, .ext.StringMap.Value> s = 1;
 inline int StringMap::_internal_s_size() const {
   return s_.size();
 }
@@ -430,102 +510,23 @@ inline int StringMap::s_size() const {
 inline void StringMap::clear_s() {
   s_.Clear();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::ext::StringList >&
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::ext::StringMap_Value >&
 StringMap::_internal_s() const {
   return s_.GetMap();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::ext::StringList >&
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::ext::StringMap_Value >&
 StringMap::s() const {
   // @@protoc_insertion_point(field_map:ext.StringMap.s)
   return _internal_s();
 }
-inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::ext::StringList >*
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::ext::StringMap_Value >*
 StringMap::_internal_mutable_s() {
   return s_.MutableMap();
 }
-inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::ext::StringList >*
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::ext::StringMap_Value >*
 StringMap::mutable_s() {
   // @@protoc_insertion_point(field_mutable_map:ext.StringMap.s)
   return _internal_mutable_s();
-}
-
-// -------------------------------------------------------------------
-
-// StringList
-
-// repeated string vs = 1;
-inline int StringList::_internal_vs_size() const {
-  return vs_.size();
-}
-inline int StringList::vs_size() const {
-  return _internal_vs_size();
-}
-inline void StringList::clear_vs() {
-  vs_.Clear();
-}
-inline std::string* StringList::add_vs() {
-  std::string* _s = _internal_add_vs();
-  // @@protoc_insertion_point(field_add_mutable:ext.StringList.vs)
-  return _s;
-}
-inline const std::string& StringList::_internal_vs(int index) const {
-  return vs_.Get(index);
-}
-inline const std::string& StringList::vs(int index) const {
-  // @@protoc_insertion_point(field_get:ext.StringList.vs)
-  return _internal_vs(index);
-}
-inline std::string* StringList::mutable_vs(int index) {
-  // @@protoc_insertion_point(field_mutable:ext.StringList.vs)
-  return vs_.Mutable(index);
-}
-inline void StringList::set_vs(int index, const std::string& value) {
-  vs_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set:ext.StringList.vs)
-}
-inline void StringList::set_vs(int index, std::string&& value) {
-  vs_.Mutable(index)->assign(std::move(value));
-  // @@protoc_insertion_point(field_set:ext.StringList.vs)
-}
-inline void StringList::set_vs(int index, const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  vs_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:ext.StringList.vs)
-}
-inline void StringList::set_vs(int index, const char* value, size_t size) {
-  vs_.Mutable(index)->assign(
-    reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:ext.StringList.vs)
-}
-inline std::string* StringList::_internal_add_vs() {
-  return vs_.Add();
-}
-inline void StringList::add_vs(const std::string& value) {
-  vs_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:ext.StringList.vs)
-}
-inline void StringList::add_vs(std::string&& value) {
-  vs_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:ext.StringList.vs)
-}
-inline void StringList::add_vs(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  vs_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:ext.StringList.vs)
-}
-inline void StringList::add_vs(const char* value, size_t size) {
-  vs_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:ext.StringList.vs)
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
-StringList::vs() const {
-  // @@protoc_insertion_point(field_list:ext.StringList.vs)
-  return vs_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
-StringList::mutable_vs() {
-  // @@protoc_insertion_point(field_mutable_list:ext.StringList.vs)
-  return &vs_;
 }
 
 #ifdef __GNUC__

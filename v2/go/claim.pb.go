@@ -3223,8 +3223,11 @@ type Stream struct {
 	//	*Stream_Audio
 	//	*Stream_Software
 	Type isStream_Type `protobuf_oneof:"type"`
-	// Value should contain one of the extension types (e.g. StringMap).
-	// Key provides a hint indicating what keys we should expect in the map.
+	// Map key is a label for the extension hinting what info we should expect.
+	// For example, one could have 2 extensions, "ebook" and "literature", which
+	// are both StringMaps, but contain different sets of keys.
+	// Map value should contain one of the extension types (e.g. StringMap)
+	// encoded as a protobuf.Any.
 	Extensions map[string]*anypb.Any `protobuf:"bytes,14,rep,name=extensions,proto3" json:"extensions" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 

@@ -33,8 +33,11 @@ message Stream {
         Software software = 13;
     }
 
-    // Value should contain one of the extension types (e.g. StringMap).
-    // Key provides a hint indicating what keys we should expect in the map.
+    // Map key is a label for the extension hinting what info we should expect.
+    // For example, one could have 2 extensions, "ebook" and "literature", which
+    // are both StringMaps, but contain different sets of keys.
+    // Map value should contain one of the extension types (e.g. StringMap)
+    // encoded as a protobuf.Any.
     map<string, google.protobuf.Any> extensions = 14;
 
     message Modifiable {

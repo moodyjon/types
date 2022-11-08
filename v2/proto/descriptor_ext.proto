@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-package ext;
-
-// Descriptor for ad Stream.Extension (see claim.proto).
-message Descriptor {
-    bytes descriptor = 1; // Serialized protobuf descriptor.
-}

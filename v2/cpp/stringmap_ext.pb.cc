@@ -21,6 +21,18 @@ namespace _pb = ::PROTOBUF_NAMESPACE_ID;
 namespace _pbi = _pb::internal;
 
 namespace ext {
+PROTOBUF_CONSTEXPR StringMap_Value::StringMap_Value(
+    ::_pbi::ConstantInitialized)
+  : vs_(){}
+struct StringMap_ValueDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR StringMap_ValueDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~StringMap_ValueDefaultTypeInternal() {}
+  union {
+    StringMap_Value _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StringMap_ValueDefaultTypeInternal _StringMap_Value_default_instance_;
 PROTOBUF_CONSTEXPR StringMap_SEntry_DoNotUse::StringMap_SEntry_DoNotUse(
     ::_pbi::ConstantInitialized){}
 struct StringMap_SEntry_DoNotUseDefaultTypeInternal {
@@ -44,24 +56,19 @@ struct StringMapDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StringMapDefaultTypeInternal _StringMap_default_instance_;
-PROTOBUF_CONSTEXPR StringList::StringList(
-    ::_pbi::ConstantInitialized)
-  : vs_(){}
-struct StringListDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR StringListDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~StringListDefaultTypeInternal() {}
-  union {
-    StringList _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StringListDefaultTypeInternal _StringList_default_instance_;
 }  // namespace ext
 static ::_pb::Metadata file_level_metadata_stringmap_5fext_2eproto[3];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_stringmap_5fext_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_stringmap_5fext_2eproto = nullptr;
 
 const uint32_t TableStruct_stringmap_5fext_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::ext::StringMap_Value, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::ext::StringMap_Value, vs_),
   PROTOBUF_FIELD_OFFSET(::ext::StringMap_SEntry_DoNotUse, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::ext::StringMap_SEntry_DoNotUse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -79,36 +86,29 @@ const uint32_t TableStruct_stringmap_5fext_2eproto::offsets[] PROTOBUF_SECTION_V
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::ext::StringMap, s_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::ext::StringList, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::ext::StringList, vs_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 8, -1, sizeof(::ext::StringMap_SEntry_DoNotUse)},
-  { 10, -1, -1, sizeof(::ext::StringMap)},
-  { 17, -1, -1, sizeof(::ext::StringList)},
+  { 0, -1, -1, sizeof(::ext::StringMap_Value)},
+  { 7, 15, -1, sizeof(::ext::StringMap_SEntry_DoNotUse)},
+  { 17, -1, -1, sizeof(::ext::StringMap)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
+  &::ext::_StringMap_Value_default_instance_._instance,
   &::ext::_StringMap_SEntry_DoNotUse_default_instance_._instance,
   &::ext::_StringMap_default_instance_._instance,
-  &::ext::_StringList_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_stringmap_5fext_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\023stringmap_ext.proto\022\003ext\"h\n\tStringMap\022"
-  " \n\001s\030\002 \003(\0132\025.ext.StringMap.SEntry\0329\n\006SEn"
-  "try\022\013\n\003key\030\001 \001(\t\022\036\n\005value\030\002 \001(\0132\017.ext.St"
-  "ringList:\0028\001\"\030\n\nStringList\022\n\n\002vs\030\001 \003(\tb\006"
-  "proto3"
+  "\n\023stringmap_ext.proto\022\003ext\"\202\001\n\tStringMap"
+  "\022 \n\001s\030\001 \003(\0132\025.ext.StringMap.SEntry\032\023\n\005Va"
+  "lue\022\n\n\002vs\030\001 \003(\t\032>\n\006SEntry\022\013\n\003key\030\001 \001(\t\022#"
+  "\n\005value\030\002 \001(\0132\024.ext.StringMap.Value:\0028\001b"
+  "\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_stringmap_5fext_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_stringmap_5fext_2eproto = {
-    false, false, 166, descriptor_table_protodef_stringmap_5fext_2eproto,
+    false, false, 167, descriptor_table_protodef_stringmap_5fext_2eproto,
     "stringmap_ext.proto",
     &descriptor_table_stringmap_5fext_2eproto_once, nullptr, 0, 3,
     schemas, file_default_instances, TableStruct_stringmap_5fext_2eproto::offsets,
@@ -125,6 +125,189 @@ namespace ext {
 
 // ===================================================================
 
+class StringMap_Value::_Internal {
+ public:
+};
+
+StringMap_Value::StringMap_Value(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  vs_(arena) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:ext.StringMap.Value)
+}
+StringMap_Value::StringMap_Value(const StringMap_Value& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      vs_(from.vs_) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:ext.StringMap.Value)
+}
+
+inline void StringMap_Value::SharedCtor() {
+}
+
+StringMap_Value::~StringMap_Value() {
+  // @@protoc_insertion_point(destructor:ext.StringMap.Value)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void StringMap_Value::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void StringMap_Value::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void StringMap_Value::Clear() {
+// @@protoc_insertion_point(message_clear_start:ext.StringMap.Value)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  vs_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* StringMap_Value::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated string vs = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_vs();
+            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(ptr);
+            CHK_(::_pbi::VerifyUTF8(str, "ext.StringMap.Value.vs"));
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* StringMap_Value::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:ext.StringMap.Value)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated string vs = 1;
+  for (int i = 0, n = this->_internal_vs_size(); i < n; i++) {
+    const auto& s = this->_internal_vs(i);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      s.data(), static_cast<int>(s.length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "ext.StringMap.Value.vs");
+    target = stream->WriteString(1, s, target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:ext.StringMap.Value)
+  return target;
+}
+
+size_t StringMap_Value::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:ext.StringMap.Value)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated string vs = 1;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(vs_.size());
+  for (int i = 0, n = vs_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      vs_.Get(i));
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData StringMap_Value::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    StringMap_Value::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*StringMap_Value::GetClassData() const { return &_class_data_; }
+
+void StringMap_Value::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<StringMap_Value *>(to)->MergeFrom(
+      static_cast<const StringMap_Value &>(from));
+}
+
+
+void StringMap_Value::MergeFrom(const StringMap_Value& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:ext.StringMap.Value)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  vs_.MergeFrom(from.vs_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void StringMap_Value::CopyFrom(const StringMap_Value& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:ext.StringMap.Value)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool StringMap_Value::IsInitialized() const {
+  return true;
+}
+
+void StringMap_Value::InternalSwap(StringMap_Value* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  vs_.InternalSwap(&other->vs_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata StringMap_Value::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_stringmap_5fext_2eproto_getter, &descriptor_table_stringmap_5fext_2eproto_once,
+      file_level_metadata_stringmap_5fext_2eproto[0]);
+}
+
+// ===================================================================
+
 StringMap_SEntry_DoNotUse::StringMap_SEntry_DoNotUse() {}
 StringMap_SEntry_DoNotUse::StringMap_SEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
     : SuperType(arena) {}
@@ -134,7 +317,7 @@ void StringMap_SEntry_DoNotUse::MergeFrom(const StringMap_SEntry_DoNotUse& other
 ::PROTOBUF_NAMESPACE_ID::Metadata StringMap_SEntry_DoNotUse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_stringmap_5fext_2eproto_getter, &descriptor_table_stringmap_5fext_2eproto_once,
-      file_level_metadata_stringmap_5fext_2eproto[0]);
+      file_level_metadata_stringmap_5fext_2eproto[1]);
 }
 
 // ===================================================================
@@ -202,16 +385,16 @@ const char* StringMap::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // map<string, .ext.StringList> s = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+      // map<string, .ext.StringMap.Value> s = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
             ptr = ctx->ParseMessage(&s_, ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
         } else
           goto handle_unusual;
         continue;
@@ -244,9 +427,9 @@ uint8_t* StringMap::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // map<string, .ext.StringList> s = 2;
+  // map<string, .ext.StringMap.Value> s = 1;
   if (!this->_internal_s().empty()) {
-    using MapType = ::_pb::Map<std::string, ::ext::StringList>;
+    using MapType = ::_pb::Map<std::string, ::ext::StringMap_Value>;
     using WireHelper = StringMap_SEntry_DoNotUse::Funcs;
     const auto& map_field = this->_internal_s();
     auto check_utf8 = [](const MapType::value_type& entry) {
@@ -259,12 +442,12 @@ uint8_t* StringMap::_InternalSerialize(
 
     if (stream->IsSerializationDeterministic() && map_field.size() > 1) {
       for (const auto& entry : ::_pbi::MapSorterPtr<MapType>(map_field)) {
-        target = WireHelper::InternalSerialize(2, entry.first, entry.second, target, stream);
+        target = WireHelper::InternalSerialize(1, entry.first, entry.second, target, stream);
         check_utf8(entry);
       }
     } else {
       for (const auto& entry : map_field) {
-        target = WireHelper::InternalSerialize(2, entry.first, entry.second, target, stream);
+        target = WireHelper::InternalSerialize(1, entry.first, entry.second, target, stream);
         check_utf8(entry);
       }
     }
@@ -286,10 +469,10 @@ size_t StringMap::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // map<string, .ext.StringList> s = 2;
+  // map<string, .ext.StringMap.Value> s = 1;
   total_size += 1 *
       ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_s_size());
-  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, ::ext::StringList >::const_iterator
+  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, ::ext::StringMap_Value >::const_iterator
       it = this->_internal_s().begin();
       it != this->_internal_s().end(); ++it) {
     total_size += StringMap_SEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
@@ -341,195 +524,16 @@ void StringMap::InternalSwap(StringMap* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata StringMap::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_stringmap_5fext_2eproto_getter, &descriptor_table_stringmap_5fext_2eproto_once,
-      file_level_metadata_stringmap_5fext_2eproto[1]);
-}
-
-// ===================================================================
-
-class StringList::_Internal {
- public:
-};
-
-StringList::StringList(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  vs_(arena) {
-  SharedCtor();
-  // @@protoc_insertion_point(arena_constructor:ext.StringList)
-}
-StringList::StringList(const StringList& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      vs_(from.vs_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:ext.StringList)
-}
-
-inline void StringList::SharedCtor() {
-}
-
-StringList::~StringList() {
-  // @@protoc_insertion_point(destructor:ext.StringList)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void StringList::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-}
-
-void StringList::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-
-void StringList::Clear() {
-// @@protoc_insertion_point(message_clear_start:ext.StringList)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  vs_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* StringList::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // repeated string vs = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            auto str = _internal_add_vs();
-            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(ptr);
-            CHK_(::_pbi::VerifyUTF8(str, "ext.StringList.vs"));
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* StringList::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:ext.StringList)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // repeated string vs = 1;
-  for (int i = 0, n = this->_internal_vs_size(); i < n; i++) {
-    const auto& s = this->_internal_vs(i);
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      s.data(), static_cast<int>(s.length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ext.StringList.vs");
-    target = stream->WriteString(1, s, target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:ext.StringList)
-  return target;
-}
-
-size_t StringList::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:ext.StringList)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // repeated string vs = 1;
-  total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(vs_.size());
-  for (int i = 0, n = vs_.size(); i < n; i++) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      vs_.Get(i));
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData StringList::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    StringList::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*StringList::GetClassData() const { return &_class_data_; }
-
-void StringList::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<StringList *>(to)->MergeFrom(
-      static_cast<const StringList &>(from));
-}
-
-
-void StringList::MergeFrom(const StringList& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:ext.StringList)
-  GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  vs_.MergeFrom(from.vs_);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void StringList::CopyFrom(const StringList& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:ext.StringList)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool StringList::IsInitialized() const {
-  return true;
-}
-
-void StringList::InternalSwap(StringList* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  vs_.InternalSwap(&other->vs_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata StringList::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_stringmap_5fext_2eproto_getter, &descriptor_table_stringmap_5fext_2eproto_once,
       file_level_metadata_stringmap_5fext_2eproto[2]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace ext
 PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::ext::StringMap_Value*
+Arena::CreateMaybeMessage< ::ext::StringMap_Value >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::ext::StringMap_Value >(arena);
+}
 template<> PROTOBUF_NOINLINE ::ext::StringMap_SEntry_DoNotUse*
 Arena::CreateMaybeMessage< ::ext::StringMap_SEntry_DoNotUse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::ext::StringMap_SEntry_DoNotUse >(arena);
@@ -537,10 +541,6 @@ Arena::CreateMaybeMessage< ::ext::StringMap_SEntry_DoNotUse >(Arena* arena) {
 template<> PROTOBUF_NOINLINE ::ext::StringMap*
 Arena::CreateMaybeMessage< ::ext::StringMap >(Arena* arena) {
   return Arena::CreateMessageInternal< ::ext::StringMap >(arena);
-}
-template<> PROTOBUF_NOINLINE ::ext::StringList*
-Arena::CreateMaybeMessage< ::ext::StringList >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::ext::StringList >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 
