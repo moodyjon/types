@@ -15,8 +15,8 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
-var google_protobuf_any_pb = require('google-protobuf/google/protobuf/any_pb.js');
-goog.object.extend(proto, google_protobuf_any_pb);
+var extension_pb = require('./extension_pb.js');
+goog.object.extend(proto, extension_pb);
 goog.exportSymbol('proto.pb.Audio', null, global);
 goog.exportSymbol('proto.pb.Channel', null, global);
 goog.exportSymbol('proto.pb.Claim', null, global);
@@ -1053,7 +1053,7 @@ proto.pb.Stream.toObject = function(includeInstance, msg) {
     video: (f = msg.getVideo()) && proto.pb.Video.toObject(includeInstance, f),
     audio: (f = msg.getAudio()) && proto.pb.Audio.toObject(includeInstance, f),
     software: (f = msg.getSoftware()) && proto.pb.Software.toObject(includeInstance, f),
-    extensionsMap: (f = msg.getExtensionsMap()) ? f.toObject(includeInstance, proto.google.protobuf.Any.toObject) : []
+    extensionsMap: (f = msg.getExtensionsMap()) ? f.toObject(includeInstance, proto.pb.Extension.toObject) : []
   };
 
   if (includeInstance) {
@@ -1139,7 +1139,7 @@ proto.pb.Stream.deserializeBinaryFromReader = function(msg, reader) {
     case 14:
       var value = msg.getExtensionsMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.google.protobuf.Any.deserializeBinaryFromReader, "", new proto.google.protobuf.Any());
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.pb.Extension.deserializeBinaryFromReader, "", new proto.pb.Extension());
          });
       break;
     default:
@@ -1249,7 +1249,7 @@ proto.pb.Stream.serializeBinaryToWriter = function(message, writer) {
   }
   f = message.getExtensionsMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(14, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.google.protobuf.Any.serializeBinaryToWriter);
+    f.serializeBinary(14, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.pb.Extension.serializeBinaryToWriter);
   }
 };
 
@@ -1286,7 +1286,7 @@ proto.pb.Stream.Modifiable.prototype.toObject = function(opt_includeInstance) {
  */
 proto.pb.Stream.Modifiable.toObject = function(includeInstance, msg) {
   var f, obj = {
-    extensionsMap: (f = msg.getExtensionsMap()) ? f.toObject(includeInstance, proto.google.protobuf.Any.toObject) : []
+    extensionsMap: (f = msg.getExtensionsMap()) ? f.toObject(includeInstance, proto.pb.Extension.toObject) : []
   };
 
   if (includeInstance) {
@@ -1326,7 +1326,7 @@ proto.pb.Stream.Modifiable.deserializeBinaryFromReader = function(msg, reader) {
     case 1:
       var value = msg.getExtensionsMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.google.protobuf.Any.deserializeBinaryFromReader, "", new proto.google.protobuf.Any());
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.pb.Extension.deserializeBinaryFromReader, "", new proto.pb.Extension());
          });
       break;
     default:
@@ -1360,21 +1360,21 @@ proto.pb.Stream.Modifiable.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getExtensionsMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(1, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.google.protobuf.Any.serializeBinaryToWriter);
+    f.serializeBinary(1, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.pb.Extension.serializeBinaryToWriter);
   }
 };
 
 
 /**
- * map<string, google.protobuf.Any> extensions = 1;
+ * map<string, Extension> extensions = 1;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
- * @return {!jspb.Map<string,!proto.google.protobuf.Any>}
+ * @return {!jspb.Map<string,!proto.pb.Extension>}
  */
 proto.pb.Stream.Modifiable.prototype.getExtensionsMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,!proto.google.protobuf.Any>} */ (
+  return /** @type {!jspb.Map<string,!proto.pb.Extension>} */ (
       jspb.Message.getMapField(this, 1, opt_noLazyCreate,
-      proto.google.protobuf.Any));
+      proto.pb.Extension));
 };
 
 
@@ -1682,15 +1682,15 @@ proto.pb.Stream.prototype.hasSoftware = function() {
 
 
 /**
- * map<string, google.protobuf.Any> extensions = 14;
+ * map<string, Extension> extensions = 14;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
- * @return {!jspb.Map<string,!proto.google.protobuf.Any>}
+ * @return {!jspb.Map<string,!proto.pb.Extension>}
  */
 proto.pb.Stream.prototype.getExtensionsMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,!proto.google.protobuf.Any>} */ (
+  return /** @type {!jspb.Map<string,!proto.pb.Extension>} */ (
       jspb.Message.getMapField(this, 14, opt_noLazyCreate,
-      proto.google.protobuf.Any));
+      proto.pb.Extension));
 };
 
 

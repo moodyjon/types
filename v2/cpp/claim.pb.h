@@ -34,7 +34,7 @@
 #include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
-#include <google/protobuf/any.pb.h>
+#include "extension.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_claim_2eproto
@@ -1549,12 +1549,12 @@ class Claim final :
 // -------------------------------------------------------------------
 
 class Stream_ExtensionsEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Stream_ExtensionsEntry_DoNotUse, 
-    std::string, ::PROTOBUF_NAMESPACE_ID::Any,
+    std::string, ::pb::Extension,
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> {
 public:
   typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Stream_ExtensionsEntry_DoNotUse, 
-    std::string, ::PROTOBUF_NAMESPACE_ID::Any,
+    std::string, ::pb::Extension,
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> SuperType;
   Stream_ExtensionsEntry_DoNotUse();
@@ -1575,12 +1575,12 @@ public:
 // -------------------------------------------------------------------
 
 class Stream_Modifiable_ExtensionsEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Stream_Modifiable_ExtensionsEntry_DoNotUse, 
-    std::string, ::PROTOBUF_NAMESPACE_ID::Any,
+    std::string, ::pb::Extension,
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> {
 public:
   typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Stream_Modifiable_ExtensionsEntry_DoNotUse, 
-    std::string, ::PROTOBUF_NAMESPACE_ID::Any,
+    std::string, ::pb::Extension,
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> SuperType;
   Stream_Modifiable_ExtensionsEntry_DoNotUse();
@@ -1724,21 +1724,21 @@ class Stream_Modifiable final :
   enum : int {
     kExtensionsFieldNumber = 1,
   };
-  // map<string, .google.protobuf.Any> extensions = 1;
+  // map<string, .pb.Extension> extensions = 1;
   int extensions_size() const;
   private:
   int _internal_extensions_size() const;
   public:
   void clear_extensions();
   private:
-  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >&
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::pb::Extension >&
       _internal_extensions() const;
-  ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >*
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::pb::Extension >*
       _internal_mutable_extensions();
   public:
-  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >&
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::pb::Extension >&
       extensions() const;
-  ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >*
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::pb::Extension >*
       mutable_extensions();
 
   // @@protoc_insertion_point(class_scope:pb.Stream.Modifiable)
@@ -1750,7 +1750,7 @@ class Stream_Modifiable final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::MapField<
       Stream_Modifiable_ExtensionsEntry_DoNotUse,
-      std::string, ::PROTOBUF_NAMESPACE_ID::Any,
+      std::string, ::pb::Extension,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> extensions_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1901,21 +1901,21 @@ class Stream final :
     kAudioFieldNumber = 12,
     kSoftwareFieldNumber = 13,
   };
-  // map<string, .google.protobuf.Any> extensions = 14;
+  // map<string, .pb.Extension> extensions = 14;
   int extensions_size() const;
   private:
   int _internal_extensions_size() const;
   public:
   void clear_extensions();
   private:
-  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >&
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::pb::Extension >&
       _internal_extensions() const;
-  ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >*
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::pb::Extension >*
       _internal_mutable_extensions();
   public:
-  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >&
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::pb::Extension >&
       extensions() const;
-  ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >*
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::pb::Extension >*
       mutable_extensions();
 
   // string author = 2;
@@ -2095,7 +2095,7 @@ class Stream final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::MapField<
       Stream_ExtensionsEntry_DoNotUse,
-      std::string, ::PROTOBUF_NAMESPACE_ID::Any,
+      std::string, ::pb::Extension,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> extensions_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr author_;
@@ -7103,27 +7103,27 @@ inline Claim::TypeCase Claim::type_case() const {
 
 // Stream_Modifiable
 
-// map<string, .google.protobuf.Any> extensions = 1;
+// map<string, .pb.Extension> extensions = 1;
 inline int Stream_Modifiable::_internal_extensions_size() const {
   return extensions_.size();
 }
 inline int Stream_Modifiable::extensions_size() const {
   return _internal_extensions_size();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >&
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::pb::Extension >&
 Stream_Modifiable::_internal_extensions() const {
   return extensions_.GetMap();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >&
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::pb::Extension >&
 Stream_Modifiable::extensions() const {
   // @@protoc_insertion_point(field_map:pb.Stream.Modifiable.extensions)
   return _internal_extensions();
 }
-inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >*
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::pb::Extension >*
 Stream_Modifiable::_internal_mutable_extensions() {
   return extensions_.MutableMap();
 }
-inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >*
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::pb::Extension >*
 Stream_Modifiable::mutable_extensions() {
   // @@protoc_insertion_point(field_mutable_map:pb.Stream.Modifiable.extensions)
   return _internal_mutable_extensions();
@@ -7779,27 +7779,27 @@ inline ::pb::Software* Stream::mutable_software() {
   return _msg;
 }
 
-// map<string, .google.protobuf.Any> extensions = 14;
+// map<string, .pb.Extension> extensions = 14;
 inline int Stream::_internal_extensions_size() const {
   return extensions_.size();
 }
 inline int Stream::extensions_size() const {
   return _internal_extensions_size();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >&
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::pb::Extension >&
 Stream::_internal_extensions() const {
   return extensions_.GetMap();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >&
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::pb::Extension >&
 Stream::extensions() const {
   // @@protoc_insertion_point(field_map:pb.Stream.extensions)
   return _internal_extensions();
 }
-inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >*
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::pb::Extension >*
 Stream::_internal_mutable_extensions() {
   return extensions_.MutableMap();
 }
-inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >*
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::pb::Extension >*
 Stream::mutable_extensions() {
   // @@protoc_insertion_point(field_mutable_map:pb.Stream.extensions)
   return _internal_mutable_extensions();

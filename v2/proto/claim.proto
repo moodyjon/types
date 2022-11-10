@@ -1,7 +1,8 @@
 syntax = "proto3";
 
 package pb;
-import "google/protobuf/any.proto";
+
+import "extension.proto";
 
 message Claim {
     // Primary type
@@ -35,14 +36,12 @@ message Stream {
 
     // Map key is a label for the extension hinting what info we should expect.
     // For example, one could have 2 extensions, "ebook" and "literature", which
-    // are both StringMaps, but contain different sets of keys.
-    // Map value should contain one of the extension types (e.g. StringMap)
-    // encoded as a protobuf.Any.
-    map<string, google.protobuf.Any> extensions = 14;
+    // are both StringMaps, but contain different key/value metadata.
+    map<string, Extension> extensions = 14;
 
     message Modifiable {
         // Limit modifications to extensions for now.
-        map<string, google.protobuf.Any> extensions = 1;
+        map<string, Extension> extensions = 1;
     }
 }
 

@@ -29,7 +29,7 @@ GO_OPTS+=" --go_opt=Mclaim.proto=$GO_PACKAGE"
 GO_OPTS+=" --go_opt=Mpurchase.proto=$GO_PACKAGE"
 GO_OPTS+=" --go_opt=Mresult.proto=$GO_PACKAGE"
 GO_OPTS+=" --go_opt=Msupport.proto=$GO_PACKAGE"
-GO_OPTS+=" --go_opt=Mstringmap_ext.proto=$GO_PACKAGE"
+GO_OPTS+=" --go_opt=Mextension.proto=$GO_PACKAGE"
 
 mkdir -p $DIR/go $DIR/go.tmp $DIR/python $DIR/js $DIR/cpp
 find $DIR/go $DIR/go.tmp $DIR/python $DIR/js $DIR/cpp -type f -delete
