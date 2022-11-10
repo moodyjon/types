@@ -2,25 +2,14 @@ syntax = "proto3";
 
 package pb;
 
-// StringMap is a generic kind of Extension which is useful for
-// testing & prototyping, but is not the most space-efficient and
-// does not enforce a fixed set of fields/types.
-message StringMap {
-    message Value {
-        oneof type {
-            string str = 1;
-            int64 int = 2;
-        }
-    }
-    message Values {
-        repeated Value vs = 1;
-    }
-    map<string, Values> fields = 1;
-}
+import "google/protobuf/struct.proto";
 
 message Extension {
     oneof type {
-        StringMap map = 1;
-        // Limit to StringMap for now. Consider protobuf.Any in future.
+        // Struct represents a structured data value, consisting of fields
+        // which map to dynamically typed values. No fixed set of fields/types
+        // is enforced. The JSON representation for Struct is a JSON object.
+        google.protobuf.Struct struct = 1;
+        // Limit to Struct for now. Consider protobuf.Any in future.
     }
 }

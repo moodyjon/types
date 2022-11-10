@@ -3223,8 +3223,8 @@ type Stream struct {
 	//	*Stream_Software
 	Type isStream_Type `protobuf_oneof:"type"`
 	// Map key is a label for the extension hinting what info we should expect.
-	// For example, one could have 2 extensions, "ebook" and "literature", which
-	// are both StringMaps, but contain different key/value metadata.
+	// For example, a stream could have 2 extensions, "ebook" and "literature",
+	// which contain different key/value metadata.
 	Extensions map[string]*Extension `protobuf:"bytes,14,rep,name=extensions,proto3" json:"extensions" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
@@ -4216,7 +4216,7 @@ type Stream_Modifiable struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Limit modifications to extensions for now.
+	// Limit modifications on reposts to extensions for now.
 	Extensions map[string]*Extension `protobuf:"bytes,1,rep,name=extensions,proto3" json:"extensions" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 

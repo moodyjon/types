@@ -9,6 +9,7 @@ package _go
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
+	structpb "google.golang.org/protobuf/types/known/structpb"
 	reflect "reflect"
 	sync "sync"
 )
@@ -20,70 +21,20 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// StringMap is a generic kind of Extension which is useful for
-// testing & prototyping, but is not the most space-efficient and
-// does not enforce a fixed set of fields/types.
-type StringMap struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Fields map[string]*StringMap_Values `protobuf:"bytes,1,rep,name=fields,proto3" json:"fields" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
-}
-
-func (x *StringMap) Reset() {
-	*x = StringMap{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_extension_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *StringMap) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*StringMap) ProtoMessage() {}
-
-func (x *StringMap) ProtoReflect() protoreflect.Message {
-	mi := &file_extension_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use StringMap.ProtoReflect.Descriptor instead.
-func (*StringMap) Descriptor() ([]byte, []int) {
-	return file_extension_proto_rawDescGZIP(), []int{0}
-}
-
-func (x *StringMap) GetFields() map[string]*StringMap_Values {
-	if x != nil {
-		return x.Fields
-	}
-	return nil
-}
-
 type Extension struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	// Types that are assignable to Type:
-	//	*Extension_Map
+	//	*Extension_Struct
 	Type isExtension_Type `protobuf_oneof:"type"`
 }
 
 func (x *Extension) Reset() {
 	*x = Extension{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_extension_proto_msgTypes[1]
+		mi := &file_extension_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -96,7 +47,7 @@ func (x *Extension) String() string {
 func (*Extension) ProtoMessage() {}
 
 func (x *Extension) ProtoReflect() protoreflect.Message {
-	mi := &file_extension_proto_msgTypes[1]
+	mi := &file_extension_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -109,7 +60,7 @@ func (x *Extension) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Extension.ProtoReflect.Descriptor instead.
 func (*Extension) Descriptor() ([]byte, []int) {
-	return file_extension_proto_rawDescGZIP(), []int{1}
+	return file_extension_proto_rawDescGZIP(), []int{0}
 }
 
 func (m *Extension) GetType() isExtension_Type {
@@ -119,9 +70,9 @@ func (m *Extension) GetType() isExtension_Type {
 	return nil
 }
 
-func (x *Extension) GetMap() *StringMap {
-	if x, ok := x.GetType().(*Extension_Map); ok {
-		return x.Map
+func (x *Extension) GetStruct() *structpb.Struct {
+	if x, ok := x.GetType().(*Extension_Struct); ok {
+		return x.Struct
 	}
 	return nil
 }
@@ -130,163 +81,27 @@ type isExtension_Type interface {
 	isExtension_Type()
 }
 
-type Extension_Map struct {
-	Map *StringMap `protobuf:"bytes,1,opt,name=map,proto3,oneof"` // Limit to StringMap for now. Consider protobuf.Any in future.
+type Extension_Struct struct {
+	// Struct represents a structured data value, consisting of fields
+	// which map to dynamically typed values. No fixed set of fields/types
+	// is enforced. The JSON representation for Struct is a JSON object.
+	Struct *structpb.Struct `protobuf:"bytes,1,opt,name=struct,proto3,oneof"` // Limit to Struct for now. Consider protobuf.Any in future.
 }
 
-func (*Extension_Map) isExtension_Type() {}
-
-type StringMap_Value struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	// Types that are assignable to Type:
-	//	*StringMap_Value_Str
-	//	*StringMap_Value_Int
-	Type isStringMap_Value_Type `protobuf_oneof:"type"`
-}
-
-func (x *StringMap_Value) Reset() {
-	*x = StringMap_Value{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_extension_proto_msgTypes[2]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *StringMap_Value) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*StringMap_Value) ProtoMessage() {}
-
-func (x *StringMap_Value) ProtoReflect() protoreflect.Message {
-	mi := &file_extension_proto_msgTypes[2]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use StringMap_Value.ProtoReflect.Descriptor instead.
-func (*StringMap_Value) Descriptor() ([]byte, []int) {
-	return file_extension_proto_rawDescGZIP(), []int{0, 0}
-}
-
-func (m *StringMap_Value) GetType() isStringMap_Value_Type {
-	if m != nil {
-		return m.Type
-	}
-	return nil
-}
-
-func (x *StringMap_Value) GetStr() string {
-	if x, ok := x.GetType().(*StringMap_Value_Str); ok {
-		return x.Str
-	}
-	return ""
-}
-
-func (x *StringMap_Value) GetInt() int64 {
-	if x, ok := x.GetType().(*StringMap_Value_Int); ok {
-		return x.Int
-	}
-	return 0
-}
-
-type isStringMap_Value_Type interface {
-	isStringMap_Value_Type()
-}
-
-type StringMap_Value_Str struct {
-	Str string `protobuf:"bytes,1,opt,name=str,proto3,oneof"`
-}
-
-type StringMap_Value_Int struct {
-	Int int64 `protobuf:"varint,2,opt,name=int,proto3,oneof"`
-}
-
-func (*StringMap_Value_Str) isStringMap_Value_Type() {}
-
-func (*StringMap_Value_Int) isStringMap_Value_Type() {}
-
-type StringMap_Values struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Vs []*StringMap_Value `protobuf:"bytes,1,rep,name=vs,proto3" json:"vs"`
-}
-
-func (x *StringMap_Values) Reset() {
-	*x = StringMap_Values{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_extension_proto_msgTypes[3]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *StringMap_Values) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*StringMap_Values) ProtoMessage() {}
-
-func (x *StringMap_Values) ProtoReflect() protoreflect.Message {
-	mi := &file_extension_proto_msgTypes[3]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use StringMap_Values.ProtoReflect.Descriptor instead.
-func (*StringMap_Values) Descriptor() ([]byte, []int) {
-	return file_extension_proto_rawDescGZIP(), []int{0, 1}
-}
-
-func (x *StringMap_Values) GetVs() []*StringMap_Value {
-	if x != nil {
-		return x.Vs
-	}
-	return nil
-}
+func (*Extension_Struct) isExtension_Type() {}
 
 var File_extension_proto protoreflect.FileDescriptor
 
 var file_extension_proto_rawDesc = []byte{
 	0x0a, 0x0f, 0x65, 0x78, 0x74, 0x65, 0x6e, 0x73, 0x69, 0x6f, 0x6e, 0x2e, 0x70, 0x72, 0x6f, 0x74,
-	0x6f, 0x12, 0x02, 0x70, 0x62, 0x22, 0xf7, 0x01, 0x0a, 0x09, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67,
-	0x4d, 0x61, 0x70, 0x12, 0x31, 0x0a, 0x06, 0x66, 0x69, 0x65, 0x6c, 0x64, 0x73, 0x18, 0x01, 0x20,
-	0x03, 0x28, 0x0b, 0x32, 0x19, 0x2e, 0x70, 0x62, 0x2e, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x4d,
-	0x61, 0x70, 0x2e, 0x46, 0x69, 0x65, 0x6c, 0x64, 0x73, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x52, 0x06,
-	0x66, 0x69, 0x65, 0x6c, 0x64, 0x73, 0x1a, 0x37, 0x0a, 0x05, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x12,
-	0x12, 0x0a, 0x03, 0x73, 0x74, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x48, 0x00, 0x52, 0x03,
-	0x73, 0x74, 0x72, 0x12, 0x12, 0x0a, 0x03, 0x69, 0x6e, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03,
-	0x48, 0x00, 0x52, 0x03, 0x69, 0x6e, 0x74, 0x42, 0x06, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x1a,
-	0x2d, 0x0a, 0x06, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x73, 0x12, 0x23, 0x0a, 0x02, 0x76, 0x73, 0x18,
-	0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x13, 0x2e, 0x70, 0x62, 0x2e, 0x53, 0x74, 0x72, 0x69, 0x6e,
-	0x67, 0x4d, 0x61, 0x70, 0x2e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x52, 0x02, 0x76, 0x73, 0x1a, 0x4f,
-	0x0a, 0x0b, 0x46, 0x69, 0x65, 0x6c, 0x64, 0x73, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x12, 0x10, 0x0a,
-	0x03, 0x6b, 0x65, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6b, 0x65, 0x79, 0x12,
-	0x2a, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14,
-	0x2e, 0x70, 0x62, 0x2e, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x4d, 0x61, 0x70, 0x2e, 0x56, 0x61,
-	0x6c, 0x75, 0x65, 0x73, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x3a, 0x02, 0x38, 0x01, 0x22,
-	0x36, 0x0a, 0x09, 0x45, 0x78, 0x74, 0x65, 0x6e, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x21, 0x0a, 0x03,
-	0x6d, 0x61, 0x70, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x53,
-	0x74, 0x72, 0x69, 0x6e, 0x67, 0x4d, 0x61, 0x70, 0x48, 0x00, 0x52, 0x03, 0x6d, 0x61, 0x70, 0x42,
-	0x06, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x6f, 0x12, 0x02, 0x70, 0x62, 0x1a, 0x1c, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2f, 0x73, 0x74, 0x72, 0x75, 0x63, 0x74, 0x2e, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x22, 0x46, 0x0a, 0x09, 0x45, 0x78, 0x74, 0x65, 0x6e, 0x73, 0x69, 0x6f, 0x6e,
+	0x12, 0x31, 0x0a, 0x06, 0x73, 0x74, 0x72, 0x75, 0x63, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x17, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62,
+	0x75, 0x66, 0x2e, 0x53, 0x74, 0x72, 0x75, 0x63, 0x74, 0x48, 0x00, 0x52, 0x06, 0x73, 0x74, 0x72,
+	0x75, 0x63, 0x74, 0x42, 0x06, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f,
+	0x74, 0x6f, 0x33,
 }
 
 var (
@@ -301,24 +116,18 @@ func file_extension_proto_rawDescGZIP() []byte {
 	return file_extension_proto_rawDescData
 }
 
-var file_extension_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_extension_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_extension_proto_goTypes = []interface{}{
-	(*StringMap)(nil),        // 0: pb.StringMap
-	(*Extension)(nil),        // 1: pb.Extension
-	(*StringMap_Value)(nil),  // 2: pb.StringMap.Value
-	(*StringMap_Values)(nil), // 3: pb.StringMap.Values
-	nil,                      // 4: pb.StringMap.FieldsEntry
+	(*Extension)(nil),       // 0: pb.Extension
+	(*structpb.Struct)(nil), // 1: google.protobuf.Struct
 }
 var file_extension_proto_depIdxs = []int32{
-	4, // 0: pb.StringMap.fields:type_name -> pb.StringMap.FieldsEntry
-	0, // 1: pb.Extension.map:type_name -> pb.StringMap
-	2, // 2: pb.StringMap.Values.vs:type_name -> pb.StringMap.Value
-	3, // 3: pb.StringMap.FieldsEntry.value:type_name -> pb.StringMap.Values
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	1, // 0: pb.Extension.struct:type_name -> google.protobuf.Struct
+	1, // [1:1] is the sub-list for method output_type
+	1, // [1:1] is the sub-list for method input_type
+	1, // [1:1] is the sub-list for extension type_name
+	1, // [1:1] is the sub-list for extension extendee
+	0, // [0:1] is the sub-list for field type_name
 }
 
 func init() { file_extension_proto_init() }
@@ -328,18 +137,6 @@ func file_extension_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_extension_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*StringMap); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_extension_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Extension); i {
 			case 0:
 				return &v.state
@@ -351,37 +148,9 @@ func file_extension_proto_init() {
 				return nil
 			}
 		}
-		file_extension_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*StringMap_Value); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_extension_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*StringMap_Values); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
 	}
-	file_extension_proto_msgTypes[1].OneofWrappers = []interface{}{
-		(*Extension_Map)(nil),
-	}
-	file_extension_proto_msgTypes[2].OneofWrappers = []interface{}{
-		(*StringMap_Value_Str)(nil),
-		(*StringMap_Value_Int)(nil),
+	file_extension_proto_msgTypes[0].OneofWrappers = []interface{}{
+		(*Extension_Struct)(nil),
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -389,7 +158,7 @@ func file_extension_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_extension_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   5,
+			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
