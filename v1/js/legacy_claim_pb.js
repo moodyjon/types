@@ -1,15 +1,19 @@
+// source: legacy_claim.proto
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {missingRequire} reports error on implicit type usages.
  * @suppress {messageConventions} JS Compiler reports an error if a variable or
  *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
+/* eslint-disable */
+// @ts-nocheck
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = Function('return this')();
+var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var stream_pb = require('./stream_pb.js');
 goog.object.extend(proto, stream_pb);
@@ -46,13 +50,15 @@ if (goog.DEBUG && !COMPILED) {
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.legacy_pb.Claim.prototype.toObject = function(opt_includeInstance) {
@@ -62,17 +68,17 @@ proto.legacy_pb.Claim.prototype.toObject = function(opt_includeInstance) {
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.legacy_pb.Claim} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.legacy_pb.Claim.toObject = function(includeInstance, msg) {
-  var obj = {
-    version: jspb.Message.getField(msg, 1),
-    claimtype: jspb.Message.getField(msg, 2),
+  var f, obj = {
+    version: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    claimtype: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     stream: (f = msg.getStream()) && stream_pb.Stream.toObject(includeInstance, f),
     certificate: (f = msg.getCertificate()) && certificate_pb.Certificate.toObject(includeInstance, f),
     publishersignature: (f = msg.getPublishersignature()) && signature_pb.Signature.toObject(includeInstance, f)
@@ -231,17 +237,21 @@ proto.legacy_pb.Claim.prototype.getVersion = function() {
 };
 
 
-/** @param {!proto.legacy_pb.Claim.Version} value */
+/**
+ * @param {!proto.legacy_pb.Claim.Version} value
+ * @return {!proto.legacy_pb.Claim} returns this
+ */
 proto.legacy_pb.Claim.prototype.setVersion = function(value) {
-  jspb.Message.setField(this, 1, value);
+  return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.legacy_pb.Claim} returns this
  */
 proto.legacy_pb.Claim.prototype.clearVersion = function() {
-  jspb.Message.setField(this, 1, undefined);
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -263,17 +273,21 @@ proto.legacy_pb.Claim.prototype.getClaimtype = function() {
 };
 
 
-/** @param {!proto.legacy_pb.Claim.ClaimType} value */
+/**
+ * @param {!proto.legacy_pb.Claim.ClaimType} value
+ * @return {!proto.legacy_pb.Claim} returns this
+ */
 proto.legacy_pb.Claim.prototype.setClaimtype = function(value) {
-  jspb.Message.setField(this, 2, value);
+  return jspb.Message.setField(this, 2, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.legacy_pb.Claim} returns this
  */
 proto.legacy_pb.Claim.prototype.clearClaimtype = function() {
-  jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -296,17 +310,21 @@ proto.legacy_pb.Claim.prototype.getStream = function() {
 };
 
 
-/** @param {?proto.legacy_pb.Stream|undefined} value */
+/**
+ * @param {?proto.legacy_pb.Stream|undefined} value
+ * @return {!proto.legacy_pb.Claim} returns this
+*/
 proto.legacy_pb.Claim.prototype.setStream = function(value) {
-  jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.legacy_pb.Claim} returns this
  */
 proto.legacy_pb.Claim.prototype.clearStream = function() {
-  this.setStream(undefined);
+  return this.setStream(undefined);
 };
 
 
@@ -329,17 +347,21 @@ proto.legacy_pb.Claim.prototype.getCertificate = function() {
 };
 
 
-/** @param {?proto.legacy_pb.Certificate|undefined} value */
+/**
+ * @param {?proto.legacy_pb.Certificate|undefined} value
+ * @return {!proto.legacy_pb.Claim} returns this
+*/
 proto.legacy_pb.Claim.prototype.setCertificate = function(value) {
-  jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.legacy_pb.Claim} returns this
  */
 proto.legacy_pb.Claim.prototype.clearCertificate = function() {
-  this.setCertificate(undefined);
+  return this.setCertificate(undefined);
 };
 
 
@@ -362,17 +384,21 @@ proto.legacy_pb.Claim.prototype.getPublishersignature = function() {
 };
 
 
-/** @param {?proto.legacy_pb.Signature|undefined} value */
+/**
+ * @param {?proto.legacy_pb.Signature|undefined} value
+ * @return {!proto.legacy_pb.Claim} returns this
+*/
 proto.legacy_pb.Claim.prototype.setPublishersignature = function(value) {
-  jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.legacy_pb.Claim} returns this
  */
 proto.legacy_pb.Claim.prototype.clearPublishersignature = function() {
-  this.setPublishersignature(undefined);
+  return this.setPublishersignature(undefined);
 };
 
 

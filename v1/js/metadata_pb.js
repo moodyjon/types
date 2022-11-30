@@ -1,15 +1,19 @@
+// source: metadata.proto
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {missingRequire} reports error on implicit type usages.
  * @suppress {messageConventions} JS Compiler reports an error if a variable or
  *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
+/* eslint-disable */
+// @ts-nocheck
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = Function('return this')();
+var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var fee_pb = require('./fee_pb.js');
 goog.object.extend(proto, fee_pb);
@@ -42,13 +46,15 @@ if (goog.DEBUG && !COMPILED) {
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.legacy_pb.Metadata.prototype.toObject = function(opt_includeInstance) {
@@ -58,26 +64,26 @@ proto.legacy_pb.Metadata.prototype.toObject = function(opt_includeInstance) {
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.legacy_pb.Metadata} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.legacy_pb.Metadata.toObject = function(includeInstance, msg) {
-  var obj = {
-    version: jspb.Message.getField(msg, 1),
-    language: jspb.Message.getField(msg, 2),
-    title: jspb.Message.getField(msg, 3),
-    description: jspb.Message.getField(msg, 4),
-    author: jspb.Message.getField(msg, 5),
-    license: jspb.Message.getField(msg, 6),
-    nsfw: jspb.Message.getField(msg, 7),
+  var f, obj = {
+    version: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    language: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    title: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    description: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    author: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    license: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    nsfw: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f,
     fee: (f = msg.getFee()) && fee_pb.Fee.toObject(includeInstance, f),
-    thumbnail: jspb.Message.getField(msg, 9),
-    preview: jspb.Message.getField(msg, 10),
-    licenseurl: jspb.Message.getField(msg, 11)
+    thumbnail: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+    preview: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
+    licenseurl: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -480,17 +486,21 @@ proto.legacy_pb.Metadata.prototype.getVersion = function() {
 };
 
 
-/** @param {!proto.legacy_pb.Metadata.Version} value */
+/**
+ * @param {!proto.legacy_pb.Metadata.Version} value
+ * @return {!proto.legacy_pb.Metadata} returns this
+ */
 proto.legacy_pb.Metadata.prototype.setVersion = function(value) {
-  jspb.Message.setField(this, 1, value);
+  return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.legacy_pb.Metadata} returns this
  */
 proto.legacy_pb.Metadata.prototype.clearVersion = function() {
-  jspb.Message.setField(this, 1, undefined);
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -512,17 +522,21 @@ proto.legacy_pb.Metadata.prototype.getLanguage = function() {
 };
 
 
-/** @param {!proto.legacy_pb.Metadata.Language} value */
+/**
+ * @param {!proto.legacy_pb.Metadata.Language} value
+ * @return {!proto.legacy_pb.Metadata} returns this
+ */
 proto.legacy_pb.Metadata.prototype.setLanguage = function(value) {
-  jspb.Message.setField(this, 2, value);
+  return jspb.Message.setField(this, 2, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.legacy_pb.Metadata} returns this
  */
 proto.legacy_pb.Metadata.prototype.clearLanguage = function() {
-  jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -544,17 +558,21 @@ proto.legacy_pb.Metadata.prototype.getTitle = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.legacy_pb.Metadata} returns this
+ */
 proto.legacy_pb.Metadata.prototype.setTitle = function(value) {
-  jspb.Message.setField(this, 3, value);
+  return jspb.Message.setField(this, 3, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.legacy_pb.Metadata} returns this
  */
 proto.legacy_pb.Metadata.prototype.clearTitle = function() {
-  jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -576,17 +594,21 @@ proto.legacy_pb.Metadata.prototype.getDescription = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.legacy_pb.Metadata} returns this
+ */
 proto.legacy_pb.Metadata.prototype.setDescription = function(value) {
-  jspb.Message.setField(this, 4, value);
+  return jspb.Message.setField(this, 4, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.legacy_pb.Metadata} returns this
  */
 proto.legacy_pb.Metadata.prototype.clearDescription = function() {
-  jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setField(this, 4, undefined);
 };
 
 
@@ -608,17 +630,21 @@ proto.legacy_pb.Metadata.prototype.getAuthor = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.legacy_pb.Metadata} returns this
+ */
 proto.legacy_pb.Metadata.prototype.setAuthor = function(value) {
-  jspb.Message.setField(this, 5, value);
+  return jspb.Message.setField(this, 5, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.legacy_pb.Metadata} returns this
  */
 proto.legacy_pb.Metadata.prototype.clearAuthor = function() {
-  jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setField(this, 5, undefined);
 };
 
 
@@ -640,17 +666,21 @@ proto.legacy_pb.Metadata.prototype.getLicense = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.legacy_pb.Metadata} returns this
+ */
 proto.legacy_pb.Metadata.prototype.setLicense = function(value) {
-  jspb.Message.setField(this, 6, value);
+  return jspb.Message.setField(this, 6, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.legacy_pb.Metadata} returns this
  */
 proto.legacy_pb.Metadata.prototype.clearLicense = function() {
-  jspb.Message.setField(this, 6, undefined);
+  return jspb.Message.setField(this, 6, undefined);
 };
 
 
@@ -665,26 +695,28 @@ proto.legacy_pb.Metadata.prototype.hasLicense = function() {
 
 /**
  * required bool nsfw = 7;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.legacy_pb.Metadata.prototype.getNsfw = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 7, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.legacy_pb.Metadata} returns this
+ */
 proto.legacy_pb.Metadata.prototype.setNsfw = function(value) {
-  jspb.Message.setField(this, 7, value);
+  return jspb.Message.setField(this, 7, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.legacy_pb.Metadata} returns this
  */
 proto.legacy_pb.Metadata.prototype.clearNsfw = function() {
-  jspb.Message.setField(this, 7, undefined);
+  return jspb.Message.setField(this, 7, undefined);
 };
 
 
@@ -707,17 +739,21 @@ proto.legacy_pb.Metadata.prototype.getFee = function() {
 };
 
 
-/** @param {?proto.legacy_pb.Fee|undefined} value */
+/**
+ * @param {?proto.legacy_pb.Fee|undefined} value
+ * @return {!proto.legacy_pb.Metadata} returns this
+*/
 proto.legacy_pb.Metadata.prototype.setFee = function(value) {
-  jspb.Message.setWrapperField(this, 8, value);
+  return jspb.Message.setWrapperField(this, 8, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.legacy_pb.Metadata} returns this
  */
 proto.legacy_pb.Metadata.prototype.clearFee = function() {
-  this.setFee(undefined);
+  return this.setFee(undefined);
 };
 
 
@@ -739,17 +775,21 @@ proto.legacy_pb.Metadata.prototype.getThumbnail = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.legacy_pb.Metadata} returns this
+ */
 proto.legacy_pb.Metadata.prototype.setThumbnail = function(value) {
-  jspb.Message.setField(this, 9, value);
+  return jspb.Message.setField(this, 9, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.legacy_pb.Metadata} returns this
  */
 proto.legacy_pb.Metadata.prototype.clearThumbnail = function() {
-  jspb.Message.setField(this, 9, undefined);
+  return jspb.Message.setField(this, 9, undefined);
 };
 
 
@@ -771,17 +811,21 @@ proto.legacy_pb.Metadata.prototype.getPreview = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.legacy_pb.Metadata} returns this
+ */
 proto.legacy_pb.Metadata.prototype.setPreview = function(value) {
-  jspb.Message.setField(this, 10, value);
+  return jspb.Message.setField(this, 10, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.legacy_pb.Metadata} returns this
  */
 proto.legacy_pb.Metadata.prototype.clearPreview = function() {
-  jspb.Message.setField(this, 10, undefined);
+  return jspb.Message.setField(this, 10, undefined);
 };
 
 
@@ -803,17 +847,21 @@ proto.legacy_pb.Metadata.prototype.getLicenseurl = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.legacy_pb.Metadata} returns this
+ */
 proto.legacy_pb.Metadata.prototype.setLicenseurl = function(value) {
-  jspb.Message.setField(this, 11, value);
+  return jspb.Message.setField(this, 11, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.legacy_pb.Metadata} returns this
  */
 proto.legacy_pb.Metadata.prototype.clearLicenseurl = function() {
-  jspb.Message.setField(this, 11, undefined);
+  return jspb.Message.setField(this, 11, undefined);
 };
 
 

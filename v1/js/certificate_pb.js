@@ -1,15 +1,19 @@
+// source: certificate.proto
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {missingRequire} reports error on implicit type usages.
  * @suppress {messageConventions} JS Compiler reports an error if a variable or
  *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
+/* eslint-disable */
+// @ts-nocheck
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = Function('return this')();
+var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 goog.exportSymbol('proto.legacy_pb.Certificate', null, global);
 goog.exportSymbol('proto.legacy_pb.Certificate.Version', null, global);
@@ -40,13 +44,15 @@ if (goog.DEBUG && !COMPILED) {
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.legacy_pb.Certificate.prototype.toObject = function(opt_includeInstance) {
@@ -56,17 +62,17 @@ proto.legacy_pb.Certificate.prototype.toObject = function(opt_includeInstance) {
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.legacy_pb.Certificate} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.legacy_pb.Certificate.toObject = function(includeInstance, msg) {
-  var obj = {
-    version: jspb.Message.getField(msg, 1),
-    keytype: jspb.Message.getField(msg, 2),
+  var f, obj = {
+    version: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    keytype: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     publickey: msg.getPublickey_asB64()
   };
 
@@ -186,17 +192,21 @@ proto.legacy_pb.Certificate.prototype.getVersion = function() {
 };
 
 
-/** @param {!proto.legacy_pb.Certificate.Version} value */
+/**
+ * @param {!proto.legacy_pb.Certificate.Version} value
+ * @return {!proto.legacy_pb.Certificate} returns this
+ */
 proto.legacy_pb.Certificate.prototype.setVersion = function(value) {
-  jspb.Message.setField(this, 1, value);
+  return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.legacy_pb.Certificate} returns this
  */
 proto.legacy_pb.Certificate.prototype.clearVersion = function() {
-  jspb.Message.setField(this, 1, undefined);
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -218,17 +228,21 @@ proto.legacy_pb.Certificate.prototype.getKeytype = function() {
 };
 
 
-/** @param {!proto.legacy_pb.KeyType} value */
+/**
+ * @param {!proto.legacy_pb.KeyType} value
+ * @return {!proto.legacy_pb.Certificate} returns this
+ */
 proto.legacy_pb.Certificate.prototype.setKeytype = function(value) {
-  jspb.Message.setField(this, 2, value);
+  return jspb.Message.setField(this, 2, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.legacy_pb.Certificate} returns this
  */
 proto.legacy_pb.Certificate.prototype.clearKeytype = function() {
-  jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -274,17 +288,21 @@ proto.legacy_pb.Certificate.prototype.getPublickey_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value */
+/**
+ * @param {!(string|Uint8Array)} value
+ * @return {!proto.legacy_pb.Certificate} returns this
+ */
 proto.legacy_pb.Certificate.prototype.setPublickey = function(value) {
-  jspb.Message.setField(this, 4, value);
+  return jspb.Message.setField(this, 4, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.legacy_pb.Certificate} returns this
  */
 proto.legacy_pb.Certificate.prototype.clearPublickey = function() {
-  jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setField(this, 4, undefined);
 };
 
 

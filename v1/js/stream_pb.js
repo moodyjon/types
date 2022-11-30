@@ -1,15 +1,19 @@
+// source: stream.proto
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {missingRequire} reports error on implicit type usages.
  * @suppress {messageConventions} JS Compiler reports an error if a variable or
  *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
+/* eslint-disable */
+// @ts-nocheck
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = Function('return this')();
+var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var metadata_pb = require('./metadata_pb.js');
 goog.object.extend(proto, metadata_pb);
@@ -43,13 +47,15 @@ if (goog.DEBUG && !COMPILED) {
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.legacy_pb.Stream.prototype.toObject = function(opt_includeInstance) {
@@ -59,16 +65,16 @@ proto.legacy_pb.Stream.prototype.toObject = function(opt_includeInstance) {
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.legacy_pb.Stream} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.legacy_pb.Stream.toObject = function(includeInstance, msg) {
-  var obj = {
-    version: jspb.Message.getField(msg, 1),
+  var f, obj = {
+    version: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     metadata: (f = msg.getMetadata()) && metadata_pb.Metadata.toObject(includeInstance, f),
     source: (f = msg.getSource()) && source_pb.Source.toObject(includeInstance, f)
   };
@@ -193,17 +199,21 @@ proto.legacy_pb.Stream.prototype.getVersion = function() {
 };
 
 
-/** @param {!proto.legacy_pb.Stream.Version} value */
+/**
+ * @param {!proto.legacy_pb.Stream.Version} value
+ * @return {!proto.legacy_pb.Stream} returns this
+ */
 proto.legacy_pb.Stream.prototype.setVersion = function(value) {
-  jspb.Message.setField(this, 1, value);
+  return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.legacy_pb.Stream} returns this
  */
 proto.legacy_pb.Stream.prototype.clearVersion = function() {
-  jspb.Message.setField(this, 1, undefined);
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -226,17 +236,21 @@ proto.legacy_pb.Stream.prototype.getMetadata = function() {
 };
 
 
-/** @param {!proto.legacy_pb.Metadata} value */
+/**
+ * @param {!proto.legacy_pb.Metadata} value
+ * @return {!proto.legacy_pb.Stream} returns this
+*/
 proto.legacy_pb.Stream.prototype.setMetadata = function(value) {
-  jspb.Message.setWrapperField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.legacy_pb.Stream} returns this
  */
 proto.legacy_pb.Stream.prototype.clearMetadata = function() {
-  jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -259,17 +273,21 @@ proto.legacy_pb.Stream.prototype.getSource = function() {
 };
 
 
-/** @param {!proto.legacy_pb.Source} value */
+/**
+ * @param {!proto.legacy_pb.Source} value
+ * @return {!proto.legacy_pb.Stream} returns this
+*/
 proto.legacy_pb.Stream.prototype.setSource = function(value) {
-  jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.legacy_pb.Stream} returns this
  */
 proto.legacy_pb.Stream.prototype.clearSource = function() {
-  jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 

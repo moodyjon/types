@@ -5,10 +5,9 @@
 
 #include <algorithm>
 
-#include <google/protobuf/stubs/common.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/extension_set.h>
-#include <google/protobuf/wire_format_lite_inl.h>
+#include <google/protobuf/wire_format_lite.h>
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/generated_message_reflection.h>
 #include <google/protobuf/reflection_ops.h>
@@ -16,44 +15,39 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 
-extern PROTOBUF_INTERNAL_EXPORT_metadata_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Metadata_metadata_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_source_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Source_source_2eproto;
+PROTOBUF_PRAGMA_INIT_SEG
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace legacy_pb {
-class StreamDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<Stream> _instance;
-} _Stream_default_instance_;
+PROTOBUF_CONSTEXPR Stream::Stream(
+    ::_pbi::ConstantInitialized)
+  : metadata_(nullptr)
+  , source_(nullptr)
+  , version_(0)
+{}
+struct StreamDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR StreamDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~StreamDefaultTypeInternal() {}
+  union {
+    Stream _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StreamDefaultTypeInternal _Stream_default_instance_;
 }  // namespace legacy_pb
-static void InitDefaultsStream_stream_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
+static ::_pb::Metadata file_level_metadata_stream_2eproto[1];
+static const ::_pb::EnumDescriptor* file_level_enum_descriptors_stream_2eproto[1];
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_stream_2eproto = nullptr;
 
-  {
-    void* ptr = &::legacy_pb::_Stream_default_instance_;
-    new (ptr) ::legacy_pb::Stream();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::legacy_pb::Stream::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<2> scc_info_Stream_stream_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsStream_stream_2eproto}, {
-      &scc_info_Metadata_metadata_2eproto.base,
-      &scc_info_Source_source_2eproto.base,}};
-
-void InitDefaults_stream_2eproto() {
-  ::google::protobuf::internal::InitSCC(&scc_info_Stream_stream_2eproto.base);
-}
-
-::google::protobuf::Metadata file_level_metadata_stream_2eproto[1];
-const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_stream_2eproto[1];
-constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_stream_2eproto = nullptr;
-
-const ::google::protobuf::uint32 TableStruct_stream_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+const uint32_t TableStruct_stream_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   PROTOBUF_FIELD_OFFSET(::legacy_pb::Stream, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::legacy_pb::Stream, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::legacy_pb::Stream, version_),
   PROTOBUF_FIELD_OFFSET(::legacy_pb::Stream, metadata_),
   PROTOBUF_FIELD_OFFSET(::legacy_pb::Stream, source_),
@@ -61,21 +55,15 @@ const ::google::protobuf::uint32 TableStruct_stream_2eproto::offsets[] PROTOBUF_
   0,
   1,
 };
-static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 8, sizeof(::legacy_pb::Stream)},
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, 9, -1, sizeof(::legacy_pb::Stream)},
 };
 
-static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::legacy_pb::_Stream_default_instance_),
+static const ::_pb::Message* const file_default_instances[] = {
+  &::legacy_pb::_Stream_default_instance_._instance,
 };
 
-::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_stream_2eproto = {
-  {}, AddDescriptors_stream_2eproto, "stream.proto", schemas,
-  file_default_instances, TableStruct_stream_2eproto::offsets,
-  file_level_metadata_stream_2eproto, 1, file_level_enum_descriptors_stream_2eproto, file_level_service_descriptors_stream_2eproto,
-};
-
-const char descriptor_table_protodef_stream_2eproto[] =
+const char descriptor_table_protodef_stream_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\014stream.proto\022\tlegacy_pb\032\016metadata.prot"
   "o\032\014source.proto\"\252\001\n\006Stream\022*\n\007version\030\001 "
   "\002(\0162\031.legacy_pb.Stream.Version\022%\n\010metada"
@@ -83,26 +71,28 @@ const char descriptor_table_protodef_stream_2eproto[] =
   "\003 \002(\0132\021.legacy_pb.Source\"*\n\007Version\022\023\n\017U"
   "NKNOWN_VERSION\020\000\022\n\n\006_0_0_1\020\001"
   ;
-::google::protobuf::internal::DescriptorTable descriptor_table_stream_2eproto = {
-  false, InitDefaults_stream_2eproto, 
-  descriptor_table_protodef_stream_2eproto,
-  "stream.proto", &assign_descriptors_table_stream_2eproto, 228,
+static const ::_pbi::DescriptorTable* const descriptor_table_stream_2eproto_deps[2] = {
+  &::descriptor_table_metadata_2eproto,
+  &::descriptor_table_source_2eproto,
 };
-
-void AddDescriptors_stream_2eproto() {
-  static constexpr ::google::protobuf::internal::InitFunc deps[2] =
-  {
-    ::AddDescriptors_metadata_2eproto,
-    ::AddDescriptors_source_2eproto,
-  };
- ::google::protobuf::internal::AddDescriptors(&descriptor_table_stream_2eproto, deps, 2);
+static ::_pbi::once_flag descriptor_table_stream_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_stream_2eproto = {
+    false, false, 228, descriptor_table_protodef_stream_2eproto,
+    "stream.proto",
+    &descriptor_table_stream_2eproto_once, descriptor_table_stream_2eproto_deps, 2, 1,
+    schemas, file_default_instances, TableStruct_stream_2eproto::offsets,
+    file_level_metadata_stream_2eproto, file_level_enum_descriptors_stream_2eproto,
+    file_level_service_descriptors_stream_2eproto,
+};
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_stream_2eproto_getter() {
+  return &descriptor_table_stream_2eproto;
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_stream_2eproto = []() { AddDescriptors_stream_2eproto(); return true; }();
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_stream_2eproto(&descriptor_table_stream_2eproto);
 namespace legacy_pb {
-const ::google::protobuf::EnumDescriptor* Stream_Version_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_stream_2eproto);
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Stream_Version_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_stream_2eproto);
   return file_level_enum_descriptors_stream_2eproto[0];
 }
 bool Stream_Version_IsValid(int value) {
@@ -115,43 +105,41 @@ bool Stream_Version_IsValid(int value) {
   }
 }
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const Stream_Version Stream::UNKNOWN_VERSION;
-const Stream_Version Stream::_0_0_1;
-const Stream_Version Stream::Version_MIN;
-const Stream_Version Stream::Version_MAX;
-const int Stream::Version_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+constexpr Stream_Version Stream::UNKNOWN_VERSION;
+constexpr Stream_Version Stream::_0_0_1;
+constexpr Stream_Version Stream::Version_MIN;
+constexpr Stream_Version Stream::Version_MAX;
+constexpr int Stream::Version_ARRAYSIZE;
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
 // ===================================================================
 
-void Stream::InitAsDefaultInstance() {
-  ::legacy_pb::_Stream_default_instance_._instance.get_mutable()->metadata_ = const_cast< ::legacy_pb::Metadata*>(
-      ::legacy_pb::Metadata::internal_default_instance());
-  ::legacy_pb::_Stream_default_instance_._instance.get_mutable()->source_ = const_cast< ::legacy_pb::Source*>(
-      ::legacy_pb::Source::internal_default_instance());
-}
-class Stream::HasBitSetters {
+class Stream::_Internal {
  public:
-  static void set_has_version(Stream* msg) {
-    msg->_has_bits_[0] |= 0x00000004u;
+  using HasBits = decltype(std::declval<Stream>()._has_bits_);
+  static void set_has_version(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
   }
   static const ::legacy_pb::Metadata& metadata(const Stream* msg);
-  static void set_has_metadata(Stream* msg) {
-    msg->_has_bits_[0] |= 0x00000001u;
+  static void set_has_metadata(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
   }
   static const ::legacy_pb::Source& source(const Stream* msg);
-  static void set_has_source(Stream* msg) {
-    msg->_has_bits_[0] |= 0x00000002u;
+  static void set_has_source(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000007) ^ 0x00000007) != 0;
   }
 };
 
 const ::legacy_pb::Metadata&
-Stream::HasBitSetters::metadata(const Stream* msg) {
+Stream::_Internal::metadata(const Stream* msg) {
   return *msg->metadata_;
 }
 const ::legacy_pb::Source&
-Stream::HasBitSetters::source(const Stream* msg) {
+Stream::_Internal::source(const Stream* msg) {
   return *msg->source_;
 }
 void Stream::clear_metadata() {
@@ -162,28 +150,22 @@ void Stream::clear_source() {
   if (source_ != nullptr) source_->Clear();
   _has_bits_[0] &= ~0x00000002u;
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Stream::kVersionFieldNumber;
-const int Stream::kMetadataFieldNumber;
-const int Stream::kSourceFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-Stream::Stream()
-  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+Stream::Stream(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:legacy_pb.Stream)
+  // @@protoc_insertion_point(arena_constructor:legacy_pb.Stream)
 }
 Stream::Stream(const Stream& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr),
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  if (from.has_metadata()) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_metadata()) {
     metadata_ = new ::legacy_pb::Metadata(*from.metadata_);
   } else {
     metadata_ = nullptr;
   }
-  if (from.has_source()) {
+  if (from._internal_has_source()) {
     source_ = new ::legacy_pb::Source(*from.source_);
   } else {
     source_ = nullptr;
@@ -192,20 +174,24 @@ Stream::Stream(const Stream& from)
   // @@protoc_insertion_point(copy_constructor:legacy_pb.Stream)
 }
 
-void Stream::SharedCtor() {
-  ::google::protobuf::internal::InitSCC(
-      &scc_info_Stream_stream_2eproto.base);
-  ::memset(&metadata_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&version_) -
-      reinterpret_cast<char*>(&metadata_)) + sizeof(version_));
+inline void Stream::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&metadata_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&version_) -
+    reinterpret_cast<char*>(&metadata_)) + sizeof(version_));
 }
 
 Stream::~Stream() {
   // @@protoc_insertion_point(destructor:legacy_pb.Stream)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
 
-void Stream::SharedDtor() {
+inline void Stream::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete metadata_;
   if (this != internal_default_instance()) delete source_;
 }
@@ -213,15 +199,10 @@ void Stream::SharedDtor() {
 void Stream::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Stream& Stream::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_Stream_stream_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Stream::Clear() {
 // @@protoc_insertion_point(message_clear_start:legacy_pb.Stream)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -238,214 +219,100 @@ void Stream::Clear() {
   }
   version_ = 0;
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* Stream::_InternalParse(const char* begin, const char* end, void* object,
-                  ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<Stream*>(object);
-  ::google::protobuf::int32 size; (void)size;
-  int depth; (void)depth;
-  ::google::protobuf::uint32 tag;
-  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
-  auto ptr = begin;
-  while (ptr < end) {
-    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
-    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+const char* Stream::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // required .legacy_pb.Stream.Version version = 1;
-      case 1: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
-        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
-        if (!::legacy_pb::Stream_Version_IsValid(val)) {
-          ::google::protobuf::internal::WriteVarint(1, val, msg->mutable_unknown_fields());
-          break;
-        }
-        msg->set_version(static_cast<::legacy_pb::Stream_Version>(val));
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        break;
-      }
-      // required .legacy_pb.Metadata metadata = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::legacy_pb::Metadata::_InternalParse;
-        object = msg->mutable_metadata();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
-      // required .legacy_pb.Source source = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::legacy_pb::Source::_InternalParse;
-        object = msg->mutable_source();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->EndGroup(tag);
-          return ptr;
-        }
-        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
-          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
-        ptr = res.first;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
-        if (res.second) return ptr;
-      }
-    }  // switch
-  }  // while
-  return ptr;
-len_delim_till_end:
-  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
-                               {parser_till_end, object}, size);
-}
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool Stream::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:legacy_pb.Stream)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required .legacy_pb.Stream.Version version = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
-          int value = 0;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          if (::legacy_pb::Stream_Version_IsValid(value)) {
-            set_version(static_cast< ::legacy_pb::Stream_Version >(value));
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          if (PROTOBUF_PREDICT_TRUE(::legacy_pb::Stream_Version_IsValid(val))) {
+            _internal_set_version(static_cast<::legacy_pb::Stream_Version>(val));
           } else {
-            mutable_unknown_fields()->AddVarint(
-                1, static_cast<::google::protobuf::uint64>(value));
+            ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
           }
-        } else {
+        } else
           goto handle_unusual;
-        }
-        break;
-      }
-
+        continue;
       // required .legacy_pb.Metadata metadata = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_metadata()));
-        } else {
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_metadata(), ptr);
+          CHK_(ptr);
+        } else
           goto handle_unusual;
-        }
-        break;
-      }
-
+        continue;
       // required .legacy_pb.Source source = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_source()));
-        } else {
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_source(), ptr);
+          CHK_(ptr);
+        } else
           goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
     }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:legacy_pb.Stream)
-  return true;
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _has_bits_.Or(has_bits);
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:legacy_pb.Stream)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void Stream::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:legacy_pb.Stream)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  cached_has_bits = _has_bits_[0];
-  // required .legacy_pb.Stream.Version version = 1;
-  if (cached_has_bits & 0x00000004u) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->version(), output);
-  }
-
-  // required .legacy_pb.Metadata metadata = 2;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, HasBitSetters::metadata(this), output);
-  }
-
-  // required .legacy_pb.Source source = 3;
-  if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, HasBitSetters::source(this), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:legacy_pb.Stream)
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-::google::protobuf::uint8* Stream::InternalSerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+uint8_t* Stream::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:legacy_pb.Stream)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   // required .legacy_pb.Stream.Version version = 1;
   if (cached_has_bits & 0x00000004u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->version(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+      1, this->_internal_version(), target);
   }
 
   // required .legacy_pb.Metadata metadata = 2;
   if (cached_has_bits & 0x00000001u) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        2, HasBitSetters::metadata(this), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(2, _Internal::metadata(this),
+        _Internal::metadata(this).GetCachedSize(), target, stream);
   }
 
   // required .legacy_pb.Source source = 3;
   if (cached_has_bits & 0x00000002u) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        3, HasBitSetters::source(this), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(3, _Internal::source(this),
+        _Internal::source(this).GetCachedSize(), target, stream);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:legacy_pb.Stream)
   return target;
@@ -455,24 +322,24 @@ size_t Stream::RequiredFieldsByteSizeFallback() const {
 // @@protoc_insertion_point(required_fields_byte_size_fallback_start:legacy_pb.Stream)
   size_t total_size = 0;
 
-  if (has_metadata()) {
+  if (_internal_has_metadata()) {
     // required .legacy_pb.Metadata metadata = 2;
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *metadata_);
   }
 
-  if (has_source()) {
+  if (_internal_has_source()) {
     // required .legacy_pb.Source source = 3;
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *source_);
   }
 
-  if (has_version()) {
+  if (_internal_has_version()) {
     // required .legacy_pb.Stream.Version version = 1;
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->version());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_version());
   }
 
   return total_size;
@@ -481,80 +348,64 @@ size_t Stream::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:legacy_pb.Stream)
   size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
   if (((_has_bits_[0] & 0x00000007) ^ 0x00000007) == 0) {  // All required fields are present.
     // required .legacy_pb.Metadata metadata = 2;
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *metadata_);
 
     // required .legacy_pb.Source source = 3;
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *source_);
 
     // required .legacy_pb.Stream.Version version = 1;
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->version());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_version());
 
   } else {
     total_size += RequiredFieldsByteSizeFallback();
   }
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void Stream::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:legacy_pb.Stream)
-  GOOGLE_DCHECK_NE(&from, this);
-  const Stream* source =
-      ::google::protobuf::DynamicCastToGenerated<Stream>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:legacy_pb.Stream)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:legacy_pb.Stream)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Stream::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    Stream::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Stream::GetClassData() const { return &_class_data_; }
+
+void Stream::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<Stream *>(to)->MergeFrom(
+      static_cast<const Stream &>(from));
 }
+
 
 void Stream::MergeFrom(const Stream& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:legacy_pb.Stream)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
-      mutable_metadata()->::legacy_pb::Metadata::MergeFrom(from.metadata());
+      _internal_mutable_metadata()->::legacy_pb::Metadata::MergeFrom(from._internal_metadata());
     }
     if (cached_has_bits & 0x00000002u) {
-      mutable_source()->::legacy_pb::Source::MergeFrom(from.source());
+      _internal_mutable_source()->::legacy_pb::Source::MergeFrom(from._internal_source());
     }
     if (cached_has_bits & 0x00000004u) {
       version_ = from.version_;
     }
     _has_bits_[0] |= cached_has_bits;
   }
-}
-
-void Stream::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:legacy_pb.Stream)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Stream::CopyFrom(const Stream& from) {
@@ -565,44 +416,42 @@ void Stream::CopyFrom(const Stream& from) {
 }
 
 bool Stream::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000007) != 0x00000007) return false;
-  if (has_metadata()) {
-    if (!this->metadata_->IsInitialized()) return false;
+  if (_Internal::MissingRequiredFields(_has_bits_)) return false;
+  if (_internal_has_metadata()) {
+    if (!metadata_->IsInitialized()) return false;
   }
-  if (has_source()) {
-    if (!this->source_->IsInitialized()) return false;
+  if (_internal_has_source()) {
+    if (!source_->IsInitialized()) return false;
   }
   return true;
 }
 
-void Stream::Swap(Stream* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void Stream::InternalSwap(Stream* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  swap(metadata_, other->metadata_);
-  swap(source_, other->source_);
-  swap(version_, other->version_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Stream, version_)
+      + sizeof(Stream::version_)
+      - PROTOBUF_FIELD_OFFSET(Stream, metadata_)>(
+          reinterpret_cast<char*>(&metadata_),
+          reinterpret_cast<char*>(&other->metadata_));
 }
 
-::google::protobuf::Metadata Stream::GetMetadata() const {
-  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_stream_2eproto);
-  return ::file_level_metadata_stream_2eproto[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata Stream::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_stream_2eproto_getter, &descriptor_table_stream_2eproto_once,
+      file_level_metadata_stream_2eproto[0]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace legacy_pb
-namespace google {
-namespace protobuf {
-template<> PROTOBUF_NOINLINE ::legacy_pb::Stream* Arena::CreateMaybeMessage< ::legacy_pb::Stream >(Arena* arena) {
-  return Arena::CreateInternal< ::legacy_pb::Stream >(arena);
+PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::legacy_pb::Stream*
+Arena::CreateMaybeMessage< ::legacy_pb::Stream >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::legacy_pb::Stream >(arena);
 }
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 #include <google/protobuf/port_undef.inc>

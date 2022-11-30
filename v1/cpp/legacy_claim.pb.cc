@@ -5,10 +5,9 @@
 
 #include <algorithm>
 
-#include <google/protobuf/stubs/common.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/extension_set.h>
-#include <google/protobuf/wire_format_lite_inl.h>
+#include <google/protobuf/wire_format_lite.h>
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/generated_message_reflection.h>
 #include <google/protobuf/reflection_ops.h>
@@ -16,46 +15,42 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 
-extern PROTOBUF_INTERNAL_EXPORT_certificate_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Certificate_certificate_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_signature_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Signature_signature_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_stream_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_Stream_stream_2eproto;
+PROTOBUF_PRAGMA_INIT_SEG
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace legacy_pb {
-class ClaimDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<Claim> _instance;
-} _Claim_default_instance_;
+PROTOBUF_CONSTEXPR Claim::Claim(
+    ::_pbi::ConstantInitialized)
+  : stream_(nullptr)
+  , certificate_(nullptr)
+  , publishersignature_(nullptr)
+  , version_(0)
+
+  , claimtype_(0)
+{}
+struct ClaimDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ClaimDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ClaimDefaultTypeInternal() {}
+  union {
+    Claim _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ClaimDefaultTypeInternal _Claim_default_instance_;
 }  // namespace legacy_pb
-static void InitDefaultsClaim_legacy_5fclaim_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
+static ::_pb::Metadata file_level_metadata_legacy_5fclaim_2eproto[1];
+static const ::_pb::EnumDescriptor* file_level_enum_descriptors_legacy_5fclaim_2eproto[2];
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_legacy_5fclaim_2eproto = nullptr;
 
-  {
-    void* ptr = &::legacy_pb::_Claim_default_instance_;
-    new (ptr) ::legacy_pb::Claim();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::legacy_pb::Claim::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<3> scc_info_Claim_legacy_5fclaim_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 3, InitDefaultsClaim_legacy_5fclaim_2eproto}, {
-      &scc_info_Stream_stream_2eproto.base,
-      &scc_info_Certificate_certificate_2eproto.base,
-      &scc_info_Signature_signature_2eproto.base,}};
-
-void InitDefaults_legacy_5fclaim_2eproto() {
-  ::google::protobuf::internal::InitSCC(&scc_info_Claim_legacy_5fclaim_2eproto.base);
-}
-
-::google::protobuf::Metadata file_level_metadata_legacy_5fclaim_2eproto[1];
-const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_legacy_5fclaim_2eproto[2];
-constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_legacy_5fclaim_2eproto = nullptr;
-
-const ::google::protobuf::uint32 TableStruct_legacy_5fclaim_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+const uint32_t TableStruct_legacy_5fclaim_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   PROTOBUF_FIELD_OFFSET(::legacy_pb::Claim, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::legacy_pb::Claim, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::legacy_pb::Claim, version_),
   PROTOBUF_FIELD_OFFSET(::legacy_pb::Claim, claimtype_),
   PROTOBUF_FIELD_OFFSET(::legacy_pb::Claim, stream_),
@@ -67,21 +62,15 @@ const ::google::protobuf::uint32 TableStruct_legacy_5fclaim_2eproto::offsets[] P
   1,
   2,
 };
-static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 10, sizeof(::legacy_pb::Claim)},
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, 11, -1, sizeof(::legacy_pb::Claim)},
 };
 
-static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::legacy_pb::_Claim_default_instance_),
+static const ::_pb::Message* const file_default_instances[] = {
+  &::legacy_pb::_Claim_default_instance_._instance,
 };
 
-::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_legacy_5fclaim_2eproto = {
-  {}, AddDescriptors_legacy_5fclaim_2eproto, "legacy_claim.proto", schemas,
-  file_default_instances, TableStruct_legacy_5fclaim_2eproto::offsets,
-  file_level_metadata_legacy_5fclaim_2eproto, 1, file_level_enum_descriptors_legacy_5fclaim_2eproto, file_level_service_descriptors_legacy_5fclaim_2eproto,
-};
-
-const char descriptor_table_protodef_legacy_5fclaim_2eproto[] =
+const char descriptor_table_protodef_legacy_5fclaim_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\022legacy_claim.proto\022\tlegacy_pb\032\014stream."
   "proto\032\021certificate.proto\032\017signature.prot"
   "o\"\331\002\n\005Claim\022)\n\007version\030\001 \002(\0162\030.legacy_pb"
@@ -94,27 +83,29 @@ const char descriptor_table_protodef_legacy_5fclaim_2eproto[] =
   "laimType\022\026\n\022UNKNOWN_CLAIM_TYPE\020\000\022\016\n\nstre"
   "amType\020\001\022\023\n\017certificateType\020\002"
   ;
-::google::protobuf::internal::DescriptorTable descriptor_table_legacy_5fclaim_2eproto = {
-  false, InitDefaults_legacy_5fclaim_2eproto, 
-  descriptor_table_protodef_legacy_5fclaim_2eproto,
-  "legacy_claim.proto", &assign_descriptors_table_legacy_5fclaim_2eproto, 429,
+static const ::_pbi::DescriptorTable* const descriptor_table_legacy_5fclaim_2eproto_deps[3] = {
+  &::descriptor_table_certificate_2eproto,
+  &::descriptor_table_signature_2eproto,
+  &::descriptor_table_stream_2eproto,
 };
-
-void AddDescriptors_legacy_5fclaim_2eproto() {
-  static constexpr ::google::protobuf::internal::InitFunc deps[3] =
-  {
-    ::AddDescriptors_stream_2eproto,
-    ::AddDescriptors_certificate_2eproto,
-    ::AddDescriptors_signature_2eproto,
-  };
- ::google::protobuf::internal::AddDescriptors(&descriptor_table_legacy_5fclaim_2eproto, deps, 3);
+static ::_pbi::once_flag descriptor_table_legacy_5fclaim_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_legacy_5fclaim_2eproto = {
+    false, false, 429, descriptor_table_protodef_legacy_5fclaim_2eproto,
+    "legacy_claim.proto",
+    &descriptor_table_legacy_5fclaim_2eproto_once, descriptor_table_legacy_5fclaim_2eproto_deps, 3, 1,
+    schemas, file_default_instances, TableStruct_legacy_5fclaim_2eproto::offsets,
+    file_level_metadata_legacy_5fclaim_2eproto, file_level_enum_descriptors_legacy_5fclaim_2eproto,
+    file_level_service_descriptors_legacy_5fclaim_2eproto,
+};
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_legacy_5fclaim_2eproto_getter() {
+  return &descriptor_table_legacy_5fclaim_2eproto;
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_legacy_5fclaim_2eproto = []() { AddDescriptors_legacy_5fclaim_2eproto(); return true; }();
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_legacy_5fclaim_2eproto(&descriptor_table_legacy_5fclaim_2eproto);
 namespace legacy_pb {
-const ::google::protobuf::EnumDescriptor* Claim_Version_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_legacy_5fclaim_2eproto);
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Claim_Version_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_legacy_5fclaim_2eproto);
   return file_level_enum_descriptors_legacy_5fclaim_2eproto[0];
 }
 bool Claim_Version_IsValid(int value) {
@@ -127,15 +118,15 @@ bool Claim_Version_IsValid(int value) {
   }
 }
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const Claim_Version Claim::UNKNOWN_VERSION;
-const Claim_Version Claim::_0_0_1;
-const Claim_Version Claim::Version_MIN;
-const Claim_Version Claim::Version_MAX;
-const int Claim::Version_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-const ::google::protobuf::EnumDescriptor* Claim_ClaimType_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_legacy_5fclaim_2eproto);
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+constexpr Claim_Version Claim::UNKNOWN_VERSION;
+constexpr Claim_Version Claim::_0_0_1;
+constexpr Claim_Version Claim::Version_MIN;
+constexpr Claim_Version Claim::Version_MAX;
+constexpr int Claim::Version_ARRAYSIZE;
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Claim_ClaimType_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_legacy_5fclaim_2eproto);
   return file_level_enum_descriptors_legacy_5fclaim_2eproto[1];
 }
 bool Claim_ClaimType_IsValid(int value) {
@@ -149,57 +140,53 @@ bool Claim_ClaimType_IsValid(int value) {
   }
 }
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const Claim_ClaimType Claim::UNKNOWN_CLAIM_TYPE;
-const Claim_ClaimType Claim::streamType;
-const Claim_ClaimType Claim::certificateType;
-const Claim_ClaimType Claim::ClaimType_MIN;
-const Claim_ClaimType Claim::ClaimType_MAX;
-const int Claim::ClaimType_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+constexpr Claim_ClaimType Claim::UNKNOWN_CLAIM_TYPE;
+constexpr Claim_ClaimType Claim::streamType;
+constexpr Claim_ClaimType Claim::certificateType;
+constexpr Claim_ClaimType Claim::ClaimType_MIN;
+constexpr Claim_ClaimType Claim::ClaimType_MAX;
+constexpr int Claim::ClaimType_ARRAYSIZE;
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
 // ===================================================================
 
-void Claim::InitAsDefaultInstance() {
-  ::legacy_pb::_Claim_default_instance_._instance.get_mutable()->stream_ = const_cast< ::legacy_pb::Stream*>(
-      ::legacy_pb::Stream::internal_default_instance());
-  ::legacy_pb::_Claim_default_instance_._instance.get_mutable()->certificate_ = const_cast< ::legacy_pb::Certificate*>(
-      ::legacy_pb::Certificate::internal_default_instance());
-  ::legacy_pb::_Claim_default_instance_._instance.get_mutable()->publishersignature_ = const_cast< ::legacy_pb::Signature*>(
-      ::legacy_pb::Signature::internal_default_instance());
-}
-class Claim::HasBitSetters {
+class Claim::_Internal {
  public:
-  static void set_has_version(Claim* msg) {
-    msg->_has_bits_[0] |= 0x00000008u;
+  using HasBits = decltype(std::declval<Claim>()._has_bits_);
+  static void set_has_version(HasBits* has_bits) {
+    (*has_bits)[0] |= 8u;
   }
-  static void set_has_claimtype(Claim* msg) {
-    msg->_has_bits_[0] |= 0x00000010u;
+  static void set_has_claimtype(HasBits* has_bits) {
+    (*has_bits)[0] |= 16u;
   }
   static const ::legacy_pb::Stream& stream(const Claim* msg);
-  static void set_has_stream(Claim* msg) {
-    msg->_has_bits_[0] |= 0x00000001u;
+  static void set_has_stream(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
   }
   static const ::legacy_pb::Certificate& certificate(const Claim* msg);
-  static void set_has_certificate(Claim* msg) {
-    msg->_has_bits_[0] |= 0x00000002u;
+  static void set_has_certificate(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
   }
   static const ::legacy_pb::Signature& publishersignature(const Claim* msg);
-  static void set_has_publishersignature(Claim* msg) {
-    msg->_has_bits_[0] |= 0x00000004u;
+  static void set_has_publishersignature(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000018) ^ 0x00000018) != 0;
   }
 };
 
 const ::legacy_pb::Stream&
-Claim::HasBitSetters::stream(const Claim* msg) {
+Claim::_Internal::stream(const Claim* msg) {
   return *msg->stream_;
 }
 const ::legacy_pb::Certificate&
-Claim::HasBitSetters::certificate(const Claim* msg) {
+Claim::_Internal::certificate(const Claim* msg) {
   return *msg->certificate_;
 }
 const ::legacy_pb::Signature&
-Claim::HasBitSetters::publishersignature(const Claim* msg) {
+Claim::_Internal::publishersignature(const Claim* msg) {
   return *msg->publishersignature_;
 }
 void Claim::clear_stream() {
@@ -214,35 +201,27 @@ void Claim::clear_publishersignature() {
   if (publishersignature_ != nullptr) publishersignature_->Clear();
   _has_bits_[0] &= ~0x00000004u;
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Claim::kVersionFieldNumber;
-const int Claim::kClaimTypeFieldNumber;
-const int Claim::kStreamFieldNumber;
-const int Claim::kCertificateFieldNumber;
-const int Claim::kPublisherSignatureFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-Claim::Claim()
-  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+Claim::Claim(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:legacy_pb.Claim)
+  // @@protoc_insertion_point(arena_constructor:legacy_pb.Claim)
 }
 Claim::Claim(const Claim& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr),
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  if (from.has_stream()) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_stream()) {
     stream_ = new ::legacy_pb::Stream(*from.stream_);
   } else {
     stream_ = nullptr;
   }
-  if (from.has_certificate()) {
+  if (from._internal_has_certificate()) {
     certificate_ = new ::legacy_pb::Certificate(*from.certificate_);
   } else {
     certificate_ = nullptr;
   }
-  if (from.has_publishersignature()) {
+  if (from._internal_has_publishersignature()) {
     publishersignature_ = new ::legacy_pb::Signature(*from.publishersignature_);
   } else {
     publishersignature_ = nullptr;
@@ -253,20 +232,24 @@ Claim::Claim(const Claim& from)
   // @@protoc_insertion_point(copy_constructor:legacy_pb.Claim)
 }
 
-void Claim::SharedCtor() {
-  ::google::protobuf::internal::InitSCC(
-      &scc_info_Claim_legacy_5fclaim_2eproto.base);
-  ::memset(&stream_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&claimtype_) -
-      reinterpret_cast<char*>(&stream_)) + sizeof(claimtype_));
+inline void Claim::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&stream_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&claimtype_) -
+    reinterpret_cast<char*>(&stream_)) + sizeof(claimtype_));
 }
 
 Claim::~Claim() {
   // @@protoc_insertion_point(destructor:legacy_pb.Claim)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
 
-void Claim::SharedDtor() {
+inline void Claim::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete stream_;
   if (this != internal_default_instance()) delete certificate_;
   if (this != internal_default_instance()) delete publishersignature_;
@@ -275,15 +258,10 @@ void Claim::SharedDtor() {
 void Claim::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Claim& Claim::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_Claim_legacy_5fclaim_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Claim::Clear() {
 // @@protoc_insertion_point(message_clear_start:legacy_pb.Claim)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -308,294 +286,135 @@ void Claim::Clear() {
         reinterpret_cast<char*>(&version_)) + sizeof(claimtype_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* Claim::_InternalParse(const char* begin, const char* end, void* object,
-                  ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<Claim*>(object);
-  ::google::protobuf::int32 size; (void)size;
-  int depth; (void)depth;
-  ::google::protobuf::uint32 tag;
-  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
-  auto ptr = begin;
-  while (ptr < end) {
-    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
-    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+const char* Claim::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // required .legacy_pb.Claim.Version version = 1;
-      case 1: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
-        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
-        if (!::legacy_pb::Claim_Version_IsValid(val)) {
-          ::google::protobuf::internal::WriteVarint(1, val, msg->mutable_unknown_fields());
-          break;
-        }
-        msg->set_version(static_cast<::legacy_pb::Claim_Version>(val));
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        break;
-      }
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          if (PROTOBUF_PREDICT_TRUE(::legacy_pb::Claim_Version_IsValid(val))) {
+            _internal_set_version(static_cast<::legacy_pb::Claim_Version>(val));
+          } else {
+            ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
+          }
+        } else
+          goto handle_unusual;
+        continue;
       // required .legacy_pb.Claim.ClaimType claimType = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
-        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
-        if (!::legacy_pb::Claim_ClaimType_IsValid(val)) {
-          ::google::protobuf::internal::WriteVarint(2, val, msg->mutable_unknown_fields());
-          break;
-        }
-        msg->set_claimtype(static_cast<::legacy_pb::Claim_ClaimType>(val));
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        break;
-      }
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          if (PROTOBUF_PREDICT_TRUE(::legacy_pb::Claim_ClaimType_IsValid(val))) {
+            _internal_set_claimtype(static_cast<::legacy_pb::Claim_ClaimType>(val));
+          } else {
+            ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(2, val, mutable_unknown_fields());
+          }
+        } else
+          goto handle_unusual;
+        continue;
       // optional .legacy_pb.Stream stream = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::legacy_pb::Stream::_InternalParse;
-        object = msg->mutable_stream();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_stream(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
       // optional .legacy_pb.Certificate certificate = 4;
-      case 4: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::legacy_pb::Certificate::_InternalParse;
-        object = msg->mutable_certificate();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+          ptr = ctx->ParseMessage(_internal_mutable_certificate(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
       // optional .legacy_pb.Signature publisherSignature = 5;
-      case 5: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::legacy_pb::Signature::_InternalParse;
-        object = msg->mutable_publishersignature();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->EndGroup(tag);
-          return ptr;
-        }
-        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
-          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
-        ptr = res.first;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
-        if (res.second) return ptr;
-      }
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
+          ptr = ctx->ParseMessage(_internal_mutable_publishersignature(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
     }  // switch
-  }  // while
-  return ptr;
-len_delim_till_end:
-  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
-                               {parser_till_end, object}, size);
-}
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool Claim::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:legacy_pb.Claim)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required .legacy_pb.Claim.Version version = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
-          int value = 0;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          if (::legacy_pb::Claim_Version_IsValid(value)) {
-            set_version(static_cast< ::legacy_pb::Claim_Version >(value));
-          } else {
-            mutable_unknown_fields()->AddVarint(
-                1, static_cast<::google::protobuf::uint64>(value));
-          }
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required .legacy_pb.Claim.ClaimType claimType = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
-          int value = 0;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          if (::legacy_pb::Claim_ClaimType_IsValid(value)) {
-            set_claimtype(static_cast< ::legacy_pb::Claim_ClaimType >(value));
-          } else {
-            mutable_unknown_fields()->AddVarint(
-                2, static_cast<::google::protobuf::uint64>(value));
-          }
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // optional .legacy_pb.Stream stream = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_stream()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // optional .legacy_pb.Certificate certificate = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_certificate()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // optional .legacy_pb.Signature publisherSignature = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (42 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_publishersignature()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
     }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:legacy_pb.Claim)
-  return true;
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _has_bits_.Or(has_bits);
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:legacy_pb.Claim)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void Claim::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:legacy_pb.Claim)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  cached_has_bits = _has_bits_[0];
-  // required .legacy_pb.Claim.Version version = 1;
-  if (cached_has_bits & 0x00000008u) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->version(), output);
-  }
-
-  // required .legacy_pb.Claim.ClaimType claimType = 2;
-  if (cached_has_bits & 0x00000010u) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      2, this->claimtype(), output);
-  }
-
-  // optional .legacy_pb.Stream stream = 3;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, HasBitSetters::stream(this), output);
-  }
-
-  // optional .legacy_pb.Certificate certificate = 4;
-  if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, HasBitSetters::certificate(this), output);
-  }
-
-  // optional .legacy_pb.Signature publisherSignature = 5;
-  if (cached_has_bits & 0x00000004u) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      5, HasBitSetters::publishersignature(this), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:legacy_pb.Claim)
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-::google::protobuf::uint8* Claim::InternalSerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+uint8_t* Claim::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:legacy_pb.Claim)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   // required .legacy_pb.Claim.Version version = 1;
   if (cached_has_bits & 0x00000008u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->version(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+      1, this->_internal_version(), target);
   }
 
   // required .legacy_pb.Claim.ClaimType claimType = 2;
   if (cached_has_bits & 0x00000010u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      2, this->claimtype(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+      2, this->_internal_claimtype(), target);
   }
 
   // optional .legacy_pb.Stream stream = 3;
   if (cached_has_bits & 0x00000001u) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        3, HasBitSetters::stream(this), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(3, _Internal::stream(this),
+        _Internal::stream(this).GetCachedSize(), target, stream);
   }
 
   // optional .legacy_pb.Certificate certificate = 4;
   if (cached_has_bits & 0x00000002u) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        4, HasBitSetters::certificate(this), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(4, _Internal::certificate(this),
+        _Internal::certificate(this).GetCachedSize(), target, stream);
   }
 
   // optional .legacy_pb.Signature publisherSignature = 5;
   if (cached_has_bits & 0x00000004u) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        5, HasBitSetters::publishersignature(this), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(5, _Internal::publishersignature(this),
+        _Internal::publishersignature(this).GetCachedSize(), target, stream);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:legacy_pb.Claim)
   return target;
@@ -605,16 +424,16 @@ size_t Claim::RequiredFieldsByteSizeFallback() const {
 // @@protoc_insertion_point(required_fields_byte_size_fallback_start:legacy_pb.Claim)
   size_t total_size = 0;
 
-  if (has_version()) {
+  if (_internal_has_version()) {
     // required .legacy_pb.Claim.Version version = 1;
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->version());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_version());
   }
 
-  if (has_claimtype()) {
+  if (_internal_has_claimtype()) {
     // required .legacy_pb.Claim.ClaimType claimType = 2;
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->claimtype());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_claimtype());
   }
 
   return total_size;
@@ -623,24 +442,19 @@ size_t Claim::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:legacy_pb.Claim)
   size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
   if (((_has_bits_[0] & 0x00000018) ^ 0x00000018) == 0) {  // All required fields are present.
     // required .legacy_pb.Claim.Version version = 1;
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->version());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_version());
 
     // required .legacy_pb.Claim.ClaimType claimType = 2;
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->claimtype());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_claimtype());
 
   } else {
     total_size += RequiredFieldsByteSizeFallback();
   }
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -649,62 +463,57 @@ size_t Claim::ByteSizeLong() const {
     // optional .legacy_pb.Stream stream = 3;
     if (cached_has_bits & 0x00000001u) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *stream_);
     }
 
     // optional .legacy_pb.Certificate certificate = 4;
     if (cached_has_bits & 0x00000002u) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *certificate_);
     }
 
     // optional .legacy_pb.Signature publisherSignature = 5;
     if (cached_has_bits & 0x00000004u) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *publishersignature_);
     }
 
   }
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void Claim::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:legacy_pb.Claim)
-  GOOGLE_DCHECK_NE(&from, this);
-  const Claim* source =
-      ::google::protobuf::DynamicCastToGenerated<Claim>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:legacy_pb.Claim)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:legacy_pb.Claim)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Claim::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    Claim::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Claim::GetClassData() const { return &_class_data_; }
+
+void Claim::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<Claim *>(to)->MergeFrom(
+      static_cast<const Claim &>(from));
 }
+
 
 void Claim::MergeFrom(const Claim& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:legacy_pb.Claim)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x0000001fu) {
     if (cached_has_bits & 0x00000001u) {
-      mutable_stream()->::legacy_pb::Stream::MergeFrom(from.stream());
+      _internal_mutable_stream()->::legacy_pb::Stream::MergeFrom(from._internal_stream());
     }
     if (cached_has_bits & 0x00000002u) {
-      mutable_certificate()->::legacy_pb::Certificate::MergeFrom(from.certificate());
+      _internal_mutable_certificate()->::legacy_pb::Certificate::MergeFrom(from._internal_certificate());
     }
     if (cached_has_bits & 0x00000004u) {
-      mutable_publishersignature()->::legacy_pb::Signature::MergeFrom(from.publishersignature());
+      _internal_mutable_publishersignature()->::legacy_pb::Signature::MergeFrom(from._internal_publishersignature());
     }
     if (cached_has_bits & 0x00000008u) {
       version_ = from.version_;
@@ -714,13 +523,7 @@ void Claim::MergeFrom(const Claim& from) {
     }
     _has_bits_[0] |= cached_has_bits;
   }
-}
-
-void Claim::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:legacy_pb.Claim)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Claim::CopyFrom(const Claim& from) {
@@ -731,49 +534,45 @@ void Claim::CopyFrom(const Claim& from) {
 }
 
 bool Claim::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000018) != 0x00000018) return false;
-  if (has_stream()) {
-    if (!this->stream_->IsInitialized()) return false;
+  if (_Internal::MissingRequiredFields(_has_bits_)) return false;
+  if (_internal_has_stream()) {
+    if (!stream_->IsInitialized()) return false;
   }
-  if (has_certificate()) {
-    if (!this->certificate_->IsInitialized()) return false;
+  if (_internal_has_certificate()) {
+    if (!certificate_->IsInitialized()) return false;
   }
-  if (has_publishersignature()) {
-    if (!this->publishersignature_->IsInitialized()) return false;
+  if (_internal_has_publishersignature()) {
+    if (!publishersignature_->IsInitialized()) return false;
   }
   return true;
 }
 
-void Claim::Swap(Claim* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void Claim::InternalSwap(Claim* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  swap(stream_, other->stream_);
-  swap(certificate_, other->certificate_);
-  swap(publishersignature_, other->publishersignature_);
-  swap(version_, other->version_);
-  swap(claimtype_, other->claimtype_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Claim, claimtype_)
+      + sizeof(Claim::claimtype_)
+      - PROTOBUF_FIELD_OFFSET(Claim, stream_)>(
+          reinterpret_cast<char*>(&stream_),
+          reinterpret_cast<char*>(&other->stream_));
 }
 
-::google::protobuf::Metadata Claim::GetMetadata() const {
-  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_legacy_5fclaim_2eproto);
-  return ::file_level_metadata_legacy_5fclaim_2eproto[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata Claim::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_legacy_5fclaim_2eproto_getter, &descriptor_table_legacy_5fclaim_2eproto_once,
+      file_level_metadata_legacy_5fclaim_2eproto[0]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace legacy_pb
-namespace google {
-namespace protobuf {
-template<> PROTOBUF_NOINLINE ::legacy_pb::Claim* Arena::CreateMaybeMessage< ::legacy_pb::Claim >(Arena* arena) {
-  return Arena::CreateInternal< ::legacy_pb::Claim >(arena);
+PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::legacy_pb::Claim*
+Arena::CreateMaybeMessage< ::legacy_pb::Claim >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::legacy_pb::Claim >(arena);
 }
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 #include <google/protobuf/port_undef.inc>

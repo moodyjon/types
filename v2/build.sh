@@ -24,7 +24,7 @@ hash protoc-gen-go 2>/dev/null || go get -u github.com/golang/protobuf/protoc-ge
 hash protoc-gen-go 2>/dev/null || { echo >&2 'error: Make sure $GOPATH/bin is in your $PATH'; exit 1; }
 
 # Inform protoc what package Go code should be placed within.
-GO_PACKAGE="github.com/lbryio/herald.go/protobuf/go"
+GO_PACKAGE="github.com/lbryio/types/v2/go"
 GO_OPTS+=" --go_opt=Mclaim.proto=$GO_PACKAGE"
 GO_OPTS+=" --go_opt=Mpurchase.proto=$GO_PACKAGE"
 GO_OPTS+=" --go_opt=Mresult.proto=$GO_PACKAGE"
@@ -41,6 +41,10 @@ protoc --proto_path="$DIR/proto" \
     --js_out="import_style=commonjs,binary:$DIR/js" \
     --cpp_out="$DIR/cpp" \
     $DIR/proto/*.proto
+
+# Fixup generated Python code.
+sed -e 's/^import\ \(.*\)_pb2\ /from . import\ \1_pb2\ /g' -i.bak $DIR/python/*.py
+touch $DIR/python/__init__.py
 
 # Fixup generated Go code.
 ls "$DIR"/go.tmp/$GO_PACKAGE/*.pb.go | xargs -n1 -IX -S1024 bash -c "sed -e 's/,omitempty//' X > X.tmp && mv X{.tmp,}"
